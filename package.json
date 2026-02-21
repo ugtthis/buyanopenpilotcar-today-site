@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "lines": "bun scripts/linecount.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/bun": "^1.3.9"
+  }
+}

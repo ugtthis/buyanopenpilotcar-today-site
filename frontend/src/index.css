@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────
+   @theme: registers every color as a first-class Tailwind
+   token → bg-canvas, text-secondary, border-accent/40, etc.
+   The custom properties are also emitted as CSS vars so
+   @layer base and inline style="" can still reference them.
+───────────────────────────────────────────────────────── */
+@theme {
+  /* ── PALANTIR FOUNDRY LIGHT (temp — revert to Blueprint dark) ── */
+
+  /* Light surfaces */
+  --color-canvas:  #F3F4F6;   /* app background (light grey) */
+  --color-surface: #FFFFFF;   /* navbar / topbar             */
+  --color-panel:   #FFFFFF;   /* card / panel surface        */
+  --color-raised:  #EAECF0;   /* elevated / hover bg         */
+  --color-hover:   #DDE3EC;   /* row hover (blue-tinted)     */
+
+  /* Text hierarchy — dark on light */
+  --color-content:   #1C2B33; /* primary text                */
+  --color-secondary: #404B54; /* dim / label text            */
+  --color-muted:     #738A97; /* placeholder / meta text     */
+
+  /* Border token — used in base styles below */
+  --color-border:        rgba(0, 0, 0, 0.10);
+  --color-border-strong: rgba(0, 0, 0, 0.16);
+
+  /* Monochromatic slate */
+  --color-accent:        #1E293B;
+  --color-accent-muted:  #334155;
+  --color-accent-bright: #475569;
+
+  /* Semantic intents — darker for light backgrounds */
+  --color-positive: #0D8050; /* forest green */
+  --color-caution:  #A66321; /* dark amber   */
+  --color-danger:   #C23030; /* dark red      */
+  --color-info:     #2B88E0; /* blue          */
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html,
+  body {
+    @apply bg-canvas text-content;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Remap opacity-white borders to opacity-black for light mode */
+  .border-white\/8  { border-color: var(--color-border) !important; }
+  .border-white\/15 { border-color: var(--color-border-strong) !important; }
+
+  ::-webkit-scrollbar          { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track    { background: var(--color-surface); }
+  ::-webkit-scrollbar-thumb    { background: var(--color-raised); }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
+
+  input,
+  select,
+  button,
+  textarea {
+    font-family: inherit;
+    font-size: inherit;
+    @apply text-content bg-panel rounded-sm;
+    border: 1px solid var(--color-border-strong);
+    outline: none;
+  }
+
+  input::placeholder {
+    @apply text-muted;
+  }
+
+  input:focus,
+  select:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 1px var(--color-accent), inset 0 1px 1px rgba(16, 22, 26, 0.3);
+  }
+
+  option {
+    background: var(--color-panel);
+    color: var(--color-content);
+  }
+
+  input[type="checkbox"] {
+    accent-color: var(--color-accent);
+  }
+
+  input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    opacity: 0.4;
+  }
+
+  a {
+    @apply text-accent-bright no-underline;
+  }
+  a:hover {
+    @apply underline;
+  }
+}
+
+/* Blueprint elevation shadows — used as utility classes */
+@layer utilities {
+  .bp-elevation-1 {
+    box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.4), 0 1px 1px rgba(16, 22, 26, 0.4);
+  }
+  .bp-elevation-2 {
+    box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.4), 0 1px 1px rgba(16, 22, 26, 0.2),
+      0 2px 6px rgba(16, 22, 26, 0.2);
+  }
+  .bp-elevation-3 {
+    box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.4), 0 2px 4px rgba(16, 22, 26, 0.4),
+      0 8px 24px rgba(16, 22, 26, 0.4);
+  }
+}

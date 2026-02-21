@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "types": ["bun-types"],
+    "target": "ESNext",
+    "module": "Preserve",
+    "moduleResolution": "Bundler",
+    "strict": true
+  },
+  "include": ["scripts/**/*"]
+}
