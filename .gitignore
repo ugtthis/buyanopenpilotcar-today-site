@@ -33,3 +33,7 @@ Thumbs.db
 .parcel-cache/
 .turbo/
 
+# Local-only project knowledge (readable on disk, not committed)
+ARCHITECTURE.md
+pipeline/md/
+

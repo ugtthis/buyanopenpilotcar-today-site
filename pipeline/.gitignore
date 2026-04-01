@@ -25,6 +25,7 @@ dist/
 Thumbs.db
 
 output*/
+data/*_full.jsonl
 data/scrape_result.json
 data/test_final.jsonl
 scrape-log.txt
