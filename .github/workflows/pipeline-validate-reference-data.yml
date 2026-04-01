@@ -3,8 +3,8 @@ name: Validate Reference Data
 on:
   pull_request:
     paths:
-      - CARS.md
-      - package_keywords.json
+      - pipeline/CARS.md
+      - pipeline/package_keywords.json
 
 jobs:
   validate:
@@ -13,4 +13,6 @@ jobs:
       - uses: actions/checkout@v4.3.1
       - uses: astral-sh/setup-uv@e58605a9b6da7c637471fab8847a5e5a6b8df081  # v5
       - run: uv sync
+        working-directory: pipeline
       - run: uv run python markdown_to_json.py --validate-only
+        working-directory: pipeline

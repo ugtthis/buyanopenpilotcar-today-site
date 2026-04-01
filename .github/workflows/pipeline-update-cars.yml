@@ -12,13 +12,18 @@ jobs:
       - uses: actions/checkout@v4.3.1
       - uses: astral-sh/setup-uv@e58605a9b6da7c637471fab8847a5e5a6b8df081  # v5
       - run: uv sync
+        working-directory: pipeline
 
       - name: Fetch CARS.md from opendbc
         run: curl -sSf https://github.com/commaai/opendbc/raw/refs/heads/master/docs/CARS.md -o CARS.md
+        working-directory: pipeline
 
       - name: Generate sync summary
         id: summary
-        run: uv run python scripts/diff_cars.py
+        run: |
+          mkdir -p .github
+          uv run python scripts/diff_cars.py
+        working-directory: pipeline
 
       - name: Create Pull Request
         id: create-pr
@@ -29,9 +34,9 @@ jobs:
           branch: sync-cars-md
           delete-branch: true
           title: "[bot] Update CARS.md from opendbc"
-          body-path: .github/cars-sync-summary.md
+          body-path: pipeline/.github/cars-sync-summary.md
           labels: automated
-          add-paths: CARS.md
+          add-paths: pipeline/CARS.md
 
       - name: Enable auto-merge for healthy syncs
         if: steps.summary.outputs.sync_state == 'healthy' && steps.create-pr.outputs.pull-request-number

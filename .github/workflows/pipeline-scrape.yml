@@ -28,23 +28,30 @@ jobs:
 
       - name: Install dependencies
         run: uv sync
+        working-directory: pipeline
 
       - name: Run scraper
         run: uv run python scraper.py
+        working-directory: pipeline
         env:
           ABCK_COOKIE: ${{ secrets.ABCK_COOKIE }}
           KMXVISITOR_COOKIE: ${{ secrets.KMXVISITOR_COOKIE }}
 
       - name: Merge scraped inventory
         run: uv run python merge_inventory.py
+        working-directory: pipeline
 
       - name: Run matcher
         run: uv run python matcher.py
+        working-directory: pipeline
 
       - name: Generate scraping summary
         if: always()
         id: summary
-        run: uv run python scripts/generate_pr_summary.py
+        run: |
+          mkdir -p .github
+          uv run python scripts/generate_pr_summary.py
+        working-directory: pipeline
 
       - name: Create Pull Request
         if: always()
@@ -56,17 +63,17 @@ jobs:
           branch: scrape-${{ github.run_id }}
           delete-branch: true
           title: ${{ steps.summary.outputs.pr_title }}
-          body-path: .github/pr-summary.md
+          body-path: pipeline/.github/pr-summary.md
           labels: automated
           add-paths: |
-            data/openpilot_cars.json
-            data/scrape_counts.json
+            pipeline/data/openpilot_cars.json
+            pipeline/data/scrape_counts.json
 
       - name: Upload inventory artifact
         uses: actions/upload-artifact@v4.6.2
         with:
           name: inventory-${{ github.run_id }}
-          path: data/*_full.jsonl
+          path: pipeline/data/*_full.jsonl
           retention-days: 30
 
       - name: Enable auto-merge for healthy runs
