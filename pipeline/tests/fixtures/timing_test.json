@@ -1,0 +1,4 @@
+{
+  "test": "This should be skipped because it's not a make file",
+  "data": [1, 2, 3]
+}

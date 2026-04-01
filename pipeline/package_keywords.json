@@ -1,0 +1,226 @@
+{
+  "All": {
+    "confidence": "extra_high",
+    "keywords": null
+  },
+
+
+
+
+  "Adaptive Cruise Control (ACC) & LKAS": {
+    "confidence": "high",
+    "keywords": ["ACC", "LKAS"]
+  },
+  "Advanced Smart Cruise Control & LKAS": {
+    "confidence": "high",
+    "keywords": ["ACC", "LKAS"]
+  },
+  "Adaptive Cruise Control (ACC) & Lane Assist": {
+    "confidence": "high",
+    "keywords": ["ACC", "LKAS"]
+  },
+  "Adaptive Cruise Control with Lane Centering": {
+    "confidence": "high",
+    "keywords": ["ACC", "LKAS"]
+  },
+  "Smart Cruise Control (SCC)": {
+    "confidence": "high",
+    "keywords": ["ACC"]
+  },
+  "Adaptive Cruise Control (ACC)": {
+    "confidence": "high",
+    "keywords": ["ACC"]
+  },
+  "Advanced Smart Cruise Control": {
+    "confidence": "high",
+    "keywords": ["ACC"]
+  },
+
+
+
+
+  "Advance Package": {
+    "confidence": "high",
+    "keywords": ["ACC", "LKAS"]
+  },
+  "AcuraWatch Plus or Advance Package": {
+    "confidence": "high",
+    "keywords": ["ACC", "LKAS"]
+  },
+  "Advance Package or Technology Package": {
+    "confidence": "high",
+    "keywords": ["ACC", "LKAS"]
+  },
+  "Technology Plus Package or AcuraWatch Plus": {
+    "confidence": "high",
+    "keywords": ["ACC", "LKAS"]
+  },
+  "Honda Sensing": {
+    "confidence": "high",
+    "keywords": ["ACC", "LKAS"]
+  },
+  "Lexus Safety System+": {
+    "confidence": "high",
+    "keywords": ["ACC", "LKAS"]
+  },
+  "Toyota Safety Sense P": {
+    "confidence": "high",
+    "keywords": ["ACC", "LKAS"]
+  },
+  "EyeSight Driver Assistance": {
+    "confidence": "high",
+    "keywords": ["ACC", "LKAS"]
+  },
+
+
+
+
+  "Highway Driving Assist II": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "Touring Trim": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "LARIAT Luxury": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "ProPILOT Assist": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "Safety Package II": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "Driver Alert Package II": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "2LT Trim with Adaptive Cruise Control Package": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "Premier or Premier Redline Trim, without Super Cruise Package": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "All except Type S": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "All except Lexus Safety System+ A": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "All--with HW3": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "All--with HW4": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "All--Advanced Trim": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "All--Performance Trim": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "All--without HDA II": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "All--2.5T Trim, without HDA II": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "All--3.5T Trim, without HDA II": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "Highway Driving Assist--without HDA II": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "Highway Driving Assist II--with HDA II": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+  "Highway Driving Assist II--2.5T Advanced Trim, with HDA II": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
+
+
+
+
+  "Co-Pilot360 Plus": {
+    "confidence": "low",
+    "keywords": ["-"]
+  },
+  "Co-Pilot360 Assist": {
+    "confidence": "low",
+    "keywords": ["-"]
+  },
+  "Co-Pilot360 Assist+": {
+    "confidence": "low",
+    "keywords": ["-"]
+  },
+  "Co-Pilot360 Assist 2.0": {
+    "confidence": "low",
+    "keywords": ["-"]
+  },
+
+
+
+
+  "All--Brazil only": {
+    "confidence": "non_us",
+    "keywords": null
+  },
+  "All--Europe only": {
+    "confidence": "non_us",
+    "keywords": null
+  },
+  "All--Non-US only": {
+    "confidence": "non_us",
+    "keywords": null
+  },
+  "All--Australia Only": {
+    "confidence": "non_us",
+    "keywords": null
+  },
+  "All--South America only": {
+    "confidence": "non_us",
+    "keywords": null
+  },
+  "All--Southeast Asia only": {
+    "confidence": "non_us",
+    "keywords": null
+  },
+  "All--Southeast Asia and Europe only": {
+    "confidence": "non_us",
+    "keywords": null
+  },
+  "Smart Cruise Control (SCC)--China only": {
+    "confidence": "non_us",
+    "keywords": null
+  },
+  "Smart Cruise Control (SCC)--with HDA II, Korea only": {
+    "confidence": "non_us",
+    "keywords": null
+  },
+  "Honda Sensing--Taiwan": {
+    "confidence": "non_us",
+    "keywords": null
+  },
+  "Honda Sensing--Singapore": {
+    "confidence": "non_us",
+    "keywords": null
+  }
+}

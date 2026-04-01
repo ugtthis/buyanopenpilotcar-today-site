@@ -1,0 +1,20 @@
+{
+  "make": "TestMake",
+  "total_count": 2,
+  "listings": [
+    {
+      "stockNumber": "12345",
+      "make": "TestMake",
+      "model": "Model1",
+      "year": 2020,
+      "basePrice": 25000
+    },
+    {
+      "stockNumber": "67890",
+      "make": "TestMake",
+      "model": "Model2",
+      "year": 2021,
+      "basePrice": 30000
+    }
+  ]
+}

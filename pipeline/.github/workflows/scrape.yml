@@ -1,0 +1,76 @@
+name: Scrape CarMax Listings
+
+on:
+  schedule:
+    # Run daily at 12am PST (8am UTC)
+    - cron: '0 8 * * *'
+
+  # Allow manual trigger from GitHub UI
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90  # Kill if it takes >90 min (safety)
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.3.1
+        with:
+          fetch-depth: 0
+
+      - name: Fetch main branch
+        run: |
+          git fetch origin main:main || echo "No main branch yet"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@e58605a9b6da7c637471fab8847a5e5a6b8df081  # v5
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Run scraper
+        run: uv run python scraper.py
+        env:
+          ABCK_COOKIE: ${{ secrets.ABCK_COOKIE }}
+          KMXVISITOR_COOKIE: ${{ secrets.KMXVISITOR_COOKIE }}
+
+      - name: Merge scraped inventory
+        run: uv run python merge_inventory.py
+
+      - name: Run matcher
+        run: uv run python matcher.py
+
+      - name: Generate scraping summary
+        if: always()
+        id: summary
+        run: uv run python scripts/generate_pr_summary.py
+
+      - name: Create Pull Request
+        if: always()
+        id: create-pr
+        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c  # v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "[BOT] Update listings"
+          branch: scrape-${{ github.run_id }}
+          delete-branch: true
+          title: ${{ steps.summary.outputs.pr_title }}
+          body-path: .github/pr-summary.md
+          labels: automated
+          add-paths: |
+            data/openpilot_cars.json
+            data/scrape_counts.json
+
+      - name: Upload inventory artifact
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: inventory-${{ github.run_id }}
+          path: data/*_full.jsonl
+          retention-days: 30
+
+      - name: Enable auto-merge for healthy runs
+        if: steps.summary.outputs.workflow_state == 'healthy' && steps.create-pr.outputs.pull-request-number
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr merge --auto --squash ${{ steps.create-pr.outputs.pull-request-number }}

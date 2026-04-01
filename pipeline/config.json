@@ -1,0 +1,6 @@
+{
+  "delay_seconds": 1.5,
+  "delay_jitter": 0.8,
+  "max_retries": 3,
+  "max_concurrent_makes": 2
+}

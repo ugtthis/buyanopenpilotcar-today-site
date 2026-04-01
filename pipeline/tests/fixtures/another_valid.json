@@ -1,0 +1,13 @@
+{
+  "make": "SecondMake",
+  "total_count": 1,
+  "listings": [
+    {
+      "stockNumber": "99999",
+      "make": "SecondMake",
+      "model": "SportsCar",
+      "year": 2023,
+      "basePrice": 50000
+    }
+  ]
+}
