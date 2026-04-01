@@ -1,5 +1,5 @@
 import type { CarListing, MatchConfidence, SupportLevel } from "./types";
-import rawJson from "../openpilot_cars.json";
+import rawJson from "../../pipeline/data/openpilot_cars.json";
 
 type RawCar = {
   stockNumber: number;

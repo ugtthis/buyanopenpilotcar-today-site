@@ -12,7 +12,7 @@ import { dirname, join } from "path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const USER_AGENT = "openpilot-car-finder/1.0 (geocoding carmax stores)";
-const carsData = JSON.parse(readFileSync(join(__dirname, "../openpilot_cars.json"), "utf-8"));
+const carsData = JSON.parse(readFileSync(join(__dirname, "../../pipeline/data/openpilot_cars.json"), "utf-8"));
 
 // Collect unique stores
 const stores = new Map();
