@@ -11,18 +11,19 @@ import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const rawJson = JSON.parse(readFileSync(join(__dirname, "../openpilot_cars.json"), "utf-8"));
+const USER_AGENT = "openpilot-car-finder/1.0 (geocoding carmax stores)";
+const carsData = JSON.parse(readFileSync(join(__dirname, "../openpilot_cars.json"), "utf-8"));
 
 // Collect unique stores
 const stores = new Map();
-for (const entry of rawJson.entries) {
-  for (const ay of entry.available_years) {
-    if (ay.car && !stores.has(ay.car.storeId)) {
-      stores.set(ay.car.storeId, {
-        id: ay.car.storeId,
-        name: ay.car.storeName,
-        city: ay.car.storeCity,
-        state: ay.car.state,
+for (const entry of carsData.entries) {
+  for (const availableYear of entry.available_years) {
+    if (availableYear.car && !stores.has(availableYear.car.storeId)) {
+      stores.set(availableYear.car.storeId, {
+        id: availableYear.car.storeId,
+        name: availableYear.car.storeName,
+        city: availableYear.car.storeCity,
+        state: availableYear.car.state,
       });
     }
   }
@@ -32,40 +33,43 @@ console.log(`Found ${stores.size} unique stores. Starting geocoding...`);
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+function buildSearchUrl(query) {
+  return `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=1`;
+}
+
+async function fetchFirstGeocodeResult(query) {
+  const response = await fetch(buildSearchUrl(query), {
+    headers: { "User-Agent": USER_AGENT },
+  });
+  const results = await response.json();
+  return results[0] ?? null;
+}
+
+function toStoreCoords(geocodeResult) {
+  return {
+    lat: parseFloat(geocodeResult.lat),
+    lng: parseFloat(geocodeResult.lon),
+  };
+}
+
 const coords = {};
 let done = 0;
 let failed = [];
 
 for (const store of stores.values()) {
-  const query = `CarMax ${store.city}, ${store.state}`;
-  const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=1`;
-
   try {
-    const res = await fetch(url, {
-      headers: { "User-Agent": "openpilot-car-finder/1.0 (geocoding carmax stores)" },
-    });
-    const data = await res.json();
+    const primaryResult = await fetchFirstGeocodeResult(`CarMax ${store.city}, ${store.state}`);
 
-    if (data.length > 0) {
-      coords[store.id] = {
-        lat: parseFloat(data[0].lat),
-        lng: parseFloat(data[0].lon),
-      };
+    if (primaryResult) {
+      coords[store.id] = toStoreCoords(primaryResult);
       done++;
       if (done % 20 === 0) console.log(`  ${done}/${stores.size} done...`);
     } else {
       // Fallback: try just city + state without "CarMax"
-      const url2 = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(`${store.city}, ${store.state}`)}&format=json&limit=1`;
       await sleep(1100);
-      const res2 = await fetch(url2, {
-        headers: { "User-Agent": "openpilot-car-finder/1.0 (geocoding carmax stores)" },
-      });
-      const data2 = await res2.json();
-      if (data2.length > 0) {
-        coords[store.id] = {
-          lat: parseFloat(data2[0].lat),
-          lng: parseFloat(data2[0].lon),
-        };
+      const fallbackResult = await fetchFirstGeocodeResult(`${store.city}, ${store.state}`);
+      if (fallbackResult) {
+        coords[store.id] = toStoreCoords(fallbackResult);
         done++;
       } else {
         console.warn(`  FAILED: storeId=${store.id} name="${store.name}" city="${store.city}" state="${store.state}"`);
