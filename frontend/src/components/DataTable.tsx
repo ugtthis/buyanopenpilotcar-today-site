@@ -64,6 +64,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
   });
   const [density, setDensity] = createSignal<RowDensity>("normal");
   const densityIndex = () => DENSITIES.indexOf(density());
+  const hasActiveSearch = () => globalFilter().trim().length > 0;
 
   const rankSort = (rankMap: Record<string, number>) =>
     (rowA: { getValue: (id: string) => unknown }, rowB: { getValue: (id: string) => unknown }, id: string) =>
@@ -109,10 +110,13 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
 
   const totalFiltered = () => table.getFilteredRowModel().rows.length;
   const totalAll = () => props.data.length;
+  const pagedRows = () => table.getRowModel().rows;
+  const isEmpty = () => totalFiltered() === 0;
+  const isSearchEmpty = () => hasActiveSearch() && isEmpty();
   const pageSize = () => table.getState().pagination.pageSize;
   const pageIdx = () => table.getState().pagination.pageIndex;
-  const pageStart = () => pageIdx() * pageSize() + 1;
-  const pageEnd = () => Math.min(pageStart() + pageSize() - 1, totalFiltered());
+  const pageStart = () => (isEmpty() ? 0 : pageIdx() * pageSize() + 1);
+  const pageEnd = () => (isEmpty() ? 0 : Math.min(pageStart() + pageSize() - 1, totalFiltered()));
 
   return (
     <div class="flex flex-col gap-2">
@@ -160,64 +164,97 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
 
       {/* ── Table ── */}
       <div class="overflow-x-auto rounded-sm border border-white/8 bp-elevation-1">
-        <table class={`w-full ${DENSITY_CONFIG[density()].textSize} text-left border-collapse`}>
-          <thead>
-            <For each={table.getHeaderGroups()}>
-              {(headerGroup) => (
-                <tr class="bg-panel border-b border-white/15">
-                  <For each={headerGroup.headers}>
-                    {(header) => (
-                      <th
-                        class={`px-3 ${DENSITY_CONFIG[density()].headPy} text-[1.15em] font-semibold whitespace-nowrap select-none transition-colors cursor-pointer`}
-                        classList={{
-                          "hover:bg-raised": header.column.getCanSort(),
-                          "text-accent-bright": !!header.column.getIsSorted(),
-                          "text-secondary": !header.column.getIsSorted(),
-                        }}
-                        onClick={header.column.getToggleSortingHandler()}
-                      >
-                        <Show when={!header.isPlaceholder}>
-                          <span class="flex items-center gap-0.5">
-                            {flexRender(header.column.columnDef.header, header.getContext())}
-                            <Show when={header.column.getIsSorted()}>
-                              {(dir) => (
-                                <span class="ml-1 inline-flex w-[1em] justify-center text-[0.8em] opacity-60 select-none">
-                                  {dir() === "asc" ? "↑" : "↓"}
-                                </span>
-                              )}
-                            </Show>
-                          </span>
-                        </Show>
-                      </th>
-                    )}
-                  </For>
-                </tr>
-              )}
-            </For>
-          </thead>
-          <tbody>
-            <For each={table.getRowModel().rows}>
-              {(row, i) => (
-                <tr
-                  class="group border-b border-white/5 cursor-default transition-colors
-                         hover:bg-accent/8"
-                  classList={{
-                    "bg-canvas":  i() % 2 === 0,
-                    "bg-surface": i() % 2 !== 0,
-                  }}
+        <Show
+          when={!isEmpty()}
+          fallback={
+            <div class="flex min-h-64 flex-col items-center justify-center gap-3 bg-surface px-4 py-10 text-center sm:px-6">
+              <div
+                class="text-[11px] font-semibold uppercase tracking-[0.18em]"
+                classList={{
+                  "text-danger": isSearchEmpty(),
+                  "text-muted": !isSearchEmpty(),
+                }}
+              >
+                {isSearchEmpty() ? "No matches found" : "No cars available"}
+              </div>
+              <div class="max-w-full text-balance text-lg font-semibold text-content">
+                {isSearchEmpty() ? `No cars match "${globalFilter().trim()}".` : "There are no cars to display right now."}
+              </div>
+              <p class="max-w-md text-sm leading-6 text-secondary">
+                {isSearchEmpty()
+                  ? "Try a different make, model, trim, or state, or clear the search to see everything again."
+                  : "Try again in a moment or adjust the current filters."}
+              </p>
+              <Show when={isSearchEmpty()}>
+                <button
+                  onClick={() => setGlobalFilter("")}
+                  class="mt-1 inline-flex min-h-9 max-w-full items-center justify-center rounded-sm border border-white/15 bg-panel px-4 py-2 text-center text-sm font-medium text-secondary transition-colors hover:bg-hover hover:text-content cursor-pointer"
                 >
-                  <For each={row.getVisibleCells()}>
-                    {(cell) => (
-                      <td class={`px-3 ${DENSITY_CONFIG[density()].cellPy} whitespace-nowrap tabular-nums text-secondary group-hover:text-content transition-colors`}>
-                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                      </td>
-                    )}
-                  </For>
-                </tr>
-              )}
-            </For>
-          </tbody>
-        </table>
+                  Clear search
+                </button>
+              </Show>
+            </div>
+          }
+        >
+          <table class={`w-full ${DENSITY_CONFIG[density()].textSize} text-left border-collapse`}>
+            <thead>
+              <For each={table.getHeaderGroups()}>
+                {(headerGroup) => (
+                  <tr class="bg-panel border-b border-white/15">
+                    <For each={headerGroup.headers}>
+                      {(header) => (
+                        <th
+                          class={`px-3 ${DENSITY_CONFIG[density()].headPy} text-[1.15em] font-semibold whitespace-nowrap select-none transition-colors cursor-pointer`}
+                          classList={{
+                            "hover:bg-raised": header.column.getCanSort(),
+                            "text-accent-bright": !!header.column.getIsSorted(),
+                            "text-secondary": !header.column.getIsSorted(),
+                          }}
+                          onClick={header.column.getToggleSortingHandler()}
+                        >
+                          <Show when={!header.isPlaceholder}>
+                            <span class="flex items-center gap-0.5">
+                              {flexRender(header.column.columnDef.header, header.getContext())}
+                              <Show when={header.column.getIsSorted()}>
+                                {(dir) => (
+                                  <span class="ml-1 inline-flex w-[1em] justify-center text-[0.8em] opacity-60 select-none">
+                                    {dir() === "asc" ? "↑" : "↓"}
+                                  </span>
+                                )}
+                              </Show>
+                            </span>
+                          </Show>
+                        </th>
+                      )}
+                    </For>
+                  </tr>
+                )}
+              </For>
+            </thead>
+            <tbody>
+              <For each={pagedRows()}>
+                {(row, i) => (
+                  <tr
+                    class="group border-b border-white/5 cursor-default transition-colors
+                           hover:bg-accent/8"
+                    classList={{
+                      "bg-canvas":  i() % 2 === 0,
+                      "bg-surface": i() % 2 !== 0,
+                    }}
+                  >
+                    <For each={row.getVisibleCells()}>
+                      {(cell) => (
+                        <td class={`px-3 ${DENSITY_CONFIG[density()].cellPy} whitespace-nowrap tabular-nums text-secondary group-hover:text-content transition-colors`}>
+                          {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                        </td>
+                      )}
+                    </For>
+                  </tr>
+                )}
+              </For>
+            </tbody>
+          </table>
+        </Show>
       </div>
 
       {/* ── Pagination ── */}
@@ -231,21 +268,23 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
           <strong class="text-secondary">{totalFiltered().toLocaleString()}</strong> cars
         </span>
 
-        <div class="flex w-full items-center justify-center gap-2 flex-wrap sm:w-auto">
-          {/* Page nav */}
-          <div class="flex items-center gap-1.5">
-            <BpBtn onClick={() => table.firstPage()}    disabled={!table.getCanPreviousPage()}>⟨⟨</BpBtn>
-            <BpBtn onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>⟨</BpBtn>
+        <Show when={!isEmpty()}>
+          <div class="flex w-full items-center justify-center gap-2 flex-wrap sm:w-auto">
+            {/* Page nav */}
+            <div class="flex items-center gap-1.5">
+              <BpBtn onClick={() => table.firstPage()}    disabled={!table.getCanPreviousPage()}>⟨⟨</BpBtn>
+              <BpBtn onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>⟨</BpBtn>
 
-            <span class="min-w-20 h-9 px-4 inline-flex items-center justify-center text-sm rounded-sm border border-white/8 bg-surface text-secondary select-none tabular-nums">
-              {pageIdx() + 1}
-              <span class="text-muted"> / {table.getPageCount()}</span>
-            </span>
+              <span class="min-w-20 h-9 px-4 inline-flex items-center justify-center text-sm rounded-sm border border-white/8 bg-surface text-secondary select-none tabular-nums">
+                {pageIdx() + 1}
+                <span class="text-muted"> / {table.getPageCount()}</span>
+              </span>
 
-            <BpBtn onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>⟩</BpBtn>
-            <BpBtn onClick={() => table.lastPage()} disabled={!table.getCanNextPage()}>⟩⟩</BpBtn>
+              <BpBtn onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>⟩</BpBtn>
+              <BpBtn onClick={() => table.lastPage()} disabled={!table.getCanNextPage()}>⟩⟩</BpBtn>
+            </div>
           </div>
-        </div>
+        </Show>
       </div>
     </div>
   );
