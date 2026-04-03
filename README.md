@@ -62,6 +62,6 @@ bun run build    # production build → frontend/dist/
 | Workflow | Trigger | What it does |
 |----------|---------|--------------|
 | `pipeline-scrape` | daily 8am UTC | scrape → match → PR with updated data |
-| `pipeline-update-cars` | daily 10am UTC | sync CARS.md from opendbc → PR |
+| `pipeline-update-ref-data` | daily 10am UTC | sync CARS.md from opendbc, rebuild ref data → PR |
 | `pipeline-validate-reference-data` | PR touching CARS.md or package_keywords.json | validate reference data schema |
 | `validate` | push / PR to main | typecheck + build frontend, validate store coords |
