@@ -199,7 +199,7 @@ export default function App() {
 
       <div class="bg-paper bg-noise border-b border-white/8 px-5 pt-12 pb-8 shrink-0">
         <div class="min-w-0">
-          <img src={logo} alt="buyanopenpilotcar.today" class="h-20 w-auto" />
+          <img src={logo} alt="buyanopenpilotcar.today" class="h-auto max-h-20 w-auto max-w-full" />
         </div>
       </div>
 
