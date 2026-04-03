@@ -196,7 +196,7 @@ export default function App() {
     <div class="min-h-screen bg-canvas flex flex-col">
 
 
-      <div class="bg-surface border-b border-white/8 px-5 pt-7 pb-9 shrink-0">
+      <div class="bg-paper bg-noise border-b border-white/8 px-5 pt-7 pb-5 shrink-0">
         <div class="flex justify-end mb-1">
           {/* Legend popover */}
           <div class="relative shrink-0">

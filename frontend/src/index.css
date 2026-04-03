@@ -10,31 +10,29 @@
   /* ── PALANTIR FOUNDRY LIGHT (temp — revert to Blueprint dark) ── */
 
   /* Light surfaces */
-  --color-canvas:  #F3F4F6;   /* app background (light grey) */
-  --color-surface: #FFFFFF;   /* navbar / topbar             */
-  --color-panel:   #FFFFFF;   /* card / panel surface        */
-  --color-raised:  #EAECF0;   /* elevated / hover bg         */
-  --color-hover:   #DDE3EC;   /* row hover (blue-tinted)     */
+  --color-canvas:  #F3F4F6;
+  --color-surface: #FFFFFF;
+  --color-panel:   #FFFFFF;
+  --color-raised:  #EAECF0;
+  --color-hover:   #DDE3EC;
 
-  /* Text hierarchy — dark on light */
-  --color-content:   #1C2B33; /* primary text                */
-  --color-secondary: #404B54; /* dim / label text            */
-  --color-muted:     #738A97; /* placeholder / meta text     */
+  --color-content:   #1C2B33;
+  --color-secondary: #404B54;
+  --color-muted:     #738A97;
 
-  /* Border token — used in base styles below */
-  --color-border:        rgba(0, 0, 0, 0.10);
-  --color-border-strong: rgba(0, 0, 0, 0.16);
+  --color-border:        rgba(0, 0, 0, 0.09);
+  --color-border-strong: rgba(0, 0, 0, 0.14);
 
-  /* Monochromatic slate */
+  --color-paper:         #F3F4F7; /* mellow cool grey, close to canvas */
+
   --color-accent:        #1E293B;
   --color-accent-muted:  #334155;
   --color-accent-bright: #475569;
 
-  /* Semantic intents — darker for light backgrounds */
-  --color-positive: #0D8050; /* forest green */
-  --color-caution:  #A66321; /* dark amber   */
-  --color-danger:   #C23030; /* dark red      */
-  --color-info:     #2B88E0; /* blue          */
+  --color-positive: #0D8050;
+  --color-caution:  #A66321;
+  --color-danger:   #C23030;
+  --color-info:     #2B88E0;
 }
 
 @layer base {
@@ -115,6 +113,17 @@
 
 /* Blueprint elevation shadows — used as utility classes */
 @layer utilities {
+  /* Paper like textures */
+  .bg-noise {
+    background-image:
+      /* fine grain on top — the grainy vintage feel */
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.70' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23g)'/%3E%3C/svg%3E"),
+      /* subtle lit bumps beneath */
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='5' seed='2' stitchTiles='stitch' result='noise'/%3E%3CfeDiffuseLighting in='noise' lighting-color='white' surfaceScale='2'%3E%3CfeDistantLight azimuth='45' elevation='65'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23p)'/%3E%3C/svg%3E");
+    background-blend-mode: normal, multiply;
+    background-repeat: repeat;
+  }
+
   .bp-elevation-1 {
     box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.4), 0 1px 1px rgba(16, 22, 26, 0.4);
   }
