@@ -11,6 +11,7 @@ import { cars } from "./data";
 import { haversineMiles } from "./haversine";
 import storeCoords from "./store-coords.json";
 import type { CarListing, Column, PendingNav } from "./types";
+import logo from "./assets/logo.png";
 
 type Coords = { lat: number; lng: number };
 const STORE_COORDS = storeCoords as Record<string, Coords>;
@@ -234,16 +235,7 @@ export default function App() {
         </div>
 
         <div class="min-w-0">
-          <div class="flex items-center gap-2 mb-1.5">
-            <span class="text-[10px] font-semibold px-1.5 py-0.5 uppercase tracking-wider rounded-sm bg-accent/12 text-accent-bright border border-accent/40">
-              Dataset
-            </span>
-            <span class="text-muted text-xs">·</span>
-            <span class="text-muted text-xs">CarMax Inventory</span>
-          </div>
-          <h1 class="text-2xl font-semibold text-content leading-tight">
-            openpilot Compatible Vehicles
-          </h1>
+          <img src={logo} alt="buyanopenpilotcar.today" class="h-20 w-auto" />
         </div>
       </div>
 
