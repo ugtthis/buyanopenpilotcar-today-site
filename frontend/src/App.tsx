@@ -198,7 +198,7 @@ export default function App() {
 
 
       <div class="bg-paper bg-noise border-b border-white/8 shrink-0">
-        <div class="max-w-[1800px] mx-auto px-5 pt-12 pb-8 min-w-0">
+        <div class="max-w-[1800px] mx-auto px-5 pt-12 pb-8">
           <img src={logo} alt="buyanopenpilotcar.today" class="h-auto max-h-20 w-auto max-w-full" />
         </div>
       </div>
@@ -207,185 +207,185 @@ export default function App() {
       <div class="bg-accent/5 border-b border-black/10 shrink-0">
         <div class="max-w-[1800px] mx-auto px-5 py-4 flex flex-col gap-3">
 
-        {/* Row 1: Main text search */}
-        <div
-          class="flex items-center gap-3.5 px-4 py-3 rounded bg-surface transition-[border-color,box-shadow]"
-          style={{
-            border: "1.5px solid var(--color-accent)",
-            "box-shadow": "0 1px 3px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.06)",
-          }}
-        >
-          <SearchIcon class="w-5 h-5 text-accent shrink-0" />
-          <input
-            ref={searchInputRef}
-            type="search"
-            placeholder="Search makes, models, trims, states…"
-            value={searchQuery()}
-            onInput={(e) => setSearchQuery(e.currentTarget.value)}
-            class="flex-1 min-w-0 bg-transparent border-none text-base text-content placeholder:text-muted
-                   focus:shadow-none focus:border-transparent"
-            style={{ "box-shadow": "none" }}
-          />
-          <Show when={searchQuery()} fallback={
-            <kbd class="hidden sm:inline-flex items-center gap-1 px-1.5 py-0.5 text-[11px] font-medium
-                        rounded border border-black/12 text-muted bg-canvas select-none leading-5">
-              <CmdIcon class="w-3 h-3" />
-              K
-            </kbd>
-          }>
-            <button
-              onClick={() => setSearchQuery("")}
-              aria-label="Clear search"
-              class="flex items-center justify-center w-5 h-5 rounded text-muted shrink-0
-                     hover:bg-raised hover:text-content transition-colors border-0 bg-transparent cursor-pointer text-xs"
-            >
-              ✕
-            </button>
-          </Show>
-        </div>
-
-        {/* Row 2: Location + radius — two linked controls, stacked on mobile, side-by-side on desktop */}
-        <div class="flex flex-col sm:flex-row gap-2 items-stretch">
-
-          {/* Left: zip input — always visible, acts as the feature entry point */}
+          {/* Row 1: Main text search */}
           <div
-            class="flex items-center gap-2.5 px-3.5 py-2.5 rounded bg-surface flex-1 min-w-0 transition-[border-color]"
+            class="flex items-center gap-3.5 px-4 py-3 rounded bg-surface transition-[border-color,box-shadow]"
             style={{
-              border: zipCoords()
-                ? "1.5px solid var(--color-accent)"
-                : "1.5px solid rgba(255,255,255,0.15)",
+              border: "1.5px solid var(--color-accent)",
+              "box-shadow": "0 1px 3px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.06)",
             }}
           >
-            <PinIcon
-              class="w-3.5 h-3.5 shrink-0 transition-colors"
-              classList={{ "text-accent": !!zipCoords(), "text-muted": !zipCoords() }}
-            />
-
-            <span class="text-xs font-medium text-muted shrink-0 select-none">Near</span>
-
+            <SearchIcon class="w-5 h-5 text-accent shrink-0" />
             <input
-              type="text"
-              inputmode="numeric"
-              pattern="\d{5}"
-              maxlength="5"
-              placeholder="ZIP code"
-              value={userZip()}
-              onInput={(e) => setUserZip(e.currentTarget.value)}
-              class="flex-1 min-w-0 bg-transparent border-none text-sm text-content placeholder:text-muted
-                     focus:shadow-none focus:border-transparent tabular-nums"
+              ref={searchInputRef}
+              type="search"
+              placeholder="Search makes, models, trims, states…"
+              value={searchQuery()}
+              onInput={(e) => setSearchQuery(e.currentTarget.value)}
+              class="flex-1 min-w-0 bg-transparent border-none text-base text-content placeholder:text-muted
+                     focus:shadow-none focus:border-transparent"
               style={{ "box-shadow": "none" }}
-              aria-label="Enter your ZIP code to find nearest cars"
             />
+            <Show when={searchQuery()} fallback={
+              <kbd class="hidden sm:inline-flex items-center gap-1 px-1.5 py-0.5 text-[11px] font-medium
+                          rounded border border-black/12 text-muted bg-canvas select-none leading-5">
+                <CmdIcon class="w-3 h-3" />
+                K
+              </kbd>
+            }>
+              <button
+                onClick={() => setSearchQuery("")}
+                aria-label="Clear search"
+                class="flex items-center justify-center w-5 h-5 rounded text-muted shrink-0
+                       hover:bg-raised hover:text-content transition-colors border-0 bg-transparent cursor-pointer text-xs"
+              >
+                ✕
+              </button>
+            </Show>
+          </div>
 
-            <Show when={zipCoords.loading}>
-              <span class="text-muted text-[11px] animate-pulse shrink-0 select-none">Locating…</span>
-            </Show>
-            <Show when={!zipCoords.loading && validZip() && zipCoords() === null}>
-              <span class="text-[11px] text-warning shrink-0 select-none">ZIP not found</span>
-            </Show>
-            <Show when={zipCoords.error}>
-              <span class="text-[11px] text-warning shrink-0 select-none">Connection error</span>
-            </Show>
-            <Show when={zipCoords()}>
-              {(coords) => (
-                <>
-                  <span class="text-[11px] font-medium text-accent-bright shrink-0 whitespace-nowrap select-none">
-                    {coords().city}, {coords().state}
-                  </span>
+          {/* Row 2: Location + radius — two linked controls, stacked on mobile, side-by-side on desktop */}
+          <div class="flex flex-col sm:flex-row gap-2 items-stretch">
+
+            {/* Left: zip input — always visible, acts as the feature entry point */}
+            <div
+              class="flex items-center gap-2.5 px-3.5 py-2.5 rounded bg-surface flex-1 min-w-0 transition-[border-color]"
+              style={{
+                border: zipCoords()
+                  ? "1.5px solid var(--color-accent)"
+                  : "1.5px solid rgba(255,255,255,0.15)",
+              }}
+            >
+              <PinIcon
+                class="w-3.5 h-3.5 shrink-0 transition-colors"
+                classList={{ "text-accent": !!zipCoords(), "text-muted": !zipCoords() }}
+              />
+
+              <span class="text-xs font-medium text-muted shrink-0 select-none">Near</span>
+
+              <input
+                type="text"
+                inputmode="numeric"
+                pattern="\d{5}"
+                maxlength="5"
+                placeholder="ZIP code"
+                value={userZip()}
+                onInput={(e) => setUserZip(e.currentTarget.value)}
+                class="flex-1 min-w-0 bg-transparent border-none text-sm text-content placeholder:text-muted
+                       focus:shadow-none focus:border-transparent tabular-nums"
+                style={{ "box-shadow": "none" }}
+                aria-label="Enter your ZIP code to find nearest cars"
+              />
+
+              <Show when={zipCoords.loading}>
+                <span class="text-muted text-[11px] animate-pulse shrink-0 select-none">Locating…</span>
+              </Show>
+              <Show when={!zipCoords.loading && validZip() && zipCoords() === null}>
+                <span class="text-[11px] text-warning shrink-0 select-none">ZIP not found</span>
+              </Show>
+              <Show when={zipCoords.error}>
+                <span class="text-[11px] text-warning shrink-0 select-none">Connection error</span>
+              </Show>
+              <Show when={zipCoords()}>
+                {(coords) => (
+                  <>
+                    <span class="text-[11px] font-medium text-accent-bright shrink-0 whitespace-nowrap select-none">
+                      {coords().city}, {coords().state}
+                    </span>
+                    <button
+                      onClick={clearZip}
+                      aria-label="Clear location"
+                      class="flex items-center justify-center w-5 h-5 rounded shrink-0 text-muted
+                             hover:bg-raised hover:text-content transition-colors border-0 bg-transparent cursor-pointer text-[11px]"
+                    >
+                      ✕
+                    </button>
+                  </>
+                )}
+              </Show>
+            </div>
+
+            {/* Right: radius selector — appears once ZIP resolves, full-width on mobile */}
+            <div
+              class="flex items-center rounded bg-surface overflow-hidden transition-[opacity,border-color]"
+              style={{
+                border: "1.5px solid rgba(255,255,255,0.15)",
+                opacity: zipCoords() ? "1" : "0.4",
+                "pointer-events": zipCoords() ? "auto" : "none",
+              }}
+            >
+              <span class="pl-3 pr-2.5 text-[11px] font-semibold text-muted uppercase tracking-wider shrink-0 select-none whitespace-nowrap">
+                Within
+              </span>
+              <div class="w-px self-stretch bg-white/10 shrink-0" />
+              <For each={RADIUS_OPTIONS}>
+                {(opt) => (
                   <button
-                    onClick={clearZip}
-                    aria-label="Clear location"
-                    class="flex items-center justify-center w-5 h-5 rounded shrink-0 text-muted
-                           hover:bg-raised hover:text-content transition-colors border-0 bg-transparent cursor-pointer text-[11px]"
+                    onClick={() => setRadius(opt.value)}
+                    disabled={!zipCoords()}
+                    class="flex-1 sm:flex-none px-3 py-2.5 text-xs font-medium whitespace-nowrap border-0
+                           transition-colors duration-150 relative"
+                    classList={{
+                      "bg-raised text-content": radius() === opt.value,
+                      "bg-transparent text-muted hover:text-secondary": radius() !== opt.value,
+                    }}
+                    aria-pressed={radius() === opt.value}
                   >
-                    ✕
+                    {opt.label}
                   </button>
-                </>
-              )}
-            </Show>
+                )}
+              </For>
+            </div>
           </div>
-
-          {/* Right: radius selector — appears once ZIP resolves, full-width on mobile */}
-          <div
-            class="flex items-center rounded bg-surface overflow-hidden transition-[opacity,border-color]"
-            style={{
-              border: "1.5px solid rgba(255,255,255,0.15)",
-              opacity: zipCoords() ? "1" : "0.4",
-              "pointer-events": zipCoords() ? "auto" : "none",
-            }}
-          >
-            <span class="pl-3 pr-2.5 text-[11px] font-semibold text-muted uppercase tracking-wider shrink-0 select-none whitespace-nowrap">
-              Within
-            </span>
-            <div class="w-px self-stretch bg-white/10 shrink-0" />
-            <For each={RADIUS_OPTIONS}>
-              {(opt) => (
-                <button
-                  onClick={() => setRadius(opt.value)}
-                  disabled={!zipCoords()}
-                  class="flex-1 sm:flex-none px-3 py-2.5 text-xs font-medium whitespace-nowrap border-0
-                         transition-colors duration-150 relative"
-                  classList={{
-                    "bg-raised text-content": radius() === opt.value,
-                    "bg-transparent text-muted hover:text-secondary": radius() !== opt.value,
-                  }}
-                  aria-pressed={radius() === opt.value}
-                >
-                  {opt.label}
-                </button>
-              )}
-            </For>
-          </div>
-        </div>
         </div>
       </div>
 
       <div class="flex-1 overflow-hidden">
         <div class="h-full overflow-auto">
           <div class="max-w-[1800px] mx-auto px-5 pt-4 pb-10">
-          <DataTable
-            data={filteredCars()}
-            columns={columns}
-            pageSize={30}
-            searchQuery={searchQuery()}
-            onSearchChange={setSearchQuery}
-            distanceActive={!!zipCoords()}
-            legendSlot={
-              <div class="relative shrink-0">
-                <button
-                  onClick={() => setShowLegend(v => !v)}
-                  class="flex items-center gap-1.5 px-3 py-2.5 text-xs font-medium rounded-sm bg-panel border border-white/15 text-secondary hover:bg-raised hover:text-content transition-colors cursor-pointer"
-                  classList={{ "text-content bg-raised": showLegend() }}
-                >
-                  <InfoCircleIcon class="w-3.5 h-3.5 shrink-0" />
-                  <span>Legend</span>
-                </button>
-                <Show when={showLegend()}>
-                  <div class="fixed inset-0 z-10" onClick={() => setShowLegend(false)} aria-hidden="true" />
-                  <div class="absolute right-0 z-20 mt-1 w-72 max-w-[calc(100vw-2rem)] rounded-sm border border-white/15 bg-panel bp-elevation-3 p-3 flex flex-col gap-3">
-                    <div>
-                      <p class="text-[10px] font-semibold uppercase tracking-wider text-muted mb-2.5">Support levels</p>
-                      <div class="flex flex-wrap gap-x-1.5 gap-y-2.5">
-                        {Object.keys(SUPPORT_LEVEL_STYLES).map((level) => (
-                          <SupportChip level={level} onClick={() => { setActiveSupportLevel(level); setShowLegend(false); }} />
-                        ))}
+            <DataTable
+              data={filteredCars()}
+              columns={columns}
+              pageSize={30}
+              searchQuery={searchQuery()}
+              onSearchChange={setSearchQuery}
+              distanceActive={!!zipCoords()}
+              legendSlot={
+                <div class="relative shrink-0">
+                  <button
+                    onClick={() => setShowLegend(v => !v)}
+                    class="flex items-center gap-1.5 px-3 py-2.5 text-xs font-medium rounded-sm bg-panel border border-white/15 text-secondary hover:bg-raised hover:text-content transition-colors cursor-pointer"
+                    classList={{ "text-content bg-raised": showLegend() }}
+                  >
+                    <InfoCircleIcon class="w-3.5 h-3.5 shrink-0" />
+                    <span>Legend</span>
+                  </button>
+                  <Show when={showLegend()}>
+                    <div class="fixed inset-0 z-10" onClick={() => setShowLegend(false)} aria-hidden="true" />
+                    <div class="absolute right-0 z-20 mt-1 w-72 max-w-[calc(100vw-2rem)] rounded-sm border border-white/15 bg-panel bp-elevation-3 p-3 flex flex-col gap-3">
+                      <div>
+                        <p class="text-[10px] font-semibold uppercase tracking-wider text-muted mb-2.5">Support levels</p>
+                        <div class="flex flex-wrap gap-x-1.5 gap-y-2.5">
+                          {Object.keys(SUPPORT_LEVEL_STYLES).map((level) => (
+                            <SupportChip level={level} onClick={() => { setActiveSupportLevel(level); setShowLegend(false); }} />
+                          ))}
+                        </div>
+                      </div>
+                      <div class="border-t border-white/8" />
+                      <div>
+                        <p class="text-[10px] font-semibold uppercase tracking-wider text-muted mb-2.5">Confidence levels</p>
+                        <div class="flex flex-wrap gap-x-1.5 gap-y-2.5">
+                          {Object.keys(CONFIDENCE_STYLES).map((level) => (
+                            <ConfidenceChip level={level} onClick={() => { setActiveConfidenceLevel(level); setShowLegend(false); }} />
+                          ))}
+                        </div>
                       </div>
                     </div>
-                    <div class="border-t border-white/8" />
-                    <div>
-                      <p class="text-[10px] font-semibold uppercase tracking-wider text-muted mb-2.5">Confidence levels</p>
-                      <div class="flex flex-wrap gap-x-1.5 gap-y-2.5">
-                        {Object.keys(CONFIDENCE_STYLES).map((level) => (
-                          <ConfidenceChip level={level} onClick={() => { setActiveConfidenceLevel(level); setShowLegend(false); }} />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </Show>
-              </div>
-            }
-          />
-          </div>
+                  </Show>
+                </div>
+              }
+            />
+            </div>
         </div>
       </div>
 
