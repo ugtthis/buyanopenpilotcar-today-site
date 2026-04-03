@@ -197,7 +197,7 @@ export default function App() {
     <div class="min-h-screen bg-canvas flex flex-col">
 
 
-      <div class="bg-paper bg-noise border-b border-white/8 px-5 pt-7 pb-5 shrink-0">
+      <div class="bg-paper bg-noise border-b border-white/8 px-5 pt-12 pb-8 shrink-0">
         <div class="min-w-0">
           <img src={logo} alt="buyanopenpilotcar.today" class="h-20 w-auto" />
         </div>
