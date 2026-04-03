@@ -62,7 +62,8 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
       if (s.length === 1 && s[0].id === "distance") setSorting([{ id: "make", desc: false }]);
     }
   });
-  const [density, setDensity] = createSignal<RowDensity>("normal");
+  const isMobile = typeof window !== "undefined" && !window.matchMedia("(min-width: 640px)").matches;
+  const [density, setDensity] = createSignal<RowDensity>(isMobile ? "comfortable" : "normal");
   const densityIndex = () => DENSITIES.indexOf(density());
   const hasActiveSearch = () => globalFilter().trim().length > 0;
 
