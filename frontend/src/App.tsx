@@ -22,6 +22,12 @@ const formatPrice = (price: number | null) =>
 const formatMpg = (city: number | null, hwy: number | null) =>
   city != null && hwy != null ? `${city} / ${hwy}` : <span class="text-muted">—</span>;
 
+const formatNumberDetail = (value: number | null, suffix: string) =>
+  value != null ? `${value.toLocaleString()} ${suffix}` : <span class="text-muted">—</span>;
+
+const formatTextDetail = (value: string | null) =>
+  value?.trim() ? value : <span class="text-muted">—</span>;
+
 export default function App() {
   const [searchQuery, setSearchQuery] = createSignal("");
   let searchInputRef: HTMLInputElement | undefined;
@@ -191,6 +197,31 @@ export default function App() {
     },
     { key: "engineType", header: "Engine" },
     { key: "storeName",  header: "Store"  },
+    {
+      key: "horsepower",
+      header: "HP",
+      render: (value) => formatNumberDetail(value as number | null, "hp"),
+    },
+    {
+      key: "engineTorque",
+      header: "Torque",
+      render: (value) => formatNumberDetail(value as number | null, "lb-ft"),
+    },
+    {
+      key: "engineSize",
+      header: "Liters",
+      render: (value) => formatTextDetail(value as string | null),
+    },
+    {
+      key: "horsepowerRpm",
+      header: "HP RPM",
+      render: (value) => formatNumberDetail(value as number | null, "rpm"),
+    },
+    {
+      key: "engineTorqueRpm",
+      header: "Torque RPM",
+      render: (value) => formatNumberDetail(value as number | null, "rpm"),
+    },
   ];
 
   return (

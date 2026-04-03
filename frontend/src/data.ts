@@ -17,6 +17,11 @@ type RawCar = {
   engineType: string;
   storeName: string;
   storeId: number;
+  horsepower: number | null;
+  horsepowerRpm: number | null;
+  engineSize: string | null;
+  engineTorque: number | null;
+  engineTorqueRpm: number | null;
 };
 
 type RawYear = {
@@ -60,6 +65,11 @@ export const cars: CarListing[] = (rawJson as RawJson).entries.flatMap(
           engineType: car.engineType ?? "",
           storeName: car.storeName ?? "",
           storeId: car.storeId,
+          horsepower: car.horsepower,
+          engineTorque: car.engineTorque,
+          engineSize: car.engineSize,
+          horsepowerRpm: car.horsepowerRpm,
+          engineTorqueRpm: car.engineTorqueRpm,
         };
       }),
 );

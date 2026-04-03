@@ -28,6 +28,11 @@ export type CarListing = {
   engineType: string;
   storeName: string;
   storeId: number;
+  horsepower: number | null;
+  engineTorque: number | null;
+  engineSize: string | null;
+  horsepowerRpm: number | null;
+  engineTorqueRpm: number | null;
   distance?: number;
 };
 
