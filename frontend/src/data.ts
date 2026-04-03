@@ -33,6 +33,7 @@ type RawYear = {
 type RawEntry = {
   make: string;
   model: string;
+  model_original: string;
   package_requirements: string;
   support_level: { type: string };
   available_years: RawYear[];
@@ -51,6 +52,7 @@ export const cars: CarListing[] = (rawJson as RawJson).entries.flatMap(
           stockNumber: car.stockNumber,
           make: entry.make,
           model: entry.model,
+          modelOriginal: entry.model_original,
           supportLevel: entry.support_level.type as SupportLevel,
           matchConfidence: ay.match_confidence as MatchConfidence,
           year: car.year,

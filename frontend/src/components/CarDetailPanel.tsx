@@ -2,6 +2,7 @@ import { For, Show, type JSXElement } from "solid-js";
 import { CONFIDENCE_CONTENT } from "../confidenceContent";
 import { SUPPORT_TYPE_CONTENT } from "../supportContent";
 import type { CarListing } from "../types";
+import { buildopendbcSiteUrl } from "../urls";
 import { ConfidenceChip } from "./ConfidenceChip";
 import { SupportChip } from "./SupportChip";
 
@@ -129,13 +130,21 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
         <For each={detailSections()}>{(section) => <DetailSectionCard {...section} />}</For>
       </div>
 
-      <div class="sticky -bottom-4 z-10 -mx-4 -mb-4 mt-auto border-t border-white/8 bg-surface px-4 py-4 pb-[calc(env(safe-area-inset-bottom)+1rem)]">
+      <div class="sticky -bottom-4 z-10 -mx-4 -mb-4 mt-auto flex flex-col gap-3 border-t border-white/8 bg-surface px-4 py-4 pb-[calc(env(safe-area-inset-bottom)+1rem)]">
         <button
           onClick={() => props.onOpenListingLink(props.car)}
           class="inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-accent px-5 py-3 text-base font-semibold text-white transition-colors hover:bg-accent-muted cursor-pointer"
         >
           View Listing ↗
         </button>
+        <a
+          href={buildopendbcSiteUrl(props.car.make, props.car.modelOriginal)}
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex min-h-12 w-full items-center justify-center rounded-sm border border-white/12 bg-transparent px-5 py-3 text-base font-semibold text-secondary transition-colors hover:bg-white/5 cursor-pointer"
+        >
+          View Detailed Support Specs ↗
+        </a>
       </div>
     </div>
   );

@@ -14,6 +14,7 @@ export type CarListing = {
   stockNumber: number;
   make: string;
   model: string;
+  modelOriginal: string;
   supportLevel: SupportLevel;
   matchConfidence: MatchConfidence;
   year: number;
