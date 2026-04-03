@@ -19,15 +19,15 @@ jobs:
         working-directory: pipeline
 
       - name: Fetch CARS.md from opendbc
-        run: curl -sSf https://github.com/commaai/opendbc/raw/refs/heads/master/docs/CARS.md -o CARS.md
+        run: curl -sSf https://github.com/commaai/opendbc/raw/refs/heads/master/docs/CARS.md -o data/ref/CARS.md
         working-directory: pipeline
 
       - name: Fetch metadata for detailed support info
-        run: curl -sSf https://raw.githubusercontent.com/ugtthis/opendbc-site/main/src/data/metadata.json -o data/opendbc_metadata_ref.json
+        run: curl -sSf https://raw.githubusercontent.com/ugtthis/opendbc-site/main/src/data/metadata.json -o data/ref/opendbc_metadata_ref.json
         working-directory: pipeline
 
       - name: Transform reference data
-        run: uv run python markdown_to_json.py --input CARS.md --output data/opendbc_ref.json
+        run: uv run python markdown_to_json.py --input data/ref/CARS.md --output data/ref/opendbc_ref.json
         working-directory: pipeline
 
       - name: Generate sync summary
@@ -49,9 +49,9 @@ jobs:
           body-path: pipeline/.github/cars-sync-summary.md
           labels: automated
           add-paths: |
-            pipeline/CARS.md
-            pipeline/data/opendbc_metadata_ref.json
-            pipeline/data/opendbc_ref.json
+            pipeline/data/ref/CARS.md
+            pipeline/data/ref/opendbc_metadata_ref.json
+            pipeline/data/ref/opendbc_ref.json
 
       - name: Enable auto-merge for healthy syncs
         if: steps.summary.outputs.sync_state == 'healthy' && steps.create-pr.outputs.pull-request-number

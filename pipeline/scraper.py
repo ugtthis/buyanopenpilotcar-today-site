@@ -24,7 +24,7 @@ OUTPUT_DIR = Path("output")
 DATA_DIR = Path("data")
 SCRAPE_RESULT_FILE = DATA_DIR / "scrape_result.json"
 COOKIES_FILE = Path("cookies.json") # Expires 01/2027
-REFERENCE_FILE = DATA_DIR / "opendbc_ref.json"
+REFERENCE_FILE = DATA_DIR / "ref" / "opendbc_ref.json"
 
 start_time = None
 browser_cookies = ""

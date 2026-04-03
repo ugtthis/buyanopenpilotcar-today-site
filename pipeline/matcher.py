@@ -17,7 +17,7 @@ from utils import build_index_key, CarVariant
 
 
 DATA_DIR = Path("data")
-REFERENCE_FILE = DATA_DIR / "opendbc_ref.json"
+REFERENCE_FILE = DATA_DIR / "ref" / "opendbc_ref.json"
 OUTPUT_FILE = DATA_DIR / "openpilot_cars.json"
 
 

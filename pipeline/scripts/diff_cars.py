@@ -11,7 +11,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from markdown_to_json import parse_cars_from_markdown, RowValidationError
 
 
-CARS_FILE = Path("CARS.md")
+CARS_FILE = Path("data/ref/CARS.md")
 SUMMARY_FILE = Path(".github/cars-sync-summary.md")
 HEALTHY_STATE = "healthy"
 DEGRADED_STATE = "degraded"

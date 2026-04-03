@@ -5,7 +5,7 @@ Find openpilot-compatible vehicles for sale on CarMax. The pipeline scrapes CarM
 ## How it works
 
 ```
-CARS.md (opendbc) + package_keywords.json
+pipeline/data/ref/CARS.md (opendbc) + pipeline/package_keywords.json
         │
         ▼ pipeline/matcher.py
 pipeline/data/openpilot_cars.json
@@ -32,7 +32,7 @@ Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/).
 cd pipeline
 uv sync
 
-# Build reference data from CARS.md
+# Build reference data from pipeline/data/ref/CARS.md
 uv run python markdown_to_json.py
 
 # Scrape CarMax (requires cookies — see pipeline/README.md)
@@ -62,6 +62,6 @@ bun run build    # production build → frontend/dist/
 | Workflow | Trigger | What it does |
 |----------|---------|--------------|
 | `pipeline-scrape` | daily 8am UTC | scrape → match → PR with updated data |
-| `pipeline-update-ref-data` | daily 10am UTC | sync CARS.md from opendbc, rebuild ref data → PR |
-| `pipeline-validate-reference-data` | PR touching CARS.md or package_keywords.json | validate reference data schema |
+| `pipeline-update-ref-data` | daily 10am UTC | sync `pipeline/data/ref/CARS.md` from opendbc, rebuild ref data → PR |
+| `pipeline-validate-reference-data` | PR touching `pipeline/data/ref/CARS.md` or `package_keywords.json` | validate reference data schema |
 | `validate` | push / PR to main | typecheck + build frontend, validate store coords |

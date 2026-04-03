@@ -65,7 +65,7 @@ uv run pytest
 
 ### Build Reference Data (`markdown_to_json.py`)
 
-Use this CLI to convert `CARS.md` + `package_keywords.json` into `data/opendbc_ref.json`.
+Use this CLI to convert `data/ref/CARS.md` + `package_keywords.json` into `data/ref/opendbc_ref.json`.
 
 ```bash
 python3 markdown_to_json.py
@@ -74,13 +74,13 @@ python3 markdown_to_json.py
 Useful flags:
 
 ```bash
-python3 markdown_to_json.py --input CARS.md --output data/opendbc_ref.json
+python3 markdown_to_json.py --input data/ref/CARS.md --output data/ref/opendbc_ref.json
 ```
 
 Validate table compatibility only (no output file written):
 
 ```bash
-python3 markdown_to_json.py --input CARS.md --validate-only
+python3 markdown_to_json.py --input data/ref/CARS.md --validate-only
 ```
 
 Only the first markdown table is parsed. Any later reference tables are ignored.

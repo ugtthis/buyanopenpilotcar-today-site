@@ -9,8 +9,8 @@ from pathlib import Path
 from utils import build_index_key, CarVariant
 
 SCRIPT_DIR = Path(__file__).parent
-DEFAULT_INPUT = SCRIPT_DIR / "CARS.md" # from opendbc/docs/CARS.md
-DEFAULT_OUTPUT = SCRIPT_DIR / "data" / "opendbc_ref.json"
+DEFAULT_INPUT = SCRIPT_DIR / "data" / "ref" / "CARS.md" # from opendbc/docs/CARS.md
+DEFAULT_OUTPUT = SCRIPT_DIR / "data" / "ref" / "opendbc_ref.json"
 PACKAGE_KEYWORDS_PATH = SCRIPT_DIR / "package_keywords.json"
 
 EXTRACT_COLUMNS = {
