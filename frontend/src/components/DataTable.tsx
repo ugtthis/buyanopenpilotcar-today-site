@@ -118,6 +118,12 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
   const pageIdx = () => table.getState().pagination.pageIndex;
   const pageStart = () => (isEmpty() ? 0 : pageIdx() * pageSize() + 1);
   const pageEnd = () => (isEmpty() ? 0 : Math.min(pageStart() + pageSize() - 1, totalFiltered()));
+  const handleRowClick = (event: MouseEvent, row: T) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+    if (target.closest("a, button, input, select, textarea")) return;
+    props.onRowClick?.(row);
+  };
 
   return (
     <div class="flex flex-col gap-2">
@@ -236,12 +242,14 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
               <For each={pagedRows()}>
                 {(row, i) => (
                   <tr
-                    class="group border-b border-white/5 cursor-default transition-colors
+                    class="group border-b border-white/5 transition-colors
+                           cursor-pointer
                            hover:bg-accent/8"
                     classList={{
                       "bg-canvas":  i() % 2 === 0,
                       "bg-surface": i() % 2 !== 0,
                     }}
+                    onClick={(event) => handleRowClick(event, row.original)}
                   >
                     <For each={row.getVisibleCells()}>
                       {(cell) => (

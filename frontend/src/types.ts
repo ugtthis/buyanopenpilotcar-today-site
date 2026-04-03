@@ -48,6 +48,7 @@ export type DataTableProps<T extends object> = {
   pageSize?: number;
   searchQuery: string;
   onSearchChange: (value: string) => void;
+  onRowClick?: (row: T) => void;
   distanceActive?: boolean;
   legendSlot?: JSXElement;
 };

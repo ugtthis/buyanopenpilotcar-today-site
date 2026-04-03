@@ -17,10 +17,15 @@ type Props = {
 export function SupportChip(props: Props) {
   const style = () => SUPPORT_LEVEL_STYLES[props.level] ?? FALLBACK_STYLE;
   const label = () => props.level.charAt(0).toUpperCase() + props.level.slice(1);
+  const handleClick = (event: MouseEvent) => {
+    if (!props.onClick) return;
+    event.stopPropagation();
+    props.onClick();
+  };
 
   return (
     <span
-      onClick={props.onClick}
+      onClick={handleClick}
       class={`inline-flex items-center gap-1 px-1.5 py-0.5 text-[0.8em] font-semibold rounded-sm ${style().wrap}`}
       classList={{ "cursor-pointer hover:opacity-80 transition-opacity": !!props.onClick }}
     >

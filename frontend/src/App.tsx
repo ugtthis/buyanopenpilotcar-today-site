@@ -1,5 +1,6 @@
 import { createEffect, createMemo, createResource, createSignal, For, onMount, Show } from "solid-js";
 import { CmdIcon, InfoCircleIcon, PinIcon, SearchIcon } from "./components/Icons";
+import { CarDetailPanel } from "./components/CarDetailPanel";
 import { ConfidenceChip, CONFIDENCE_STYLES } from "./components/ConfidenceChip";
 import { ConfidenceDetail } from "./components/ConfidenceDetail";
 import { ConfirmNavModal } from "./components/ConfirmNavModal";
@@ -44,6 +45,7 @@ export default function App() {
   });
   const [activeSupportLevel, setActiveSupportLevel] = createSignal<string | null>(null);
   const [activeConfidenceLevel, setActiveConfidenceLevel] = createSignal<string | null>(null);
+  const [selectedCar, setSelectedCar] = createSignal<CarListing | null>(null);
   const [pendingNav, setPendingNav] = createSignal<PendingNav | null>(null);
   const [showLegend, setShowLegend] = createSignal(false);
 
@@ -106,42 +108,42 @@ export default function App() {
     const level = activeConfidenceLevel();
     return level ? `${CONFIDENCE_STYLES[level]?.label ?? level} Confidence` : "";
   };
+  const selectedCarTitle = () => {
+    const car = selectedCar();
+    return car ? `${car.year} ${car.make} ${car.model}` : "";
+  };
+  const buildListingUrl = (car: CarListing) => `https://www.carmax.com/car/${car.stockNumber}`;
+
+  function openCarDetail(car: CarListing) {
+    setSelectedCar(car);
+  }
+
+  function startCarNavigation(car: CarListing) {
+    const url = buildListingUrl(car);
+    if (car.supportLevel === "upstream") {
+      window.open(url, "_blank", "noreferrer");
+      setSelectedCar(null);
+      return;
+    }
+
+    setPendingNav({
+      url,
+      make: car.make,
+      model: car.model,
+      year: car.year,
+      trim: car.trim,
+      supportLevel: car.supportLevel,
+    });
+  }
+
+  function confirmPendingNavigation() {
+    const nav = pendingNav();
+    if (nav) window.open(nav.url, "_blank", "noreferrer");
+    setPendingNav(null);
+    setSelectedCar(null);
+  }
 
   const columns: Column<CarListing>[] = [
-    {
-      key: "stockNumber",
-      header: "Listing",
-      render: (value, row) => {
-        const url = `https://www.carmax.com/car/${value}`;
-        if (row.supportLevel === "upstream") {
-          return (
-            <a
-              href={url}
-              target="_blank"
-              rel="noreferrer"
-              class="text-accent-bright hover:underline font-medium"
-            >
-              ↗ View
-            </a>
-          );
-        }
-        return (
-          <button
-            onClick={() => setPendingNav({
-              url,
-              make: row.make,
-              model: row.model,
-              year: row.year,
-              trim: row.trim,
-              supportLevel: row.supportLevel,
-            })}
-            class="text-accent-bright hover:underline font-medium border-0 bg-transparent cursor-pointer p-0"
-          >
-            ↗ View
-          </button>
-        );
-      },
-    },
     {
       key: "distance",
       header: "Distance",
@@ -380,6 +382,7 @@ export default function App() {
               pageSize={30}
               searchQuery={searchQuery()}
               onSearchChange={setSearchQuery}
+              onRowClick={openCarDetail}
               distanceActive={!!zipCoords()}
               legendSlot={
                 <div class="relative shrink-0">
@@ -422,13 +425,19 @@ export default function App() {
 
       <ConfirmNavModal
         pending={pendingNav()}
-        onConfirm={() => {
-          const nav = pendingNav();
-          if (nav) window.open(nav.url, "_blank", "noreferrer");
-          setPendingNav(null);
-        }}
+        onConfirm={confirmPendingNavigation}
         onCancel={() => setPendingNav(null)}
       />
+
+      <InfoDrawer
+        open={selectedCar() !== null}
+        title={selectedCarTitle()}
+        onClose={() => setSelectedCar(null)}
+      >
+        <Show when={selectedCar()}>
+          {(car) => <CarDetailPanel car={car()} onOpenListingLink={startCarNavigation} />}
+        </Show>
+      </InfoDrawer>
 
       <InfoDrawer
         open={activeSupportLevel() !== null}

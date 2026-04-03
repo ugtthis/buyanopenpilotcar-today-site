@@ -1,0 +1,142 @@
+import { For, Show, type JSXElement } from "solid-js";
+import { CONFIDENCE_CONTENT } from "../confidenceContent";
+import { SUPPORT_TYPE_CONTENT } from "../supportContent";
+import type { CarListing } from "../types";
+import { ConfidenceChip } from "./ConfidenceChip";
+import { SupportChip } from "./SupportChip";
+
+type CarDetailPanelProps = {
+  car: CarListing;
+  onOpenListingLink: (car: CarListing) => void;
+};
+
+type DetailItem = {
+  label: string;
+  value: JSXElement;
+};
+
+type DetailSection = {
+  title: string;
+  items: DetailItem[];
+};
+
+const formatPrice = (price: number | null) => (price != null ? `$${price.toLocaleString()}` : "—");
+const formatMileage = (mileage: number | null) => (mileage != null ? `${mileage.toLocaleString()} mi` : "—");
+const formatDistance = (distance: number | undefined) => (distance != null ? `${distance} mi` : "—");
+const formatNumberDetail = (value: number | null, suffix: string) => (value != null ? `${value.toLocaleString()} ${suffix}` : "—");
+const formatTextDetail = (value: string | null) => (value?.trim() ? value : "—");
+const formatMpg = (city: number | null, highway: number | null) => (
+  city != null && highway != null ? `${city} / ${highway}` : "—"
+);
+
+const DetailRow = (props: DetailItem) => (
+  <div class="flex items-start justify-between gap-4 border-t border-white/8 py-2.5">
+    <span class="text-xs font-medium uppercase tracking-wider text-muted">{props.label}</span>
+    <div class="min-w-0 text-right text-sm text-content">{props.value}</div>
+  </div>
+);
+
+const DetailSectionCard = (props: DetailSection) => (
+  <div class="rounded-sm border border-white/8 bg-canvas/60 px-4 py-3">
+    <div class="mb-1 text-[11px] font-semibold uppercase tracking-wider text-muted">{props.title}</div>
+    <div class="flex flex-col">
+      <For each={props.items}>{(item) => <DetailRow {...item} />}</For>
+    </div>
+  </div>
+);
+
+export function CarDetailPanel(props: CarDetailPanelProps) {
+  const supportDescription = () =>
+    SUPPORT_TYPE_CONTENT[props.car.supportLevel]?.paragraphs[0] ?? "No support details available for this vehicle.";
+  const confidenceDescription = () =>
+    CONFIDENCE_CONTENT[props.car.matchConfidence]?.paragraphs[0] ?? "No confidence details available for this vehicle.";
+
+  const detailSections = (): DetailSection[] => [
+    {
+      title: "Listing",
+      items: [
+        { label: "Price", value: <span class="tabular-nums">{formatPrice(props.car.price)}</span> },
+        { label: "Mileage", value: <span class="tabular-nums">{formatMileage(props.car.mileage)}</span> },
+        ...(props.car.distance != null
+          ? [{ label: "Distance", value: <span class="tabular-nums">{formatDistance(props.car.distance)}</span> }]
+          : []),
+        { label: "State", value: props.car.state },
+        { label: "Store", value: props.car.storeName },
+        { label: "Stock", value: <span class="tabular-nums">{props.car.stockNumber}</span> },
+      ],
+    },
+    {
+      title: "Vehicle",
+      items: [
+        { label: "Color", value: props.car.exteriorColor },
+        { label: "Drive", value: props.car.driveTrain },
+        { label: "MPG (C/H)", value: <span class="tabular-nums">{formatMpg(props.car.mpgCity, props.car.mpgHighway)}</span> },
+      ],
+    },
+    {
+      title: "Powertrain",
+      items: [
+        { label: "Engine", value: props.car.engineType },
+        { label: "Liters", value: formatTextDetail(props.car.engineSize) },
+        { label: "HP", value: <span class="tabular-nums">{formatNumberDetail(props.car.horsepower, "hp")}</span> },
+        { label: "Torque", value: <span class="tabular-nums">{formatNumberDetail(props.car.engineTorque, "lb-ft")}</span> },
+        { label: "HP RPM", value: <span class="tabular-nums">{formatNumberDetail(props.car.horsepowerRpm, "rpm")}</span> },
+        { label: "Torque RPM", value: <span class="tabular-nums">{formatNumberDetail(props.car.engineTorqueRpm, "rpm")}</span> },
+      ],
+    },
+  ];
+
+  return (
+    <div class="flex min-h-full flex-col gap-5">
+      <div class="flex flex-col gap-3">
+        <div class="flex items-start justify-between gap-3">
+          <div class="min-w-0">
+            <p class="text-lg font-semibold leading-tight text-content">
+              {props.car.year} {props.car.make} {props.car.model}
+            </p>
+            <Show when={props.car.trim}>
+              <p class="mt-1 text-sm text-secondary">{props.car.trim}</p>
+            </Show>
+          </div>
+          <span class="rounded-sm bg-raised px-2 py-1 text-[11px] font-semibold uppercase tracking-wider text-muted">
+            Car details
+          </span>
+        </div>
+
+        <p class="text-sm leading-relaxed text-secondary">
+          Review the listing details here, then continue to CarMax when you are ready.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div class="rounded-sm border border-white/8 bg-canvas/60 px-4 py-3">
+          <div class="mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted">Support</div>
+          <div class="flex flex-col gap-2">
+            <SupportChip level={props.car.supportLevel} />
+            <p class="text-sm leading-relaxed text-secondary">{supportDescription()}</p>
+          </div>
+        </div>
+        <div class="rounded-sm border border-white/8 bg-canvas/60 px-4 py-3">
+          <div class="mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted">Confidence</div>
+          <div class="flex flex-col gap-2">
+            <ConfidenceChip level={props.car.matchConfidence} />
+            <p class="text-sm leading-relaxed text-secondary">{confidenceDescription()}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <For each={detailSections()}>{(section) => <DetailSectionCard {...section} />}</For>
+      </div>
+
+      <div class="sticky -bottom-4 z-10 -mx-4 -mb-4 mt-auto border-t border-white/8 bg-surface px-4 py-4 pb-[calc(env(safe-area-inset-bottom)+1rem)]">
+        <button
+          onClick={() => props.onOpenListingLink(props.car)}
+          class="inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-accent px-5 py-3 text-base font-semibold text-white transition-colors hover:bg-accent-muted cursor-pointer"
+        >
+          View Listing ↗
+        </button>
+      </div>
+    </div>
+  );
+}
