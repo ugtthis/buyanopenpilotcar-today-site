@@ -197,14 +197,15 @@ export default function App() {
     <div class="min-h-screen bg-canvas flex flex-col">
 
 
-      <div class="bg-paper bg-noise border-b border-white/8 px-5 pt-12 pb-8 shrink-0">
-        <div class="min-w-0">
+      <div class="bg-paper bg-noise border-b border-white/8 shrink-0">
+        <div class="max-w-[1800px] mx-auto px-5 pt-12 pb-8 min-w-0">
           <img src={logo} alt="buyanopenpilotcar.today" class="h-auto max-h-20 w-auto max-w-full" />
         </div>
       </div>
 
       {/* ── Search band ── */}
-      <div class="bg-accent/5 border-b border-black/10 px-5 py-4 shrink-0 flex flex-col gap-3">
+      <div class="bg-accent/5 border-b border-black/10 shrink-0">
+        <div class="max-w-[1800px] mx-auto px-5 py-4 flex flex-col gap-3">
 
         {/* Row 1: Main text search */}
         <div
@@ -335,12 +336,13 @@ export default function App() {
               )}
             </For>
           </div>
-
+        </div>
         </div>
       </div>
 
       <div class="flex-1 overflow-hidden">
-        <div class="h-full overflow-auto px-5 pt-4 pb-10">
+        <div class="h-full overflow-auto">
+          <div class="max-w-[1800px] mx-auto px-5 pt-4 pb-10">
           <DataTable
             data={filteredCars()}
             columns={columns}
@@ -383,6 +385,7 @@ export default function App() {
               </div>
             }
           />
+          </div>
         </div>
       </div>
 
