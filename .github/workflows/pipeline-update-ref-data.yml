@@ -22,6 +22,10 @@ jobs:
         run: curl -sSf https://github.com/commaai/opendbc/raw/refs/heads/master/docs/CARS.md -o CARS.md
         working-directory: pipeline
 
+      - name: Fetch metadata for detailed support info
+        run: curl -sSf https://raw.githubusercontent.com/ugtthis/opendbc-site/main/src/data/metadata.json -o data/opendbc_metadata_ref.json
+        working-directory: pipeline
+
       - name: Transform reference data
         run: uv run python markdown_to_json.py --input CARS.md --output data/opendbc_ref.json
         working-directory: pipeline
@@ -46,6 +50,7 @@ jobs:
           labels: automated
           add-paths: |
             pipeline/CARS.md
+            pipeline/data/opendbc_metadata_ref.json
             pipeline/data/opendbc_ref.json
 
       - name: Enable auto-merge for healthy syncs
