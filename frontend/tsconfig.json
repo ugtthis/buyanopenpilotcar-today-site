@@ -1,16 +1,14 @@
 {
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
-    "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "bundler",
+    "types": ["vite/client"],
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true
+    "isolatedModules": true
   },
   "include": ["src"]
 }

@@ -1,5 +1,0 @@
-{
-  "scripts": {
-    "lines": "bun linecount.ts"
-  }
-}

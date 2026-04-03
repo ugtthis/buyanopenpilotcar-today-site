@@ -3,12 +3,13 @@ import { resolve, relative } from "path";
 const ROOT = resolve(import.meta.dir, "..");
 
 const INCLUDE_EXTENSIONS = new Set([
-  ".ts", ".tsx", ".js", ".jsx", ".css", ".html",
+  ".ts", ".tsx", ".js", ".jsx", ".css", ".html", ".py",
 ]);
 
 const EXCLUDE_DIRS = new Set([
   "node_modules", "dist", "build", ".git",
   ".cache", ".output", ".turbo", ".parcel-cache",
+  "venv", ".venv", "__pycache__", ".pytest_cache",
 ]);
 
 const glob = new Bun.Glob("**/*");
