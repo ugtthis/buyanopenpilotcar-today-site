@@ -137,6 +137,14 @@ export default function App() {
       },
     },
     {
+      key: "distance",
+      header: "Distance",
+      render: (value) =>
+        value != null
+          ? <span class="tabular-nums font-medium text-accent-bright">{value as number} mi</span>
+          : <span class="text-muted">—</span>,
+    },
+    {
       key: "matchConfidence",
       header: "Confidence",
       render: (value) => (
@@ -155,14 +163,6 @@ export default function App() {
     { key: "model", header: "Model" },
     { key: "year",  header: "Year"  },
     { key: "trim",  header: "Trim"  },
-    {
-      key: "distance",
-      header: "Distance",
-      render: (value) =>
-        value != null
-          ? <span class="tabular-nums font-medium text-accent-bright">{value as number} mi</span>
-          : <span class="text-muted">—</span>,
-    },
     {
       key: "supportLevel",
       header: "Support",
