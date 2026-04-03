@@ -129,28 +129,31 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
           </Show>
         </div>
 
-        {/* Row density toggle */}
-        <div class="relative flex items-center rounded-sm border border-white/15 bg-panel overflow-hidden ml-auto">
-          {/* Sliding indicator */}
-          <div
-            class="absolute inset-y-0 left-0 w-1/2 bg-raised shadow-[inset_0_0_0_1px_rgba(255,255,255,0.15)] pointer-events-none"
-            style={{ transform: `translateX(${densityIndex() * 100}%)`, transition: "transform 150ms ease" }}
-          />
-          <For each={DENSITIES}>
-            {(d) => (
-              <button
-                onClick={() => setDensity(d)}
-                title={DENSITY_CONFIG[d].label}
-                class="relative z-10 flex items-center justify-center w-10 py-2.5 border-0 bg-transparent transition-colors duration-150 cursor-pointer"
-                classList={{
-                  "text-content":                    density() === d,
-                  "text-muted hover:text-secondary": density() !== d,
-                }}
-              >
-                {DENSITY_CONFIG[d].icon()}
-              </button>
-            )}
-          </For>
+        {/* Legend slot + Row density toggle */}
+        <div class="flex items-center gap-2 ml-auto">
+          {props.legendSlot}
+          <div class="relative flex items-center rounded-sm border border-white/15 bg-panel overflow-hidden">
+            {/* Sliding indicator */}
+            <div
+              class="absolute inset-y-0 left-0 w-1/2 bg-raised shadow-[inset_0_0_0_1px_rgba(255,255,255,0.15)] pointer-events-none"
+              style={{ transform: `translateX(${densityIndex() * 100}%)`, transition: "transform 150ms ease" }}
+            />
+            <For each={DENSITIES}>
+              {(d) => (
+                <button
+                  onClick={() => setDensity(d)}
+                  title={DENSITY_CONFIG[d].label}
+                  class="relative z-10 flex items-center justify-center w-10 py-2.5 border-0 bg-transparent transition-colors duration-150 cursor-pointer"
+                  classList={{
+                    "text-content":                    density() === d,
+                    "text-muted hover:text-secondary": density() !== d,
+                  }}
+                >
+                  {DENSITY_CONFIG[d].icon()}
+                </button>
+              )}
+            </For>
+          </div>
         </div>
 
       </div>

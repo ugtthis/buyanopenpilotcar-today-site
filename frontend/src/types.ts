@@ -44,6 +44,7 @@ export type DataTableProps<T extends object> = {
   searchQuery: string;
   onSearchChange: (value: string) => void;
   distanceActive?: boolean;
+  legendSlot?: JSXElement;
 };
 
 export type PendingNav = {

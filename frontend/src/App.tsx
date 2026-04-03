@@ -198,42 +198,6 @@ export default function App() {
 
 
       <div class="bg-paper bg-noise border-b border-white/8 px-5 pt-7 pb-5 shrink-0">
-        <div class="flex justify-end mb-1">
-          {/* Legend popover */}
-          <div class="relative shrink-0">
-            <button
-              onClick={() => setShowLegend(v => !v)}
-              class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-sm bg-panel border border-white/15 text-secondary hover:bg-raised hover:text-content transition-colors cursor-pointer"
-              classList={{ "text-content bg-raised": showLegend() }}
-            >
-              <InfoCircleIcon class="w-3.5 h-3.5 shrink-0" />
-              <span>Legend</span>
-            </button>
-            <Show when={showLegend()}>
-              <div class="fixed inset-0 z-10" onClick={() => setShowLegend(false)} aria-hidden="true" />
-              <div class="absolute right-0 z-20 mt-1 w-72 max-w-[calc(100vw-2rem)] rounded-sm border border-white/15 bg-panel bp-elevation-3 p-3 flex flex-col gap-3">
-                <div>
-                  <p class="text-[10px] font-semibold uppercase tracking-wider text-muted mb-2.5">Support levels</p>
-                  <div class="flex flex-wrap gap-x-1.5 gap-y-2.5">
-                    {Object.keys(SUPPORT_LEVEL_STYLES).map((level) => (
-                      <SupportChip level={level} onClick={() => { setActiveSupportLevel(level); setShowLegend(false); }} />
-                    ))}
-                  </div>
-                </div>
-                <div class="border-t border-white/8" />
-                <div>
-                  <p class="text-[10px] font-semibold uppercase tracking-wider text-muted mb-2.5">Confidence levels</p>
-                  <div class="flex flex-wrap gap-x-1.5 gap-y-2.5">
-                    {Object.keys(CONFIDENCE_STYLES).map((level) => (
-                      <ConfidenceChip level={level} onClick={() => { setActiveConfidenceLevel(level); setShowLegend(false); }} />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </Show>
-          </div>
-        </div>
-
         <div class="min-w-0">
           <img src={logo} alt="buyanopenpilotcar.today" class="h-20 w-auto" />
         </div>
@@ -384,6 +348,40 @@ export default function App() {
             searchQuery={searchQuery()}
             onSearchChange={setSearchQuery}
             distanceActive={!!zipCoords()}
+            legendSlot={
+              <div class="relative shrink-0">
+                <button
+                  onClick={() => setShowLegend(v => !v)}
+                  class="flex items-center gap-1.5 px-3 py-2.5 text-xs font-medium rounded-sm bg-panel border border-white/15 text-secondary hover:bg-raised hover:text-content transition-colors cursor-pointer"
+                  classList={{ "text-content bg-raised": showLegend() }}
+                >
+                  <InfoCircleIcon class="w-3.5 h-3.5 shrink-0" />
+                  <span>Legend</span>
+                </button>
+                <Show when={showLegend()}>
+                  <div class="fixed inset-0 z-10" onClick={() => setShowLegend(false)} aria-hidden="true" />
+                  <div class="absolute right-0 z-20 mt-1 w-72 max-w-[calc(100vw-2rem)] rounded-sm border border-white/15 bg-panel bp-elevation-3 p-3 flex flex-col gap-3">
+                    <div>
+                      <p class="text-[10px] font-semibold uppercase tracking-wider text-muted mb-2.5">Support levels</p>
+                      <div class="flex flex-wrap gap-x-1.5 gap-y-2.5">
+                        {Object.keys(SUPPORT_LEVEL_STYLES).map((level) => (
+                          <SupportChip level={level} onClick={() => { setActiveSupportLevel(level); setShowLegend(false); }} />
+                        ))}
+                      </div>
+                    </div>
+                    <div class="border-t border-white/8" />
+                    <div>
+                      <p class="text-[10px] font-semibold uppercase tracking-wider text-muted mb-2.5">Confidence levels</p>
+                      <div class="flex flex-wrap gap-x-1.5 gap-y-2.5">
+                        {Object.keys(CONFIDENCE_STYLES).map((level) => (
+                          <ConfidenceChip level={level} onClick={() => { setActiveConfidenceLevel(level); setShowLegend(false); }} />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </Show>
+              </div>
+            }
           />
         </div>
       </div>
