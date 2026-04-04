@@ -76,17 +76,6 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
       ],
     },
     {
-      title: "Powertrain",
-      items: [
-        { label: "Engine", value: props.car.engineType },
-        { label: "Liters", value: formatTextDetail(props.car.engineSize) },
-        { label: "HP", value: <span class="tabular-nums">{formatNumberDetail(props.car.horsepower, "hp")}</span> },
-        { label: "Torque", value: <span class="tabular-nums">{formatNumberDetail(props.car.engineTorque, "lb-ft")}</span> },
-        { label: "HP RPM", value: <span class="tabular-nums">{formatNumberDetail(props.car.horsepowerRpm, "rpm")}</span> },
-        { label: "Torque RPM", value: <span class="tabular-nums">{formatNumberDetail(props.car.engineTorqueRpm, "rpm")}</span> },
-      ],
-    },
-    {
       title: "Support Specs",
       items: [
         { label: "Longitudinal", value: props.car.supportSpecs.longitudinal },
@@ -102,6 +91,17 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
         },
         { label: "Steering Torque", value: props.car.supportSpecs.steeringTorque },
         { label: "Auto Resume", value: props.car.supportSpecs.autoResumeStar },
+      ],
+    },
+    {
+      title: "Powertrain",
+      items: [
+        { label: "Engine", value: props.car.engineType },
+        { label: "Liters", value: formatTextDetail(props.car.engineSize) },
+        { label: "HP", value: <span class="tabular-nums">{formatNumberDetail(props.car.horsepower, "hp")}</span> },
+        { label: "Torque", value: <span class="tabular-nums">{formatNumberDetail(props.car.engineTorque, "lb-ft")}</span> },
+        { label: "HP RPM", value: <span class="tabular-nums">{formatNumberDetail(props.car.horsepowerRpm, "rpm")}</span> },
+        { label: "Torque RPM", value: <span class="tabular-nums">{formatNumberDetail(props.car.engineTorqueRpm, "rpm")}</span> },
       ],
     },
   ];
