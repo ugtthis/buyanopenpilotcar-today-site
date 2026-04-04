@@ -46,6 +46,7 @@ export default function App() {
   const [activeSupportLevel, setActiveSupportLevel] = createSignal<string | null>(null);
   const [activeConfidenceLevel, setActiveConfidenceLevel] = createSignal<string | null>(null);
   const [selectedCar, setSelectedCar] = createSignal<CarListing | null>(null);
+  const [isCarNameVisible, setIsCarNameVisible] = createSignal(true);
   const [pendingNav, setPendingNav] = createSignal<PendingNav | null>(null);
   const [showLegend, setShowLegend] = createSignal(false);
 
@@ -112,9 +113,11 @@ export default function App() {
     const car = selectedCar();
     return car ? `${car.year} ${car.make} ${car.model}` : "";
   };
+  const selectedCarDrawerTitle = () => (isCarNameVisible() ? "Car Details" : selectedCarTitle());
   const buildListingUrl = (car: CarListing) => `https://www.carmax.com/car/${car.stockNumber}`;
 
   function openCarDetail(car: CarListing) {
+    setIsCarNameVisible(true);
     setSelectedCar(car);
   }
 
@@ -449,11 +452,20 @@ export default function App() {
 
       <InfoDrawer
         open={selectedCar() !== null}
-        title={selectedCarTitle()}
-        onClose={() => setSelectedCar(null)}
+        title={selectedCarDrawerTitle()}
+        onClose={() => {
+          setSelectedCar(null);
+          setIsCarNameVisible(true);
+        }}
       >
         <Show when={selectedCar()}>
-          {(car) => <CarDetailPanel car={car()} onOpenListingLink={startCarNavigation} />}
+          {(car) => (
+            <CarDetailPanel
+              car={car()}
+              onOpenListingLink={startCarNavigation}
+              onCarNameVisibilityChange={setIsCarNameVisible}
+            />
+          )}
         </Show>
       </InfoDrawer>
 

@@ -1,4 +1,4 @@
-import { For, Show, type JSXElement } from "solid-js";
+import { onCleanup, onMount, For, Show, type JSXElement } from "solid-js";
 import { CONFIDENCE_CONTENT } from "../confidenceContent";
 import { SUPPORT_TYPE_CONTENT } from "../supportContent";
 import type { CarListing } from "../types";
@@ -9,6 +9,7 @@ import { SupportChip } from "./SupportChip";
 type CarDetailPanelProps = {
   car: CarListing;
   onOpenListingLink: (car: CarListing) => void;
+  onCarNameVisibilityChange?: (isVisible: boolean) => void;
 };
 
 type DetailItem = {
@@ -31,6 +32,7 @@ const formatMpg = (city: number | null, highway: number | null) => (
   city != null && highway != null ? `${city} / ${highway}` : "—"
 );
 const SUPPORT_SPECS_UNAVAILABLE = "N/A";
+const CAR_TITLE_VISIBLE_THRESHOLD = 0.25;
 
 const DetailRow = (props: DetailItem) => (
   <div class="flex items-start justify-between gap-4 border-t border-white/8 py-2.5">
@@ -49,6 +51,24 @@ const DetailSectionCard = (props: DetailSection) => (
 );
 
 export function CarDetailPanel(props: CarDetailPanelProps) {
+  let carNameRef: HTMLParagraphElement | undefined;
+
+  onMount(() => {
+    const onVisibilityChange = props.onCarNameVisibilityChange;
+    const target = carNameRef;
+    if (!onVisibilityChange || !target || typeof IntersectionObserver === "undefined") return;
+
+    // Keep the drawer header concise until the in-panel car title scrolls away.
+    const observer = new IntersectionObserver(
+      ([entry]) => onVisibilityChange(entry.isIntersecting && entry.intersectionRatio > CAR_TITLE_VISIBLE_THRESHOLD),
+      { threshold: [0, CAR_TITLE_VISIBLE_THRESHOLD, 0.5, 1] },
+    );
+
+    onVisibilityChange(true);
+    observer.observe(target);
+    onCleanup(() => observer.disconnect());
+  });
+
   const supportDescription = () =>
     SUPPORT_TYPE_CONTENT[props.car.supportLevel]?.paragraphs[0] ?? "No support details available for this vehicle.";
   const confidenceDescription = () =>
@@ -116,7 +136,7 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
       <div class="flex flex-col gap-3">
         <div class="flex items-start justify-between gap-3">
           <div class="min-w-0">
-            <p class="text-lg font-semibold leading-tight text-content">
+            <p ref={carNameRef} class="text-xl font-bold leading-tight text-content">
               {props.car.year} {props.car.make} {props.car.model}
             </p>
             <Show when={props.car.trim}>
