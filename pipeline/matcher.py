@@ -243,6 +243,7 @@ def build_output(reference_data: dict, cheapest: dict, metrics: dict) -> dict:
       "matching_keywords": reference_entry.get("matching_keywords"),
       "variant_info": reference_entry.get("variant_info"),
       "support_level": reference_entry.get("support_level", {}),
+      "support_specs": reference_entry.get("support_specs"),
       "available_years": available_years,
       "unavailable_years": unavailable_years
     }
