@@ -167,9 +167,12 @@ export default function App() {
       header: "Price",
       render: (value) => formatPrice(value as number | null),
     },
-    { key: "make",  header: "Make"  },
-    { key: "model", header: "Model" },
-    { key: "year",  header: "Year"  },
+    {
+      id: "car",
+      header: "Car",
+      accessorFn: (row) => `${row.make} ${row.model}`,
+    },
+    { key: "year", header: "Year" },
     { key: "trim",  header: "Trim"  },
     {
       key: "supportLevel",

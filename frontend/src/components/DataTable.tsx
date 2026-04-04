@@ -46,7 +46,7 @@ const BpBtn = (props: { onClick: () => void; disabled: boolean; children: string
 export function DataTable<T extends object>(props: DataTableProps<T>) {
   const globalFilter = () => props.searchQuery;
   const setGlobalFilter = props.onSearchChange;
-  const [sorting, setSorting] = createSignal<SortingState>([{ id: "make", desc: false }]);
+  const [sorting, setSorting] = createSignal<SortingState>([{ id: "car", desc: false }]);
   const [columnVisibility, setColumnVisibility] = createSignal<VisibilityState>({});
   // Distance column visibility is always derived from the prop — never stored in signal state.
   // This means TanStack always reads the ground truth directly; no sync needed.
@@ -59,7 +59,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
       // If sort is still on distance when zip is cleared, the user never changed it manually —
       // reset to make so the list has an obvious order. Otherwise leave their sort alone.
       const s = untrack(sorting); // read without subscribing — this effect should only react to distanceActive, not to user sort changes
-      if (s.length === 1 && s[0].id === "distance") setSorting([{ id: "make", desc: false }]);
+      if (s.length === 1 && s[0].id === "distance") setSorting([{ id: "car", desc: false }]);
     }
   });
   const isMobile = typeof window !== "undefined" && !window.matchMedia("(min-width: 640px)").matches;
