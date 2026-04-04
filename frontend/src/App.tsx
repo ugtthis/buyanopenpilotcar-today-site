@@ -189,8 +189,8 @@ export default function App() {
           ? <span class="tabular-nums">{(value as number).toLocaleString()} mi</span>
           : <span class="text-muted">—</span>,
     },
-    { key: "state",        header: "State"  },
     { key: "exteriorColor", header: "Color" },
+    { key: "state",        header: "State"  },
     {
       id: "longitudinal",
       header: "Longitudinal",
