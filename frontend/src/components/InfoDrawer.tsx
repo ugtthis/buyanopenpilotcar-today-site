@@ -51,7 +51,7 @@ export function InfoDrawer(props: InfoDrawerProps) {
 
           <Drawer.Content
             aria-label={props.title}
-            class="fixed z-50 flex flex-col bg-surface border border-white/15 will-change-transform
+            class="fixed z-50 flex flex-col overflow-hidden bg-surface border border-white/15 will-change-transform
                    data-transitioning:transition-transform
                    data-opening:duration-300 data-opening:ease-[cubic-bezier(0.32,0.72,0,1)]
                    data-closing:duration-200 data-closing:ease-out
