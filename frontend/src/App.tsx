@@ -191,6 +191,16 @@ export default function App() {
     },
     { key: "state",        header: "State"  },
     { key: "exteriorColor", header: "Color" },
+    {
+      id: "longitudinal",
+      header: "Longitudinal",
+      accessorFn: (row) => row.supportSpecs.longitudinal,
+    },
+    {
+      id: "autoResume",
+      header: "Auto Resume",
+      accessorFn: (row) => row.supportSpecs.autoResumeStar,
+    },
     { key: "driveTrain",   header: "Drive"  },
     {
       key: "mpgCity",

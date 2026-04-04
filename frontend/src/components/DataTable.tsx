@@ -74,14 +74,17 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
 
   const columnDefs = (): ColumnDef<T>[] =>
     props.columns.map((col) => {
-      const rank = COLUMN_SORT_RANK[col.key];
+      const id = (col.key ?? col.id)!;
+      const rank = COLUMN_SORT_RANK[id];
+      const accessor = col.accessorFn
+        ? { id: col.id, accessorFn: col.accessorFn }
+        : { accessorKey: col.key };
       return {
-        id: col.key,
-        accessorKey: col.key,
+        ...accessor,
         header: col.header,
         cell: (info) =>
           col.render
-            ? col.render(info.getValue() as T[keyof T], info.row.original)
+            ? col.render(info.getValue(), info.row.original)
             : String(info.getValue() ?? ""),
         ...(rank ? { sortingFn: rankSort(rank) } : {}),
       };

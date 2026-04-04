@@ -49,10 +49,12 @@ export type CarListing = {
 };
 
 export type Column<T> = {
-  key: keyof T & string;
   header: string;
-  render?: (value: T[keyof T], row: T) => JSXElement;
-};
+  render?: (value: unknown, row: T) => JSXElement;
+} & (
+  | { key: keyof T & string; id?: never; accessorFn?: never }
+  | { id: string; accessorFn: (row: T) => unknown; key?: never }
+);
 
 export type DataTableProps<T extends object> = {
   data: T[];
