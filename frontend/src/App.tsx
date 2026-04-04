@@ -82,6 +82,9 @@ export default function App() {
   // Invariant: whenever the zip is not valid, the cached result must be clear.
   // One declarative rule beats two imperative call sites.
   createEffect(() => { if (!validZip()) resetZipCoords(undefined); });
+  createEffect(() => {
+    if (!validZip()) setRadius(null);
+  });
 
   function clearZip() {
     setUserZip("");
@@ -99,10 +102,12 @@ export default function App() {
     });
   });
 
+  const canFilterByDistance = createMemo(() => zipCoords() != null);
+
   // Reruns only when radius changes — cheap filter on already-computed distances
   const filteredCars = createMemo((): CarListing[] => {
     const maxMiles = radius();
-    if (maxMiles == null) return carsWithDistance();
+    if (!canFilterByDistance() || maxMiles == null) return carsWithDistance();
     return carsWithDistance().filter((car) => car.distance != null && car.distance <= maxMiles);
   });
 
