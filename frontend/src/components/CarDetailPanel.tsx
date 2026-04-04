@@ -30,6 +30,7 @@ const formatBooleanDetail = (value: boolean) => (value ? "Yes" : "No");
 const formatMpg = (city: number | null, highway: number | null) => (
   city != null && highway != null ? `${city} / ${highway}` : "—"
 );
+const SUPPORT_SPECS_UNAVAILABLE = "N/A";
 
 const DetailRow = (props: DetailItem) => (
   <div class="flex items-start justify-between gap-4 border-t border-white/8 py-2.5">
@@ -52,6 +53,22 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
     SUPPORT_TYPE_CONTENT[props.car.supportLevel]?.paragraphs[0] ?? "No support details available for this vehicle.";
   const confidenceDescription = () =>
     CONFIDENCE_CONTENT[props.car.matchConfidence]?.paragraphs[0] ?? "No confidence details available for this vehicle.";
+  const showSupportSpecs = props.car.supportLevel === "upstream" || props.car.supportLevel === "dashcam mode";
+  const supportSpecItems: DetailItem[] = [
+    { label: "Longitudinal", value: props.car.supportSpecs.longitudinal },
+    { label: "FSR Longitudinal", value: props.car.supportSpecs.fsrLongitudinal },
+    { label: "FSR Steering", value: props.car.supportSpecs.fsrSteering },
+    {
+      label: "Experimental Long",
+      value: formatBooleanDetail(props.car.supportSpecs.experimentalLongitudinalAvailable),
+    },
+    {
+      label: "OP Long Control",
+      value: formatBooleanDetail(props.car.supportSpecs.openpilotLongitudinalControl),
+    },
+    { label: "Steering Torque", value: props.car.supportSpecs.steeringTorque },
+    { label: "Auto Resume", value: props.car.supportSpecs.autoResumeStar },
+  ];
 
   const detailSections = (): DetailSection[] => [
     {
@@ -77,21 +94,9 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
     },
     {
       title: "Support Specs",
-      items: [
-        { label: "Longitudinal", value: props.car.supportSpecs.longitudinal },
-        { label: "FSR Longitudinal", value: props.car.supportSpecs.fsrLongitudinal },
-        { label: "FSR Steering", value: props.car.supportSpecs.fsrSteering },
-        {
-          label: "Experimental Long",
-          value: formatBooleanDetail(props.car.supportSpecs.experimentalLongitudinalAvailable),
-        },
-        {
-          label: "OP Long Control",
-          value: formatBooleanDetail(props.car.supportSpecs.openpilotLongitudinalControl),
-        },
-        { label: "Steering Torque", value: props.car.supportSpecs.steeringTorque },
-        { label: "Auto Resume", value: props.car.supportSpecs.autoResumeStar },
-      ],
+      items: showSupportSpecs
+        ? supportSpecItems
+        : supportSpecItems.map(({ label }) => ({ label, value: SUPPORT_SPECS_UNAVAILABLE })),
     },
     {
       title: "Powertrain",
