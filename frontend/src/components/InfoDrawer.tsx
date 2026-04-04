@@ -57,7 +57,7 @@ export function InfoDrawer(props: InfoDrawerProps) {
                    data-closing:duration-200 data-closing:ease-out
                    data-snapping:duration-200 data-snapping:ease-out"
             classList={{
-              "bottom-0 left-0 right-0 rounded-t-lg min-h-[25vh] max-h-[70vh]": !isDesktop(),
+              "bottom-0 left-0 right-0 rounded-t-lg min-h-[25dvh] max-h-[70dvh]": !isDesktop(),
               "top-4 bottom-4 right-4 w-[min(380px,calc(100vw-1rem))] rounded-lg": isDesktop(),
             }}
             style={{ "box-shadow": "0 4px 6px -1px rgba(0,0,0,0.08), 0 16px 48px -8px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.08)" }}
