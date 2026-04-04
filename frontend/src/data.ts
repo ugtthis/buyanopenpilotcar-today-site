@@ -44,7 +44,7 @@ type RawEntry = {
   make: string;
   model: string;
   model_original: string;
-  support_specs?: RawSupportSpecs | null;
+  support_specs: RawSupportSpecs;
   package_requirements: string;
   support_level: { type: string };
   available_years: RawYear[];
@@ -59,17 +59,15 @@ export const cars: CarListing[] = (rawJson as RawJson).entries.flatMap(
       .filter((ay) => ay.car !== null)
       .map((ay) => {
         const car = ay.car!;
-        const supportSpecs: SupportSpecs | null = entry.support_specs
-          ? {
-              longitudinal: entry.support_specs.longitudinal,
-              fsrLongitudinal: entry.support_specs.fsr_longitudinal,
-              fsrSteering: entry.support_specs.fsr_steering,
-              experimentalLongitudinalAvailable: entry.support_specs.experimental_longitudinal_available,
-              openpilotLongitudinalControl: entry.support_specs.openpilot_longitudinal_control,
-              steeringTorque: entry.support_specs.steering_torque,
-              autoResumeStar: entry.support_specs.auto_resume_star,
-            }
-          : null;
+        const supportSpecs: SupportSpecs = {
+          longitudinal: entry.support_specs.longitudinal,
+          fsrLongitudinal: entry.support_specs.fsr_longitudinal,
+          fsrSteering: entry.support_specs.fsr_steering,
+          experimentalLongitudinalAvailable: entry.support_specs.experimental_longitudinal_available,
+          openpilotLongitudinalControl: entry.support_specs.openpilot_longitudinal_control,
+          steeringTorque: entry.support_specs.steering_torque,
+          autoResumeStar: entry.support_specs.auto_resume_star,
+        };
 
         return {
           stockNumber: car.stockNumber,

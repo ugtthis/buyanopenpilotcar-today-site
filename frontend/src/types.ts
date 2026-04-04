@@ -25,7 +25,7 @@ export type CarListing = {
   make: string;
   model: string;
   modelOriginal: string;
-  supportSpecs: SupportSpecs | null;
+  supportSpecs: SupportSpecs;
   supportLevel: SupportLevel;
   matchConfidence: MatchConfidence;
   year: number;

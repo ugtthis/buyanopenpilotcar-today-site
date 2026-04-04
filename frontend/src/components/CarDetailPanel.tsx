@@ -86,28 +86,24 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
         { label: "Torque RPM", value: <span class="tabular-nums">{formatNumberDetail(props.car.engineTorqueRpm, "rpm")}</span> },
       ],
     },
-    ...(props.car.supportSpecs
-      ? [
-          {
-            title: "Support Specs",
-            items: [
-              { label: "Longitudinal", value: props.car.supportSpecs.longitudinal },
-              { label: "FSR Longitudinal", value: props.car.supportSpecs.fsrLongitudinal },
-              { label: "FSR Steering", value: props.car.supportSpecs.fsrSteering },
-              {
-                label: "Experimental Long",
-                value: formatBooleanDetail(props.car.supportSpecs.experimentalLongitudinalAvailable),
-              },
-              {
-                label: "OP Long Control",
-                value: formatBooleanDetail(props.car.supportSpecs.openpilotLongitudinalControl),
-              },
-              { label: "Steering Torque", value: props.car.supportSpecs.steeringTorque },
-              { label: "Auto Resume", value: props.car.supportSpecs.autoResumeStar },
-            ],
-          },
-        ]
-      : []),
+    {
+      title: "Support Specs",
+      items: [
+        { label: "Longitudinal", value: props.car.supportSpecs.longitudinal },
+        { label: "FSR Longitudinal", value: props.car.supportSpecs.fsrLongitudinal },
+        { label: "FSR Steering", value: props.car.supportSpecs.fsrSteering },
+        {
+          label: "Experimental Long",
+          value: formatBooleanDetail(props.car.supportSpecs.experimentalLongitudinalAvailable),
+        },
+        {
+          label: "OP Long Control",
+          value: formatBooleanDetail(props.car.supportSpecs.openpilotLongitudinalControl),
+        },
+        { label: "Steering Torque", value: props.car.supportSpecs.steeringTorque },
+        { label: "Auto Resume", value: props.car.supportSpecs.autoResumeStar },
+      ],
+    },
   ];
 
   return (
