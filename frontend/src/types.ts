@@ -63,6 +63,7 @@ export type DataTableProps<T extends object> = {
   searchQuery: string;
   onSearchChange: (value: string) => void;
   onRowClick?: (row: T) => void;
+  isRowSelected?: (row: T) => boolean;
   distanceActive?: boolean;
   legendSlot?: JSXElement;
 };

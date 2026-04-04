@@ -247,26 +247,36 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
             </thead>
             <tbody>
               <For each={pagedRows()}>
-                {(row, i) => (
-                  <tr
-                    class="group border-b border-white/5 transition-colors
-                           cursor-pointer
-                           hover:bg-accent/8"
-                    classList={{
-                      "bg-canvas":  i() % 2 === 0,
-                      "bg-surface": i() % 2 !== 0,
-                    }}
-                    onClick={(event) => handleRowClick(event, row.original)}
-                  >
-                    <For each={row.getVisibleCells()}>
-                      {(cell) => (
-                        <td class={`px-3 ${DENSITY_CONFIG[density()].cellPy} whitespace-nowrap tabular-nums text-secondary group-hover:text-content transition-colors`}>
-                          {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                        </td>
-                      )}
-                    </For>
-                  </tr>
-                )}
+                {(row, i) => {
+                  const selected = () => props.isRowSelected?.(row.original) ?? false;
+                  return (
+                    <tr
+                      class="group transition-colors cursor-pointer"
+                      classList={{
+                        "bg-accent/25":      selected(),
+                        "hover:bg-accent/8": !selected(),
+                        "bg-canvas":         !selected() && i() % 2 === 0,
+                        "bg-surface":        !selected() && i() % 2 !== 0,
+                      }}
+                      onClick={(event) => handleRowClick(event, row.original)}
+                    >
+                      <For each={row.getVisibleCells()}>
+                        {(cell) => (
+                          <td
+                            class={`px-3 ${DENSITY_CONFIG[density()].cellPy} whitespace-nowrap tabular-nums transition-colors`}
+                            classList={{
+                              "text-content":             selected(),
+                              "text-secondary":           !selected(),
+                              "group-hover:text-content": !selected(),
+                            }}
+                          >
+                            {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                          </td>
+                        )}
+                      </For>
+                    </tr>
+                  );
+                }}
               </For>
             </tbody>
           </table>

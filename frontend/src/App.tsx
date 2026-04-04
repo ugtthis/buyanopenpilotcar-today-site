@@ -400,6 +400,7 @@ export default function App() {
               searchQuery={searchQuery()}
               onSearchChange={setSearchQuery}
               onRowClick={openCarDetail}
+              isRowSelected={(row) => row.stockNumber === selectedCar()?.stockNumber}
               distanceActive={!!zipCoords()}
               legendSlot={
                 <div class="relative shrink-0">
