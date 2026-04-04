@@ -32,6 +32,9 @@ const formatTextDetail = (value: string | null) =>
 export default function App() {
   const [searchQuery, setSearchQuery] = createSignal("");
   let searchInputRef: HTMLInputElement | undefined;
+  const blurOnEnter = (e: KeyboardEvent & { currentTarget: HTMLInputElement }) => {
+    if (e.key === "Enter") e.currentTarget.blur();
+  };
 
   onMount(() => {
     const handler = (e: KeyboardEvent) => {
@@ -283,6 +286,7 @@ export default function App() {
               placeholder="Search makes, models, trims, states…"
               value={searchQuery()}
               onInput={(e) => setSearchQuery(e.currentTarget.value)}
+              onKeyDown={blurOnEnter}
               class="flex-1 min-w-0 bg-transparent border-none text-base text-content placeholder:text-muted
                      focus:shadow-none focus:border-transparent"
               style={{ "box-shadow": "none" }}
@@ -336,6 +340,7 @@ export default function App() {
                   e.currentTarget.value = digits;
                   setUserZip(digits);
                 }}
+                onKeyDown={blurOnEnter}
                 class="flex-1 min-w-0 bg-transparent border-none text-sm text-content placeholder:text-muted
                        focus:shadow-none focus:border-transparent tabular-nums"
                 style={{ "box-shadow": "none" }}
