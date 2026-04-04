@@ -5,10 +5,12 @@ type InfoDrawerProps = {
   open: boolean;
   title: string;
   onClose: () => void;
+  onClosed?: () => void;
   children: JSX.Element;
 };
 
 const OVERLAY_OPACITY = 0.5;
+export const INFO_DRAWER_ANIMATION_MS = 500;
 
 function createMediaQuery(query: string) {
   const [matches, setMatches] = createSignal(false);
@@ -28,12 +30,30 @@ function createMediaQuery(query: string) {
 
 export function InfoDrawer(props: InfoDrawerProps) {
   const isDesktop = createMediaQuery("(min-width: 768px)");
+  let closedTimer: number | undefined;
+  onCleanup(() => {
+    if (!closedTimer) return;
+    window.clearTimeout(closedTimer);
+    closedTimer = undefined;
+  });
 
   return (
     <Drawer
       open={props.open}
       onOpenChange={(open) => {
-        if (!open) props.onClose();
+        if (closedTimer) {
+          window.clearTimeout(closedTimer);
+          closedTimer = undefined;
+        }
+        if (!open) {
+          props.onClose();
+          if (props.onClosed) {
+            closedTimer = window.setTimeout(() => {
+              props.onClosed?.();
+              closedTimer = undefined;
+            }, INFO_DRAWER_ANIMATION_MS);
+          }
+        }
       }}
       side={isDesktop() ? "right" : "bottom"}
       breakPoints={isDesktop() ? [0.97] : [0.85]}
@@ -43,24 +63,30 @@ export function InfoDrawer(props: InfoDrawerProps) {
           <Drawer.Overlay
             class="fixed inset-0 z-40
                    data-transitioning:transition-colors
-                   data-opening:duration-500 data-opening:ease-[cubic-bezier(0.32,0.72,0,1)]
-                   data-closing:duration-500 data-closing:ease-out
-                   data-snapping:duration-500 data-snapping:ease-out"
-            style={{ "background-color": `rgb(0 0 0 / ${OVERLAY_OPACITY * drawerProps.openPercentage})` }}
+                   data-opening:duration-(--info-drawer-animation-ms) data-opening:ease-[cubic-bezier(0.32,0.72,0,1)]
+                   data-closing:duration-(--info-drawer-animation-ms) data-closing:ease-out
+                   data-snapping:duration-(--info-drawer-animation-ms) data-snapping:ease-out"
+            style={{
+              "background-color": `rgb(0 0 0 / ${OVERLAY_OPACITY * drawerProps.openPercentage})`,
+              "--info-drawer-animation-ms": `${INFO_DRAWER_ANIMATION_MS}ms`,
+            }}
           />
 
           <Drawer.Content
             aria-label={props.title}
             class="fixed z-50 flex flex-col bg-surface border border-white/15 will-change-transform
                    data-transitioning:transition-transform
-                   data-opening:duration-500 data-opening:ease-[cubic-bezier(0.32,0.72,0,1)]
-                   data-closing:duration-500 data-closing:ease-out
-                   data-snapping:duration-500 data-snapping:ease-out"
+                   data-opening:duration-(--info-drawer-animation-ms) data-opening:ease-[cubic-bezier(0.32,0.72,0,1)]
+                   data-closing:duration-(--info-drawer-animation-ms) data-closing:ease-out
+                   data-snapping:duration-(--info-drawer-animation-ms) data-snapping:ease-out"
             classList={{
               "bottom-0 left-0 right-0 rounded-t-lg h-full max-h-[85%] overflow-visible after:absolute after:inset-x-0 after:top-[calc(100%-1px)] after:h-1/2 after:bg-inherit": !isDesktop(),
               "top-4 bottom-4 right-4 w-[min(380px,calc(100vw-1rem))] rounded-lg overflow-hidden": isDesktop(),
             }}
-            style={{ "box-shadow": "0 4px 6px -1px rgba(0,0,0,0.08), 0 16px 48px -8px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.08)" }}
+            style={{
+              "box-shadow": "0 4px 6px -1px rgba(0,0,0,0.08), 0 16px 48px -8px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.08)",
+              "--info-drawer-animation-ms": `${INFO_DRAWER_ANIMATION_MS}ms`,
+            }}
           >
             <div class="flex justify-center pt-2.5 pb-1 shrink-0" classList={{ hidden: isDesktop() }}>
               <div class="w-8 h-1 rounded-full bg-raised" />

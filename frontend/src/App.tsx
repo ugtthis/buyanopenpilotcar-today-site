@@ -46,6 +46,7 @@ export default function App() {
   const [activeSupportLevel, setActiveSupportLevel] = createSignal<string | null>(null);
   const [activeConfidenceLevel, setActiveConfidenceLevel] = createSignal<string | null>(null);
   const [selectedCar, setSelectedCar] = createSignal<CarListing | null>(null);
+  const [isCarDrawerOpen, setIsCarDrawerOpen] = createSignal(false);
   const [isCarNameVisible, setIsCarNameVisible] = createSignal(true);
   const [pendingNav, setPendingNav] = createSignal<PendingNav | null>(null);
   const [showLegend, setShowLegend] = createSignal(false);
@@ -116,16 +117,22 @@ export default function App() {
   const selectedCarDrawerTitle = () => (isCarNameVisible() ? "Car Details" : selectedCarTitle());
   const buildListingUrl = (car: CarListing) => `https://www.carmax.com/car/${car.stockNumber}`;
 
+  function closeCarDetail() {
+    setIsCarDrawerOpen(false);
+    setIsCarNameVisible(true);
+  }
+
   function openCarDetail(car: CarListing) {
     setIsCarNameVisible(true);
     setSelectedCar(car);
+    setIsCarDrawerOpen(true);
   }
 
   function startCarNavigation(car: CarListing) {
     const url = buildListingUrl(car);
     if (car.supportLevel === "upstream") {
       window.open(url, "_blank", "noreferrer");
-      setSelectedCar(null);
+      closeCarDetail();
       return;
     }
 
@@ -143,7 +150,7 @@ export default function App() {
     const nav = pendingNav();
     if (nav) window.open(nav.url, "_blank", "noreferrer");
     setPendingNav(null);
-    setSelectedCar(null);
+    closeCarDetail();
   }
 
   const columns: Column<CarListing>[] = [
@@ -451,12 +458,10 @@ export default function App() {
       />
 
       <InfoDrawer
-        open={selectedCar() !== null}
+        open={isCarDrawerOpen()}
         title={selectedCarDrawerTitle()}
-        onClose={() => {
-          setSelectedCar(null);
-          setIsCarNameVisible(true);
-        }}
+        onClose={closeCarDetail}
+        onClosed={() => setSelectedCar(null)}
       >
         <Show when={selectedCar()}>
           {(car) => (
