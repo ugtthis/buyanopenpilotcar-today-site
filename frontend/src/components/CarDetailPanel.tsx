@@ -26,6 +26,7 @@ const formatMileage = (mileage: number | null) => (mileage != null ? `${mileage.
 const formatDistance = (distance: number | undefined) => (distance != null ? `${distance} mi` : "—");
 const formatNumberDetail = (value: number | null, suffix: string) => (value != null ? `${value.toLocaleString()} ${suffix}` : "—");
 const formatTextDetail = (value: string | null) => (value?.trim() ? value : "—");
+const formatBooleanDetail = (value: boolean) => (value ? "Yes" : "No");
 const formatMpg = (city: number | null, highway: number | null) => (
   city != null && highway != null ? `${city} / ${highway}` : "—"
 );
@@ -85,6 +86,28 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
         { label: "Torque RPM", value: <span class="tabular-nums">{formatNumberDetail(props.car.engineTorqueRpm, "rpm")}</span> },
       ],
     },
+    ...(props.car.supportSpecs
+      ? [
+          {
+            title: "Support Specs",
+            items: [
+              { label: "Longitudinal", value: props.car.supportSpecs.longitudinal },
+              { label: "FSR Longitudinal", value: props.car.supportSpecs.fsrLongitudinal },
+              { label: "FSR Steering", value: props.car.supportSpecs.fsrSteering },
+              {
+                label: "Experimental Long",
+                value: formatBooleanDetail(props.car.supportSpecs.experimentalLongitudinalAvailable),
+              },
+              {
+                label: "OP Long Control",
+                value: formatBooleanDetail(props.car.supportSpecs.openpilotLongitudinalControl),
+              },
+              { label: "Steering Torque", value: props.car.supportSpecs.steeringTorque },
+              { label: "Auto Resume", value: props.car.supportSpecs.autoResumeStar },
+            ],
+          },
+        ]
+      : []),
   ];
 
   return (

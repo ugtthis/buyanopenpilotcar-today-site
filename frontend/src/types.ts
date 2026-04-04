@@ -10,11 +10,22 @@ export type SupportLevel =
 
 export type MatchConfidence = "extra_high" | "high" | "medium" | "low";
 
+export type SupportSpecs = {
+  longitudinal: string;
+  fsrLongitudinal: string;
+  fsrSteering: string;
+  experimentalLongitudinalAvailable: boolean;
+  openpilotLongitudinalControl: boolean;
+  steeringTorque: string;
+  autoResumeStar: string;
+};
+
 export type CarListing = {
   stockNumber: number;
   make: string;
   model: string;
   modelOriginal: string;
+  supportSpecs: SupportSpecs | null;
   supportLevel: SupportLevel;
   matchConfidence: MatchConfidence;
   year: number;

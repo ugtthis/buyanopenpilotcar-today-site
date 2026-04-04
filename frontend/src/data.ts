@@ -1,4 +1,4 @@
-import type { CarListing, MatchConfidence, SupportLevel } from "./types";
+import type { CarListing, MatchConfidence, SupportLevel, SupportSpecs } from "./types";
 import rawJson from "../../pipeline/data/openpilot_cars.json";
 
 type RawCar = {
@@ -30,10 +30,21 @@ type RawYear = {
   car: RawCar | null;
 };
 
+type RawSupportSpecs = {
+  longitudinal: string;
+  fsr_longitudinal: string;
+  fsr_steering: string;
+  experimental_longitudinal_available: boolean;
+  openpilot_longitudinal_control: boolean;
+  steering_torque: string;
+  auto_resume_star: string;
+};
+
 type RawEntry = {
   make: string;
   model: string;
   model_original: string;
+  support_specs?: RawSupportSpecs | null;
   package_requirements: string;
   support_level: { type: string };
   available_years: RawYear[];
@@ -48,11 +59,24 @@ export const cars: CarListing[] = (rawJson as RawJson).entries.flatMap(
       .filter((ay) => ay.car !== null)
       .map((ay) => {
         const car = ay.car!;
+        const supportSpecs: SupportSpecs | null = entry.support_specs
+          ? {
+              longitudinal: entry.support_specs.longitudinal,
+              fsrLongitudinal: entry.support_specs.fsr_longitudinal,
+              fsrSteering: entry.support_specs.fsr_steering,
+              experimentalLongitudinalAvailable: entry.support_specs.experimental_longitudinal_available,
+              openpilotLongitudinalControl: entry.support_specs.openpilot_longitudinal_control,
+              steeringTorque: entry.support_specs.steering_torque,
+              autoResumeStar: entry.support_specs.auto_resume_star,
+            }
+          : null;
+
         return {
           stockNumber: car.stockNumber,
           make: entry.make,
           model: entry.model,
           modelOriginal: entry.model_original,
+          supportSpecs,
           supportLevel: entry.support_level.type as SupportLevel,
           matchConfidence: ay.match_confidence as MatchConfidence,
           year: car.year,
