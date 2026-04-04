@@ -8,7 +8,7 @@ type InfoDrawerProps = {
   children: JSX.Element;
 };
 
-const OVERLAY_OPACITY = 0.25;
+const OVERLAY_OPACITY = 0.5;
 
 function createMediaQuery(query: string) {
   const [matches, setMatches] = createSignal(false);
@@ -44,8 +44,8 @@ export function InfoDrawer(props: InfoDrawerProps) {
             class="fixed inset-0 z-40
                    data-transitioning:transition-colors
                    data-opening:duration-500 data-opening:ease-[cubic-bezier(0.32,0.72,0,1)]
-                   data-closing:duration-200 data-closing:ease-out
-                   data-snapping:duration-200 data-snapping:ease-out"
+                   data-closing:duration-500 data-closing:ease-out
+                   data-snapping:duration-500 data-snapping:ease-out"
             style={{ "background-color": `rgb(0 0 0 / ${OVERLAY_OPACITY * drawerProps.openPercentage})` }}
           />
 
@@ -53,11 +53,11 @@ export function InfoDrawer(props: InfoDrawerProps) {
             aria-label={props.title}
             class="fixed z-50 flex flex-col bg-surface border border-white/15 will-change-transform
                    data-transitioning:transition-transform
-                   data-opening:duration-300 data-opening:ease-[cubic-bezier(0.32,0.72,0,1)]
-                   data-closing:duration-200 data-closing:ease-out
-                   data-snapping:duration-200 data-snapping:ease-out"
+                   data-opening:duration-500 data-opening:ease-[cubic-bezier(0.32,0.72,0,1)]
+                   data-closing:duration-500 data-closing:ease-out
+                   data-snapping:duration-500 data-snapping:ease-out"
             classList={{
-              "bottom-0 left-0 right-0 rounded-t-lg h-full max-h-[70vh] overflow-visible after:absolute after:inset-x-0 after:top-[calc(100%-1px)] after:h-1/2 after:bg-inherit": !isDesktop(),
+              "bottom-0 left-0 right-0 rounded-t-lg h-full max-h-[85%] overflow-visible after:absolute after:inset-x-0 after:top-[calc(100%-1px)] after:h-1/2 after:bg-inherit": !isDesktop(),
               "top-4 bottom-4 right-4 w-[min(380px,calc(100vw-1rem))] rounded-lg overflow-hidden": isDesktop(),
             }}
             style={{ "box-shadow": "0 4px 6px -1px rgba(0,0,0,0.08), 0 16px 48px -8px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.08)" }}
