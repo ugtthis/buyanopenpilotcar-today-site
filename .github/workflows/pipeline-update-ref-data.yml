@@ -30,6 +30,10 @@ jobs:
         run: uv run python markdown_to_json.py --input data/ref/CARS.md --output data/ref/opendbc_ref.json
         working-directory: pipeline
 
+      - name: Enrich ref data with opendbc metadata
+        run: uv run python enricher.py
+        working-directory: pipeline
+
       - name: Generate sync summary
         id: summary
         run: |
