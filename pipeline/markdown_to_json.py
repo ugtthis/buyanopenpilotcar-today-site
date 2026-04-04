@@ -190,6 +190,7 @@ def parse_car_from_table_row(
   support_text = get_cell(row, col_map, "support_level")
 
   return {
+    "name": f"{make} {raw_model}",
     "make": make,
     "model": model,
     "model_original": raw_model,

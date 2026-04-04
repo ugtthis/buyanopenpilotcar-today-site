@@ -3,6 +3,7 @@ from typing import TypedDict
 
 
 class CarVariant(TypedDict):
+  name: str
   make: str
   model: str
   model_original: str
