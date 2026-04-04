@@ -303,7 +303,11 @@ export default function App() {
                 maxlength="5"
                 placeholder="ZIP code"
                 value={userZip()}
-                onInput={(e) => setUserZip(e.currentTarget.value)}
+                onInput={(e) => {
+                  const digits = e.currentTarget.value.replace(/\D/g, "");
+                  e.currentTarget.value = digits;
+                  setUserZip(digits);
+                }}
                 class="flex-1 min-w-0 bg-transparent border-none text-sm text-content placeholder:text-muted
                        focus:shadow-none focus:border-transparent tabular-nums"
                 style={{ "box-shadow": "none" }}
