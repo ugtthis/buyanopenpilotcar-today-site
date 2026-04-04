@@ -124,7 +124,7 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
             </Show>
           </div>
           <span class="rounded-sm bg-raised px-2 py-1 text-[11px] font-semibold uppercase tracking-wider text-muted">
-            Car details
+            Price {formatPrice(props.car.price)}
           </span>
         </div>
 
