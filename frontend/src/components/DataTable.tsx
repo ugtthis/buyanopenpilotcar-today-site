@@ -7,7 +7,7 @@ import {
   getSortedRowModel,
 } from "@tanstack/solid-table";
 import type { ColumnDef, SortingState, VisibilityState } from "@tanstack/solid-table";
-import { createEffect, createSignal, For, Show, untrack, type JSX } from "solid-js";
+import { createEffect, createSignal, For, on, Show, untrack, type JSX } from "solid-js";
 import type { DataTableProps } from "../types";
 import { DensityComfortableIcon, DensityNormalIcon } from "./Icons";
 
@@ -108,6 +108,10 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   });
+
+  // TanStack's autoResetPageIndex relies on React's render-cycle diffing; SolidJS needs an explicit effect.
+  const autoResetPageIndex = () => table.setPageIndex(0);
+  createEffect(on(() => [globalFilter(), props.data] as const, autoResetPageIndex, { defer: true }));
 
   const totalFiltered = () => table.getFilteredRowModel().rows.length;
   const totalAll = () => props.data.length;
