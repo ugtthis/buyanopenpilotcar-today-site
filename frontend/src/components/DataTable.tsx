@@ -34,7 +34,7 @@ const BpBtn = (props: { onClick: () => void; disabled: boolean; children: string
   <button
     onClick={props.onClick}
     disabled={props.disabled}
-    class="min-w-10 h-9 px-3 text-sm font-medium rounded-sm border border-white/15 bg-panel
+    class="min-w-12 h-11 px-4 text-base font-medium rounded-sm border border-white/15 bg-panel
            text-secondary select-none transition-colors
            hover:bg-hover hover:text-content cursor-pointer
            disabled:opacity-30 disabled:cursor-not-allowed"
@@ -286,8 +286,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
       {/* ── Pagination ── */}
       <div class="flex flex-col-reverse items-center gap-3 pt-3 pb-3 sm:flex-row sm:items-center sm:justify-between">
 
-        {/* "Showing 1–25 of N" */}
-        <span class="text-xs text-muted tabular-nums text-center sm:text-left">
+        <span class="text-md text-muted tabular-nums text-center sm:text-left">
           Showing{" "}
           <strong class="text-secondary">{pageStart().toLocaleString()}–{pageEnd().toLocaleString()}</strong>
           {" "}of{" "}
@@ -301,7 +300,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
               <BpBtn onClick={() => table.firstPage()}    disabled={!table.getCanPreviousPage()}>⟨⟨</BpBtn>
               <BpBtn onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>⟨</BpBtn>
 
-              <span class="min-w-20 h-9 px-4 inline-flex items-center justify-center text-sm rounded-sm border border-white/8 bg-surface text-secondary select-none tabular-nums">
+              <span class="min-w-24 h-11 px-4 inline-flex items-center justify-center text-base rounded-sm border border-white/8 bg-surface text-secondary select-none tabular-nums">
                 {pageIdx() + 1}
                 <span class="text-muted"> / {table.getPageCount()}</span>
               </span>
