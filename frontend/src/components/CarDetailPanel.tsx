@@ -174,7 +174,7 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
         <For each={detailSections()}>{(section) => <DetailSectionCard {...section} />}</For>
       </div>
 
-      <div class="sticky -bottom-4 z-10 -mx-4 -mb-4 mt-auto flex flex-col gap-3 border-t border-white/8 bg-surface px-4 py-4 pb-[env(safe-area-inset-bottom)]">
+      <div class="sticky -bottom-4 z-10 -mx-4 -mb-4 mt-auto flex flex-col gap-3 border-t border-white/8 bg-surface px-4 py-4 pb-1">
         <button
           onClick={() => props.onOpenListingLink(props.car)}
           class="inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-accent px-5 py-3 text-base font-semibold text-white transition-colors hover:bg-accent-muted cursor-pointer"
