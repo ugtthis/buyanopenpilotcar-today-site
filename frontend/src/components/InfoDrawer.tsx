@@ -72,6 +72,7 @@ export function InfoDrawer(props: InfoDrawerProps) {
                 aria-label="Close"
                 class="flex items-center justify-center w-6 h-6 rounded-sm text-muted
                      hover:bg-raised hover:text-content transition-colors border-0 bg-transparent cursor-pointer"
+                classList={{ hidden: !isDesktop() }}
               >
                 ✕
               </Drawer.Close>
