@@ -203,7 +203,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
               >
                 {isSearchEmpty() ? "No matches found" : "No cars available"}
               </div>
-              <div class="max-w-full text-balance text-lg font-semibold text-content">
+              <div class="max-w-full wrap-break-word text-balance text-lg font-semibold text-content">
                 {isSearchEmpty() ? `No cars match "${globalFilter().trim()}".` : "There are no cars to display right now."}
               </div>
               <p class="max-w-md text-sm leading-6 text-secondary">
