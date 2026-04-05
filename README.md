@@ -63,4 +63,5 @@ bun run dev
 | `pipeline-scrape` | daily 8am UTC | scrape → match → PR with updated data |
 | `pipeline-update-ref-data` | daily 10am UTC | sync `pipeline/data/ref/CARS.md` from opendbc, rebuild ref data → PR |
 | `pipeline-validate-reference-data` | PR touching `pipeline/data/ref/CARS.md` or `package_keywords.json` | validate reference data schema |
-| `pipeline-check-store-coordinates` | push / PR to main | typecheck + build frontend, validate store coords |
+| `validate` | push / PR to main | validate store coordinates sync |
+| `frontend-build` | push / PR to main | typecheck + build frontend |
