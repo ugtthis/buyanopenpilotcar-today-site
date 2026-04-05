@@ -17,7 +17,6 @@ type RowDensity = "normal" | "comfortable";
 const DENSITIES: RowDensity[] = ["normal", "comfortable"];
 const UNKNOWN_RANK = 99;
 
-// Columns listed here sort by the given rank order instead of alphabetically.
 const COLUMN_SORT_RANK: Partial<Record<string, Record<string, number>>> = {
   matchConfidence: { extra_high: 0, high: 1, medium: 2, low: 3 },
   supportLevel:    { upstream: 0, community: 1, custom: 2, "under review": 3, "dashcam mode": 4, "not compatible": 5 },

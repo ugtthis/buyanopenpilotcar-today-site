@@ -1,13 +1,6 @@
 @import "tailwindcss";
 
-/* ─────────────────────────────────────────────────────────
-   @theme: registers every color as a first-class Tailwind
-   token → bg-canvas, text-secondary, border-accent/40, etc.
-   The custom properties are also emitted as CSS vars so
-   @layer base and inline style="" can still reference them.
-───────────────────────────────────────────────────────── */
 @theme {
-  /* ── PALANTIR FOUNDRY LIGHT (temp — revert to Blueprint dark) ── */
 
   /* Light surfaces */
   --color-canvas:  #ECEFF3;
