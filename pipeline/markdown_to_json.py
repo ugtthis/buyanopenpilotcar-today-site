@@ -3,7 +3,6 @@ import argparse
 import json
 import re
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 
 from utils import build_index_key, CarVariant
@@ -316,7 +315,6 @@ def build_output_data(cars: list[dict], source_filename: str) -> dict:
   return {
     "_metadata": {
       "warning": "AUTO-GENERATED FILE - DO NOT EDIT MANUALLY",
-      "generated_at": datetime.now(timezone.utc).isoformat(),
       "generator": "markdown_to_json.py",
       "source": source_filename
     },
