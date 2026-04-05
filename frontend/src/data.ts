@@ -75,6 +75,7 @@ export const cars: CarListing[] = (rawJson as RawJson).entries.flatMap(
           model: entry.model,
           modelOriginal: entry.model_original,
           supportSpecs,
+          packageRequirements: entry.package_requirements ?? "",
           supportLevel: entry.support_level.type as SupportLevel,
           matchConfidence: ay.match_confidence as MatchConfidence,
           year: car.year,

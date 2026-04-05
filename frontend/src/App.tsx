@@ -203,6 +203,11 @@ export default function App() {
       ),
     },
     {
+      key: "packageRequirements",
+      header: "Package Reqs",
+      render: (value) => formatTextDetail(value as string | null),
+    },
+    {
       key: "mileage",
       header: "Mileage",
       render: (value) =>

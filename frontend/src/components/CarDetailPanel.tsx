@@ -159,6 +159,10 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
           <div class="flex flex-col gap-2">
             <SupportChip level={props.car.supportLevel} />
             <p class="text-sm leading-relaxed text-secondary">{supportDescription()}</p>
+            <div class="border-t border-white/8 pt-2">
+              <div class="text-[11px] font-semibold uppercase tracking-wider text-muted">Package requirements</div>
+              <p class="mt-1 text-sm leading-relaxed text-content">{formatTextDetail(props.car.packageRequirements)}</p>
+            </div>
           </div>
         </div>
         <div class="rounded-sm border border-white/8 bg-canvas/60 px-4 py-3">
