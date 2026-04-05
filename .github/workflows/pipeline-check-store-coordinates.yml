@@ -1,4 +1,4 @@
-name: Validate
+name: Check Store IDs have coordinates
 
 on:
   push:
