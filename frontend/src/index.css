@@ -10,20 +10,20 @@
   /* ── PALANTIR FOUNDRY LIGHT (temp — revert to Blueprint dark) ── */
 
   /* Light surfaces */
-  --color-canvas:  #F3F4F6;
-  --color-surface: #FFFFFF;
-  --color-panel:   #FFFFFF;
-  --color-raised:  #EAECF0;
-  --color-hover:   #DDE3EC;
+  --color-canvas:  #ECEFF3;
+  --color-surface: #F2F5F8;
+  --color-panel:   #F2F5F8;
+  --color-raised:  #DEE5EE;
+  --color-hover:   #B7C2D1;
 
   --color-content:   #1C2B33;
   --color-secondary: #404B54;
   --color-muted:     #738A97;
 
-  --color-border:        rgba(0, 0, 0, 0.09);
-  --color-border-strong: rgba(0, 0, 0, 0.14);
+  --color-border:        rgba(0, 0, 0, 0.10);
+  --color-border-strong: rgba(0, 0, 0, 0.16);
 
-  --color-paper:         #F3F4F7; /* mellow cool grey, close to canvas */
+  --color-paper:         #ECEFF3; /* mellow cool grey, close to canvas */
 
   --color-accent:        #1E293B;
   --color-accent-muted:  #334155;
