@@ -3,8 +3,8 @@ import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const rawJson   = JSON.parse(readFileSync(join(__dirname, "../../pipeline/data/openpilot_cars.json"), "utf-8"));
-const coords    = JSON.parse(readFileSync(join(__dirname, "../src/store-coords.json"), "utf-8"));
+const rawJson   = JSON.parse(readFileSync(join(__dirname, "../data/openpilot_cars.json"), "utf-8"));
+const coords    = JSON.parse(readFileSync(join(__dirname, "../data/store-coords.json"), "utf-8"));
 
 const missingIds = new Set();
 

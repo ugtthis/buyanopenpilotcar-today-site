@@ -1,6 +1,6 @@
 /**
  * One-time script: geocodes all CarMax stores in openpilot_cars.json
- * via Nominatim (OpenStreetMap) and writes store-coords.json.
+ * via Nominatim (OpenStreetMap) and writes pipeline/data/store-coords.json.
  *
  * Run: node scripts/geocode-stores.mjs
  * Takes ~4 min due to Nominatim's 1 req/sec rate limit.
@@ -12,7 +12,7 @@ import { dirname, join } from "path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const USER_AGENT = "openpilot-car-finder/1.0 (geocoding carmax stores)";
-const carsData = JSON.parse(readFileSync(join(__dirname, "../../pipeline/data/openpilot_cars.json"), "utf-8"));
+const carsData = JSON.parse(readFileSync(join(__dirname, "../data/openpilot_cars.json"), "utf-8"));
 
 // Collect unique stores
 const stores = new Map();
@@ -85,7 +85,7 @@ for (const store of stores.values()) {
   await sleep(1100);
 }
 
-writeFileSync(join(__dirname, "../src/store-coords.json"), JSON.stringify(coords, null, 2));
+writeFileSync(join(__dirname, "../data/store-coords.json"), JSON.stringify(coords, null, 2));
 console.log(`\nDone! ${done} stores geocoded, ${failed.length} failed.`);
 if (failed.length > 0) {
   console.log("Failed stores:", failed);

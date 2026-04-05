@@ -11,7 +11,7 @@ import { SupportChip, SUPPORT_LEVEL_STYLES } from "./components/SupportChip";
 import { SupportDetail } from "./components/SupportDetail";
 import { cars } from "./data";
 import { haversineMiles } from "./haversine";
-import storeCoords from "./store-coords.json";
+import storeCoords from "../../pipeline/data/store-coords.json";
 import type { CarListing, Column, PendingNav } from "./types";
 import logo from "./assets/logo.png";
 

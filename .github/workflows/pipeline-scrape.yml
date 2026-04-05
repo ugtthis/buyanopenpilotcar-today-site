@@ -49,6 +49,10 @@ jobs:
         run: uv run python matcher.py
         working-directory: pipeline
 
+      - name: Geocode missing stores
+        run: node scripts/geocode-missing-stores.mjs
+        working-directory: pipeline
+
       - name: Generate scraping summary
         if: always()
         id: summary
@@ -72,6 +76,7 @@ jobs:
           add-paths: |
             pipeline/data/openpilot_cars.json
             pipeline/data/scrape_counts.json
+            pipeline/data/store-coords.json
 
       - name: Upload inventory artifact
         uses: actions/upload-artifact@v4.6.2

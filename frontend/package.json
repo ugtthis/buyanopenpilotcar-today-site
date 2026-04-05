@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "validate": "node scripts/validate-store-coords.mjs"
+    "validate": "node ../pipeline/scripts/validate-store-coords.mjs"
   },
   "dependencies": {
     "@corvu/drawer": "^0.2.4",
