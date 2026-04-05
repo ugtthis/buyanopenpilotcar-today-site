@@ -268,7 +268,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
                           ? "bg-accent/25"
                           : i() % 2 === 0
                             ? "bg-canvas hover:bg-accent/8"
-                            : "bg-surface hover:bg-accent/8",
+                            : "bg-white/60 hover:bg-accent/8",
                       )}
                       onClick={(event) => handleRowClick(event, row.original)}
                     >
