@@ -7,6 +7,7 @@ import {
   getSortedRowModel,
 } from "@tanstack/solid-table";
 import type { ColumnDef, SortingState, VisibilityState } from "@tanstack/solid-table";
+import clsx from "clsx";
 import { createEffect, createSignal, For, on, Show, untrack, type JSX } from "solid-js";
 import type { DataTableProps } from "../types";
 import { DensityComfortableIcon, DensityNormalIcon } from "./Icons";
@@ -218,16 +219,16 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
                     <For each={headerGroup.headers}>
                       {(header) => (
                         <th
-                          class={`px-3 ${DENSITY_CONFIG[density()].headPy} text-[1.15em] font-semibold whitespace-nowrap select-none transition-colors cursor-pointer`}
-                          classList={{
-                            "hover:bg-raised": header.column.getCanSort(),
-                            "text-accent-bright": !!header.column.getIsSorted(),
-                            "text-secondary": !header.column.getIsSorted(),
-                          }}
+                          class={clsx(
+                            "px-3 h-16 align-middle text-[1.15em] font-semibold select-none transition-colors",
+                            DENSITY_CONFIG[density()].headPy,
+                            header.column.getCanSort() && "hover:bg-raised cursor-pointer",
+                            header.column.getIsSorted() ? "text-accent-bright" : "text-secondary",
+                          )}
                           onClick={header.column.getToggleSortingHandler()}
                         >
                           <Show when={!header.isPlaceholder}>
-                            <span class="flex items-center gap-0.5">
+                            <span class="flex items-center gap-0.5 leading-tight">
                               {flexRender(header.column.columnDef.header, header.getContext())}
                               <Show when={header.column.getIsSorted()}>
                                 {(dir) => (
@@ -263,12 +264,11 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
                       <For each={row.getVisibleCells()}>
                         {(cell) => (
                           <td
-                            class={`px-3 ${DENSITY_CONFIG[density()].cellPy} whitespace-nowrap tabular-nums transition-colors`}
-                            classList={{
-                              "text-content":             selected(),
-                              "text-secondary":           !selected(),
-                              "group-hover:text-content": !selected(),
-                            }}
+                            class={clsx(
+                              "px-3 whitespace-nowrap tabular-nums transition-colors",
+                              DENSITY_CONFIG[density()].cellPy,
+                              selected() ? "text-content" : "text-secondary group-hover:text-content",
+                            )}
                           >
                             {flexRender(cell.column.columnDef.cell, cell.getContext())}
                           </td>
