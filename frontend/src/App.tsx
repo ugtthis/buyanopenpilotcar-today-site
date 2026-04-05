@@ -279,7 +279,7 @@ export default function App() {
 
           {/* Row 1: Main text search */}
           <div
-            class="flex items-center gap-3.5 px-4 py-3 rounded bg-surface transition-[border-color,box-shadow]"
+            class="flex items-center gap-3.5 px-4 py-3 rounded overflow-hidden bg-surface transition-[border-color,box-shadow]"
             style={{
               border: "1.5px solid var(--color-accent)",
               "box-shadow": "0 1px 3px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.06)",
@@ -307,8 +307,9 @@ export default function App() {
               <button
                 onClick={() => setSearchQuery("")}
                 aria-label="Clear search"
-                class="flex items-center justify-center w-5 h-5 rounded text-muted shrink-0
-                       hover:bg-raised hover:text-content transition-colors border-0 bg-transparent cursor-pointer text-xs"
+                class="-my-3 -mr-4 px-4 flex items-center justify-center self-stretch shrink-0 rounded-none
+                       border-none cursor-pointer text-lg font-bold transition-colors
+                       hover:bg-red-500/10 hover:text-red-600"
               >
                 ✕
               </button>
@@ -320,7 +321,7 @@ export default function App() {
 
             {/* Left: zip input — always visible, acts as the feature entry point */}
             <div
-              class="flex items-center gap-2.5 px-3.5 py-2.5 rounded bg-surface flex-1 min-w-0 transition-[border-color]"
+              class="flex items-center gap-2.5 px-3.5 py-2.5 rounded overflow-hidden bg-surface flex-1 min-w-0 transition-[border-color]"
               style={{
                 border: zipCoords()
                   ? "1.5px solid var(--color-accent)"
@@ -373,8 +374,9 @@ export default function App() {
                     <button
                       onClick={clearZip}
                       aria-label="Clear location"
-                      class="flex items-center justify-center w-5 h-5 rounded shrink-0 text-muted
-                             hover:bg-raised hover:text-content transition-colors border-0 bg-transparent cursor-pointer text-[11px]"
+                      class="-my-2.5 -mr-3.5 px-3.5 flex items-center justify-center self-stretch shrink-0 rounded-none
+                             border-none cursor-pointer text-lg font-bold transition-colors
+                             hover:bg-red-500/10 hover:text-red-600"
                     >
                       ✕
                     </button>
