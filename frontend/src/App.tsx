@@ -330,7 +330,7 @@ export default function App() {
             >
               <PinIcon
                 class={clsx(
-                  "w-3.5 h-3.5 shrink-0 transition-colors",
+                  "w-5 h-5 shrink-0 transition-colors",
                   zipCoords() ? "text-accent" : "text-muted",
                 )}
               />
