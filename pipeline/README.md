@@ -1,15 +1,5 @@
-# CarMax API Scraper
+# Scraper
 
-A simple, performant, and maintainable web scraper for CarMax car listings. Uses `curl-cffi` for browser impersonation to bypass bot detection.
-
-## Features
-
-- **Browser Impersonation**: Uses curl-cffi to mimic Chrome's TLS fingerprint
-- **Automatic Pagination**: Handles the 100 results/page API limit automatically
-- **Configurable**: Easy-to-edit JSON config for makes and settings
-- **Rate Limiting**: Built-in delays to avoid detection
-- **Error Handling**: Automatic retries with exponential backoff
-- **Self-Documenting**: Type hints, docstrings, and clear variable names
 
 ## Installation
 
@@ -156,93 +146,6 @@ Each JSON file contains:
 8. **Merge Inventory**: Build `data/*_full.jsonl` as the canonical matcher input
 9. **Match Inventory**: Build `data/openpilot_cars.json` as the canonical product output
 
-### API Endpoint
-
-The scraper uses CarMax's public search API:
-
-```
-https://www.carmax.com/cars/api/search/run?uri=%2Fcars%2F{make}&skip={offset}&take=100&shipping=-1&sort=price-desc
-```
-
-| Parameter | Description |
-|-----------|-------------|
-| `uri` | `/cars/{make}` (URL encoded) |
-| `skip` | Pagination offset (0, 100, 200...) |
-| `take` | Results per page (max 100) |
-| `shipping` | -1 for all |
-| `sort` | price-desc or price-asc |
-
-### Browser Impersonation
-
-The scraper uses `curl-cffi` with `impersonate="chrome120"` to:
-- Match Chrome's TLS/JA3 fingerprint
-- Use HTTP/2 like modern browsers
-- Send realistic headers (Accept, Referer, Origin, etc.)
-
-This helps bypass bot detection systems that check browser signatures.
-
-## Code Structure
-
-All logic is contained in a single file (`scraper.py`) for easy maintenance:
-
-- **Type Hints**: All functions have type annotations
-- **Docstrings**: Clear documentation for every function
-- **Named Constants**: `MAX_RESULTS_PER_PAGE = 100` (no magic numbers)
-- **Dataclasses**: Structured config with `@dataclass`
-- **Error Handling**: Try/except blocks with retries
-
-## Troubleshooting
-
-### Import Error: No module named 'curl_cffi'
-
-```bash
-uv sync
-```
-
-### 403 Forbidden or Access Denied
-
-The scraper uses browser impersonation, but CarMax may still detect automated requests if:
-- Delay is too short (increase `delay_seconds`)
-- Too many concurrent requests
-- IP-based rate limiting
-
-Try increasing the delay or using a VPN.
-
-### Empty Results
-
-Check that:
-- The make name is correct (lowercase, e.g., "ford" not "Ford")
-- Your internet connection is working
-- CarMax's API is accessible
-
-## License
-
-MIT
-
-## Documentation
-
-For current architecture, runbooks, and quirks:
-
-- `md/DATA_PIPELINE.md` - canonical pipeline design, data model, matcher semantics
-- `md/OPERATIONS.md` - CI flow, cookies, diagnostics, common failures
-- `md/REFACTOR_PLAN.md` - pipeline PR roadmap, design decisions, open decisions
-- `md/SCRAPER_ANALYSIS.md` - deep scraper analysis, bugs, performance, design issues
-- `md/FUTURE.md` - deferred improvements and reasoning behind past decisions
-- `md/TODO.md` - code hygiene items and technical debt
-
-## GitHub Actions Automation
-
-Workflow file: `.github/workflows/scrape.yml`
-
-Current scheduled pipeline:
-
-1. `scraper.py`
-2. `merge_inventory.py`
-3. `matcher.py`
-4. `scripts/generate_pr_summary.py`
-5. Auto-create PR
-
-Runs daily at `08:00 UTC` and can also be triggered manually.
 
 Workflow contract:
 
@@ -254,4 +157,4 @@ Workflow contract:
 
 ## Disclaimer
 
-This scraper is for educational purposes. Respect CarMax's terms of service and robots.txt. Use responsibly and avoid overloading their servers.
+This scraper is for educational purposes

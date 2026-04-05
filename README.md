@@ -1,6 +1,6 @@
-# openpilot car finder
+# buyanopenpilotcar.today
 
-Find openpilot-compatible vehicles for sale on CarMax. The pipeline scrapes CarMax daily and matches listings against openpilot's supported car database. The frontend presents the results as a fast, searchable table.
+Find openpilot-compatible vehicles for sale on CarMax.
 
 ## How it works
 
@@ -14,7 +14,7 @@ pipeline/data/openpilot_cars.json
 frontend/ (Vite + SolidJS)
 ```
 
-The pipeline produces `pipeline/data/openpilot_cars.json`. The frontend imports it directly — no copy step, no sync script.
+The pipeline produces `pipeline/data/openpilot_cars.json`
 
 ## Project structure
 
@@ -53,8 +53,7 @@ Requires [Bun](https://bun.sh/).
 ```bash
 cd frontend
 bun install
-bun run dev      # dev server at localhost:5173
-bun run build    # production build → frontend/dist/
+bun run dev
 ```
 
 ## CI
@@ -64,4 +63,4 @@ bun run build    # production build → frontend/dist/
 | `pipeline-scrape` | daily 8am UTC | scrape → match → PR with updated data |
 | `pipeline-update-ref-data` | daily 10am UTC | sync `pipeline/data/ref/CARS.md` from opendbc, rebuild ref data → PR |
 | `pipeline-validate-reference-data` | PR touching `pipeline/data/ref/CARS.md` or `package_keywords.json` | validate reference data schema |
-| `validate` | push / PR to main | typecheck + build frontend, validate store coords |
+| `pipeline-check-store-coordinates` | push / PR to main | typecheck + build frontend, validate store coords |
