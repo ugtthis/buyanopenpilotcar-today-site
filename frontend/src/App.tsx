@@ -17,6 +17,7 @@ import logo from "./assets/logo.png";
 
 type Coords = { lat: number; lng: number };
 const STORE_COORDS = storeCoords as Record<string, Coords>;
+const MAX_SEARCH_QUERY_LENGTH = 50;
 
 const formatPrice = (price: number | null) =>
   price != null ? `$${price.toLocaleString()}` : <span class="text-muted">—</span>;
@@ -29,6 +30,9 @@ const formatNumberDetail = (value: number | null, suffix: string) =>
 
 const formatTextDetail = (value: string | null) =>
   value?.trim() ? value : <span class="text-muted">—</span>;
+
+const normalizeSearchQuery = (value: string) =>
+  value.replace(/[\u0000-\u001F\u007F]/g, "").slice(0, MAX_SEARCH_QUERY_LENGTH);
 
 export default function App() {
   const [searchQuery, setSearchQuery] = createSignal("");
@@ -291,7 +295,8 @@ export default function App() {
               type="search"
               placeholder="Search makes, models, trims, states…"
               value={searchQuery()}
-              onInput={(e) => setSearchQuery(e.currentTarget.value)}
+              onInput={(e) => setSearchQuery(normalizeSearchQuery(e.currentTarget.value))}
+              maxLength={MAX_SEARCH_QUERY_LENGTH}
               onKeyDown={blurOnEnter}
               class="flex-1 min-w-0 bg-transparent border-none text-base text-content placeholder:text-muted
                      focus:shadow-none focus:border-transparent"
