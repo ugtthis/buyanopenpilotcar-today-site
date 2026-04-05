@@ -19,11 +19,23 @@ jobs:
         working-directory: pipeline
 
       - name: Fetch CARS.md from opendbc
-        run: curl -sSf https://github.com/commaai/opendbc/raw/refs/heads/master/docs/CARS.md -o data/ref/CARS.md
+        run: curl -sSf https://raw.githubusercontent.com/commaai/opendbc/refs/heads/master/docs/CARS.md -o data/ref/CARS.md
+        working-directory: pipeline
+
+      - name: Validate fetched CARS.md
+        run: |
+          test -s data/ref/CARS.md
+          rg '^\|Make\|Model\|' data/ref/CARS.md
         working-directory: pipeline
 
       - name: Fetch metadata for detailed support info
         run: curl -sSf https://raw.githubusercontent.com/ugtthis/opendbc-site/main/src/data/metadata.json -o data/ref/opendbc_metadata_ref.json
+        working-directory: pipeline
+
+      - name: Validate fetched metadata
+        run: |
+          test -s data/ref/opendbc_metadata_ref.json
+          uv run python -c "import json; json.load(open('data/ref/opendbc_metadata_ref.json'))"
         working-directory: pipeline
 
       - name: Transform reference data
