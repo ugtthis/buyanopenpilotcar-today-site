@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { For, Show, createMemo } from "solid-js";
 import { Portal } from "solid-js/web";
 import { SUPPORT_TYPE_CONTENT } from "../supportContent";
@@ -22,11 +23,10 @@ export function ConfirmNavModal(props: Props) {
     <Portal>
       {/* Backdrop */}
       <div
-        class="fixed inset-0 z-40 bg-black/50 backdrop-blur-[2px] transition-opacity duration-200"
-        classList={{
-          "opacity-100 pointer-events-auto": open(),
-          "opacity-0 pointer-events-none":   !open(),
-        }}
+        class={clsx(
+          "fixed inset-0 z-40 bg-black/50 backdrop-blur-[2px] transition-opacity duration-200",
+          open() ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
+        )}
         onClick={props.onCancel}
         aria-hidden="true"
       />
@@ -39,12 +39,11 @@ export function ConfirmNavModal(props: Props) {
         class="fixed z-50 inset-0 flex items-center justify-center p-4 pointer-events-none"
       >
         <div
-          class="w-full max-w-md rounded-lg border border-white/15 bg-surface
-                 transition-all duration-200 origin-center"
-          classList={{
-            "opacity-100 scale-100 pointer-events-auto": open(),
-            "opacity-0 scale-95 pointer-events-none":    !open(),
-          }}
+          class={clsx(
+            "w-full max-w-md rounded-lg border border-white/15 bg-surface",
+            "transition-all duration-200 origin-center",
+            open() ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none",
+          )}
           style={{ "box-shadow": "0 4px 6px -1px rgba(0,0,0,0.12), 0 20px 60px -10px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,0,0,0.1)" }}
         >
           {/* Header */}

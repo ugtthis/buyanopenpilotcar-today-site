@@ -162,11 +162,11 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
                 <button
                   onClick={() => setDensity(d)}
                   title={DENSITY_CONFIG[d].label}
-                  class="relative z-10 flex items-center justify-center w-10 py-2.5 border-0 bg-transparent transition-colors duration-150 cursor-pointer"
-                  classList={{
-                    "text-content":                    density() === d,
-                    "text-muted hover:text-secondary": density() !== d,
-                  }}
+                  class={clsx(
+                    "relative z-10 flex items-center justify-center w-10 py-2.5 border-0 bg-transparent",
+                    "transition-colors duration-150 cursor-pointer",
+                    density() === d ? "text-content" : "text-muted hover:text-secondary",
+                  )}
                 >
                   {DENSITY_CONFIG[d].icon()}
                 </button>
@@ -184,11 +184,10 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
           fallback={
             <div class="flex min-h-64 flex-col items-center justify-center gap-3 bg-surface px-4 py-10 text-center sm:px-6">
               <div
-                class="text-[11px] font-semibold uppercase tracking-[0.18em]"
-                classList={{
-                  "text-danger": isSearchEmpty(),
-                  "text-muted": !isSearchEmpty(),
-                }}
+                class={clsx(
+                  "text-[11px] font-semibold uppercase tracking-[0.18em]",
+                  isSearchEmpty() ? "text-danger" : "text-muted",
+                )}
               >
                 {isSearchEmpty() ? "No matches found" : "No cars available"}
               </div>
@@ -211,7 +210,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
             </div>
           }
         >
-          <table class={`w-full ${DENSITY_CONFIG[density()].textSize} text-left border-collapse`}>
+          <table class={clsx("w-full text-left border-collapse", DENSITY_CONFIG[density()].textSize)}>
             <thead>
               <For each={table.getHeaderGroups()}>
                 {(headerGroup) => (
@@ -252,13 +251,14 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
                   const selected = () => props.isRowSelected?.(row.original) ?? false;
                   return (
                     <tr
-                      class="group transition-colors cursor-pointer"
-                      classList={{
-                        "bg-accent/25":      selected(),
-                        "hover:bg-accent/8": !selected(),
-                        "bg-canvas":         !selected() && i() % 2 === 0,
-                        "bg-surface":        !selected() && i() % 2 !== 0,
-                      }}
+                      class={clsx(
+                        "group transition-colors cursor-pointer",
+                        selected()
+                          ? "bg-accent/25"
+                          : i() % 2 === 0
+                            ? "bg-canvas hover:bg-accent/8"
+                            : "bg-surface hover:bg-accent/8",
+                      )}
                       onClick={(event) => handleRowClick(event, row.original)}
                     >
                       <For each={row.getVisibleCells()}>

@@ -1,4 +1,5 @@
 import Drawer from "@corvu/drawer";
+import clsx from "clsx";
 import { createSignal, onCleanup, onMount, type JSX } from "solid-js";
 
 type InfoDrawerProps = {
@@ -74,21 +75,23 @@ export function InfoDrawer(props: InfoDrawerProps) {
 
           <Drawer.Content
             aria-label={props.title}
-            class="fixed z-50 flex flex-col bg-surface border border-white/15 will-change-transform
-                   data-transitioning:transition-transform
-                   data-opening:duration-(--info-drawer-animation-ms) data-opening:ease-[cubic-bezier(0.32,0.72,0,1)]
-                   data-closing:duration-(--info-drawer-animation-ms) data-closing:ease-out
-                   data-snapping:duration-(--info-drawer-animation-ms) data-snapping:ease-out"
-            classList={{
-              "bottom-0 left-0 right-0 rounded-t-lg h-full max-h-[85%] overflow-visible after:absolute after:inset-x-0 after:top-[calc(100%-1px)] after:h-1/2 after:bg-inherit": !isDesktop(),
-              "top-4 bottom-4 right-4 w-[min(380px,calc(100vw-1rem))] rounded-lg overflow-hidden": isDesktop(),
-            }}
+            class={clsx(
+              "fixed z-50 flex flex-col bg-surface border border-white/15 will-change-transform",
+              "data-transitioning:transition-transform",
+              "data-opening:duration-(--info-drawer-animation-ms) data-opening:ease-[cubic-bezier(0.32,0.72,0,1)]",
+              "data-closing:duration-(--info-drawer-animation-ms) data-closing:ease-out",
+              "data-snapping:duration-(--info-drawer-animation-ms) data-snapping:ease-out",
+              isDesktop()
+                ? "top-4 bottom-4 right-4 w-[min(380px,calc(100vw-1rem))] rounded-lg overflow-hidden"
+                : "bottom-0 left-0 right-0 rounded-t-lg h-full max-h-[85%] overflow-visible",
+              !isDesktop() && "after:absolute after:inset-x-0 after:top-[calc(100%-1px)] after:h-1/2 after:bg-inherit",
+            )}
             style={{
               "box-shadow": "0 4px 6px -1px rgba(0,0,0,0.08), 0 16px 48px -8px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.08)",
               "--info-drawer-animation-ms": `${INFO_DRAWER_ANIMATION_MS}ms`,
             }}
           >
-            <div class="flex justify-center pt-2.5 pb-1 shrink-0" classList={{ hidden: isDesktop() }}>
+            <div class={clsx("flex justify-center pt-2.5 pb-1 shrink-0", isDesktop() && "hidden")}>
               <div class="w-8 h-1 rounded-full bg-raised" />
             </div>
 
@@ -96,9 +99,11 @@ export function InfoDrawer(props: InfoDrawerProps) {
               <Drawer.Label class="text-sm font-semibold text-content">{props.title}</Drawer.Label>
               <Drawer.Close
                 aria-label="Close"
-                class="flex items-center justify-center w-6 h-6 rounded-sm text-muted
-                     hover:bg-raised hover:text-content transition-colors border-0 bg-transparent cursor-pointer"
-                classList={{ hidden: !isDesktop() }}
+                class={clsx(
+                  "flex items-center justify-center w-6 h-6 rounded-sm text-muted",
+                  "hover:bg-raised hover:text-content transition-colors border-0 bg-transparent cursor-pointer",
+                  !isDesktop() && "hidden",
+                )}
               >
                 ✕
               </Drawer.Close>

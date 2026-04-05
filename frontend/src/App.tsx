@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { createEffect, createMemo, createResource, createSignal, For, onMount, Show } from "solid-js";
 import { CmdIcon, InfoCircleIcon, PinIcon, SearchIcon } from "./components/Icons";
 import { CarDetailPanel } from "./components/CarDetailPanel";
@@ -327,8 +328,10 @@ export default function App() {
               }}
             >
               <PinIcon
-                class="w-3.5 h-3.5 shrink-0 transition-colors"
-                classList={{ "text-accent": !!zipCoords(), "text-muted": !zipCoords() }}
+                class={clsx(
+                  "w-3.5 h-3.5 shrink-0 transition-colors",
+                  zipCoords() ? "text-accent" : "text-muted",
+                )}
               />
 
               <span class="text-xs font-medium text-muted shrink-0 select-none">Near</span>
@@ -398,12 +401,11 @@ export default function App() {
                   <button
                     onClick={() => setRadius(opt.value)}
                     disabled={!zipCoords()}
-                    class="flex-1 sm:flex-none px-3 py-2.5 text-xs font-medium whitespace-nowrap border-0
-                           transition-colors duration-150 relative"
-                    classList={{
-                      "bg-raised text-content": radius() === opt.value,
-                      "bg-transparent text-muted hover:text-secondary": radius() !== opt.value,
-                    }}
+                    class={clsx(
+                      "flex-1 sm:flex-none px-3 py-2.5 text-xs font-medium whitespace-nowrap border-0",
+                      "transition-colors duration-150 relative",
+                      radius() === opt.value ? "bg-raised text-content" : "bg-transparent text-muted hover:text-secondary",
+                    )}
                     aria-pressed={radius() === opt.value}
                   >
                     {opt.label}
@@ -431,8 +433,11 @@ export default function App() {
                 <div class="relative shrink-0">
                   <button
                     onClick={() => setShowLegend(v => !v)}
-                    class="flex items-center gap-1.5 px-3 py-2.5 text-xs font-medium rounded-sm bg-panel border border-white/15 text-secondary hover:bg-raised hover:text-content transition-colors cursor-pointer"
-                    classList={{ "text-content bg-raised": showLegend() }}
+                    class={clsx(
+                      "flex items-center gap-1.5 px-3 py-2.5 text-xs font-medium rounded-sm bg-panel",
+                      "border border-white/15 text-secondary hover:bg-raised hover:text-content transition-colors cursor-pointer",
+                      showLegend() && "text-content bg-raised",
+                    )}
                   >
                     <InfoCircleIcon class="w-3.5 h-3.5 shrink-0" />
                     <span>Legend</span>

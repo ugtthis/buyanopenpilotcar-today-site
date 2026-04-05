@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 export const CONFIDENCE_STYLES: Record<string, { wrap: string; dot: string; label: string }> = {
   extra_high: { wrap: "bg-positive/15 text-positive", dot: "bg-positive",  label: "Extra High" },
   high:       { wrap: "bg-info/15 text-info",          dot: "bg-info",      label: "High"       },
@@ -23,10 +25,13 @@ export function ConfidenceChip(props: Props) {
   return (
     <span
       onClick={handleClick}
-      class={`inline-flex items-center gap-1 px-1.5 py-0.5 text-[0.8em] font-semibold rounded-sm ${style().wrap}`}
-      classList={{ "cursor-pointer hover:opacity-80 transition-opacity": !!props.onClick }}
+      class={clsx(
+        "inline-flex items-center gap-1 px-1.5 py-0.5 text-[0.8em] font-semibold rounded-sm",
+        style().wrap,
+        props.onClick && "cursor-pointer hover:opacity-80 transition-opacity",
+      )}
     >
-      <span class={`inline-block w-1 h-1 rounded-full ${style().dot}`} />
+      <span class={clsx("inline-block w-1 h-1 rounded-full", style().dot)} />
       {style().label}
     </span>
   );
