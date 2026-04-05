@@ -66,6 +66,13 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
   const isMobile = typeof window !== "undefined" && !window.matchMedia("(min-width: 640px)").matches;
   const [density, setDensity] = createSignal<RowDensity>(isMobile ? "comfortable" : "normal");
   const densityIndex = () => DENSITIES.indexOf(density());
+  const handleDensityClick = (densityOption: RowDensity) => {
+    setDensity((current) => {
+      if (current !== densityOption) return densityOption;
+      const nextIndex = (DENSITIES.indexOf(current) + 1) % DENSITIES.length;
+      return DENSITIES[nextIndex];
+    });
+  };
   const hasActiveSearch = () => globalFilter().trim().length > 0;
 
   const rankSort = (rankMap: Record<string, number>) =>
@@ -164,7 +171,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
             <For each={DENSITIES}>
               {(densityOption) => (
                 <button
-                  onClick={() => setDensity(densityOption)}
+                  onClick={() => handleDensityClick(densityOption)}
                   title={DENSITY_CONFIG[densityOption].label}
                   class={clsx(
                     "relative z-10 flex items-center justify-center w-10 py-2.5 border-0 bg-transparent",
