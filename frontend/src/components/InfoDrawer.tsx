@@ -82,7 +82,7 @@ export function InfoDrawer(props: InfoDrawerProps) {
               "data-closing:duration-(--info-drawer-animation-ms) data-closing:ease-out",
               "data-snapping:duration-(--info-drawer-animation-ms) data-snapping:ease-out",
               isDesktop()
-                ? "top-4 bottom-4 right-4 w-[min(380px,calc(100vw-1rem))] rounded-lg overflow-hidden"
+                ? "top-4 bottom-4 right-4 w-[560px] rounded-lg overflow-hidden"
                 : "bottom-0 left-0 right-0 rounded-t-lg h-full max-h-[85%] overflow-visible",
               !isDesktop() && "after:absolute after:inset-x-0 after:top-[calc(100%-1px)] after:h-1/2 after:bg-inherit",
             )}
