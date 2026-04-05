@@ -12,6 +12,7 @@ DATA_DIR = Path("data")
 PRODUCT_ARTIFACT = DATA_DIR / "openpilot_cars.json"
 SCRAPE_RESULT_FILE = DATA_DIR / "scrape_result.json"
 SCRAPE_COUNTS_FILE = DATA_DIR / "scrape_counts.json"
+GEOCODE_RESULT_FILE = Path(".github/geocode-summary.json")
 SUMMARY_PATH = Path(".github/pr-summary.md")
 HEALTHY_STATE = "healthy"
 DEGRADED_STATE = "degraded"
@@ -64,6 +65,13 @@ def get_product_summary():
     "cars_processed": metrics.get("cars_processed", 0),
     "match_rate": metrics.get("match_rate", 0),
   }
+
+
+def get_geocode_summary():
+  data = load_json_file(GEOCODE_RESULT_FILE)
+  if not isinstance(data, dict):
+    return None
+  return data
 
 
 def _read_git_file(file_path):
@@ -147,6 +155,34 @@ def append_workflow_state(lines, workflow_state, inventory_artifact, failed_make
   lines.append("")
 
 
+def append_geocode_summary(lines, geocode_summary):
+  if not geocode_summary:
+    return
+
+  status = geocode_summary.get("status")
+  missing_count = geocode_summary.get("missing_count", 0)
+  geocoded_count = geocode_summary.get("geocoded_count", 0)
+  failed_count = geocode_summary.get("failed_count", 0)
+  failed_store_ids = geocode_summary.get("failed_store_ids", [])
+
+  lines.append("## Store Coordinates")
+  lines.append("")
+
+  if status == "no_missing":
+    lines.append("No new stores needed geocoding.")
+  else:
+    lines.append(
+      f"Missing stores detected: **{missing_count}** | "
+      f"Geocoded: **{geocoded_count}** | "
+      f"Failed: **{failed_count}**"
+    )
+    if failed_count:
+      failed_text = ", ".join(f"`{store_id}`" for store_id in failed_store_ids)
+      lines.append(f"Failed store IDs: {failed_text}")
+
+  lines.append("")
+
+
 def append_scrape_summary(lines, previous_counts, current_counts):
   total_previous = sum(previous_counts.values())
   total_current = sum(current_counts.values())
@@ -195,6 +231,7 @@ def generate_summary():
     save_scrape_counts(current_counts)
   previous_counts = get_previous_counts()
   product_summary = get_product_summary()
+  geocode_summary = get_geocode_summary()
   inventory_artifact = get_latest_inventory_artifact()
   product_artifact_exists = PRODUCT_ARTIFACT.exists()
   failed_makes = get_failed_makes()
@@ -211,6 +248,7 @@ def generate_summary():
 
   lines = ["## CarMax Listings Update", ""]
   append_workflow_state(lines, workflow_state, inventory_artifact, failed_makes, count_mismatches, missing)
+  append_geocode_summary(lines, geocode_summary)
 
   if current_counts:
     append_product_summary(lines, product_summary)

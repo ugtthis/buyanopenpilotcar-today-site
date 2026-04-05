@@ -50,8 +50,10 @@ jobs:
         working-directory: pipeline
 
       - name: Geocode missing stores
-        run: node scripts/geocode-missing-stores.mjs
+        run: uv run python scripts/geocode_missing_stores.py
         working-directory: pipeline
+        env:
+          PYTHONUNBUFFERED: "1"
 
       - name: Generate scraping summary
         if: always()

@@ -6,7 +6,9 @@ from scripts.generate_pr_summary import (
   get_failed_makes,
   get_count_mismatches,
   get_product_summary,
+  get_geocode_summary,
   get_workflow_state,
+  append_geocode_summary,
   save_scrape_counts,
   HEALTHY_STATE,
   DEGRADED_STATE,
@@ -91,6 +93,67 @@ class TestGetProductSummary:
     monkeypatch.setattr(summary_script, "PRODUCT_ARTIFACT", tmp_path / "missing.json")
 
     assert get_product_summary() is None
+
+
+class TestGetGeocodeSummary:
+  def test_returns_geocode_summary_from_file(self, tmp_path, monkeypatch):
+    geocode_file = tmp_path / "geocode-summary.json"
+    geocode_file.write_text(
+      json.dumps(
+        {
+          "status": "ok",
+          "missing_count": 3,
+          "geocoded_count": 3,
+          "failed_count": 0,
+          "failed_store_ids": [],
+        }
+      )
+    )
+    monkeypatch.setattr(summary_script, "GEOCODE_RESULT_FILE", geocode_file)
+
+    result = get_geocode_summary()
+    assert result["status"] == "ok"
+    assert result["missing_count"] == 3
+
+  def test_returns_none_when_file_missing(self, tmp_path, monkeypatch):
+    monkeypatch.setattr(summary_script, "GEOCODE_RESULT_FILE", tmp_path / "missing.json")
+    assert get_geocode_summary() is None
+
+
+class TestAppendGeocodeSummary:
+  def test_appends_no_missing_message(self):
+    lines = []
+    append_geocode_summary(
+      lines,
+      {
+        "status": "no_missing",
+        "missing_count": 0,
+        "geocoded_count": 0,
+        "failed_count": 0,
+        "failed_store_ids": [],
+      },
+    )
+
+    joined = "\n".join(lines)
+    assert "## Store Coordinates" in joined
+    assert "No new stores needed geocoding." in joined
+
+  def test_appends_failed_store_ids(self):
+    lines = []
+    append_geocode_summary(
+      lines,
+      {
+        "status": "failed",
+        "missing_count": 4,
+        "geocoded_count": 2,
+        "failed_count": 2,
+        "failed_store_ids": ["6154", "7298"],
+      },
+    )
+
+    joined = "\n".join(lines)
+    assert "Missing stores detected: **4** | Geocoded: **2** | Failed: **2**" in joined
+    assert "Failed store IDs: `6154`, `7298`" in joined
 
   def test_returns_none_when_file_malformed(self, tmp_path, monkeypatch):
     product_file = tmp_path / "openpilot_cars.json"
