@@ -1,4 +1,4 @@
-name: Sync Ref Data
+name: 00 - Sync Ref Data
 
 on:
   schedule:

@@ -1,4 +1,4 @@
-name: Check Store IDs have coordinates
+name: 02 - Check Store IDs have coordinates
 
 on:
   push:

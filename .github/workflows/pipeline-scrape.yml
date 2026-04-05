@@ -1,4 +1,4 @@
-name: Scrape CarMax Listings
+name: 01 - Scrape CarMax Listings
 
 on:
   schedule:
