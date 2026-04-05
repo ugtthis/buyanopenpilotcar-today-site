@@ -25,7 +25,12 @@ jobs:
       - name: Validate fetched CARS.md
         run: |
           test -s data/ref/CARS.md
-          rg '^\|Make\|Model\|' data/ref/CARS.md
+          uv run python - <<'PY'
+          from pathlib import Path
+
+          cars_md = Path("data/ref/CARS.md").read_text(encoding="utf-8")
+          assert "|Make|Model|" in cars_md, "CARS.md missing expected table header"
+          PY
         working-directory: pipeline
 
       - name: Fetch metadata for detailed support info
