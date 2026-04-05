@@ -1,7 +1,7 @@
 {
   "_metadata": {
     "warning": "AUTO-GENERATED FILE - DO NOT EDIT MANUALLY",
-    "generated_at": "2026-04-04T03:40:40.575503+00:00",
+    "generated_at": "2026-04-05T09:25:47.313958+00:00",
     "generator": "markdown_to_json.py",
     "source": "CARS.md"
   },
@@ -8025,16 +8025,43 @@
       }
     },
     {
-      "name": "Rivian R1S 2022-25",
+      "name": "Rivian R1S 2022-24",
       "make": "Rivian",
       "model": "R1S",
-      "model_original": "R1S 2022-25",
+      "model_original": "R1S 2022-24",
       "index_key": "rivian_r1s",
       "variant_info": null,
       "years": [
         2022,
         2023,
-        2024,
+        2024
+      ],
+      "package_requirements": "All",
+      "package_key_used": "All",
+      "match_confidence": "extra_high",
+      "matching_keywords": null,
+      "support_level": {
+        "type": "upstream",
+        "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
+      }
+    },
+    {
+      "name": "Rivian R1S 2025",
+      "make": "Rivian",
+      "model": "R1S",
+      "model_original": "R1S 2025",
+      "index_key": "rivian_r1s",
+      "variant_info": null,
+      "years": [
         2025
       ],
       "package_requirements": "All",
@@ -8056,16 +8083,43 @@
       }
     },
     {
-      "name": "Rivian R1T 2022-25",
+      "name": "Rivian R1T 2022-24",
       "make": "Rivian",
       "model": "R1T",
-      "model_original": "R1T 2022-25",
+      "model_original": "R1T 2022-24",
       "index_key": "rivian_r1t",
       "variant_info": null,
       "years": [
         2022,
         2023,
-        2024,
+        2024
+      ],
+      "package_requirements": "All",
+      "package_key_used": "All",
+      "match_confidence": "extra_high",
+      "matching_keywords": null,
+      "support_level": {
+        "type": "upstream",
+        "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
+      }
+    },
+    {
+      "name": "Rivian R1T 2025",
+      "make": "Rivian",
+      "model": "R1T",
+      "model_original": "R1T 2025",
+      "index_key": "rivian_r1t",
+      "variant_info": null,
+      "years": [
         2025
       ],
       "package_requirements": "All",
