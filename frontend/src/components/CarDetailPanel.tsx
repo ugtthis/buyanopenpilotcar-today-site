@@ -36,14 +36,14 @@ const CAR_TITLE_VISIBLE_THRESHOLD = 0.25;
 
 const DetailRow = (props: DetailItem) => (
   <div class="flex items-start justify-between gap-4 border-t border-white/8 py-2.5">
-    <span class="text-xs font-medium uppercase tracking-wider text-muted">{props.label}</span>
-    <div class="min-w-0 text-right text-sm text-content">{props.value}</div>
+    <span class="text-md font-medium text-muted">{props.label}</span>
+    <div class="min-w-0 text-right text-base text-content">{props.value}</div>
   </div>
 );
 
 const DetailSectionCard = (props: DetailSection) => (
   <div class="rounded-sm border border-white/8 bg-canvas/60 px-4 py-3">
-    <div class="mb-1 text-[11px] font-semibold uppercase tracking-wider text-muted">{props.title}</div>
+    <div class="mb-1 text-md font-bold uppercase tracking-wide text-muted">{props.title}</div>
     <div class="flex flex-col">
       <For each={props.items}>{(item) => <DetailRow {...item} />}</For>
     </div>
