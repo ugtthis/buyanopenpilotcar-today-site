@@ -50,7 +50,7 @@ export type CarListing = {
 };
 
 export type Column<T> = {
-  header: string;
+  header: string | JSXElement;
   render?: (value: unknown, row: T) => JSXElement;
 } & (
   | { key: keyof T & string; id?: never; accessorFn?: never }

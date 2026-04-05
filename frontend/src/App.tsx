@@ -209,7 +209,15 @@ export default function App() {
     },
     {
       key: "packageRequirements",
-      header: "Package Reqs",
+      header: (
+        <span
+          class="inline-flex items-center gap-1.5 rounded border px-1.75 py-0.75 font-semibold"
+          title="Without the required package, the car will not be compatible with openpilot."
+        >
+          <span aria-hidden="true">⚠</span>
+          <span>Package To Verify</span>
+        </span>
+      ),
       render: (value) => formatTextDetail(value as string | null),
     },
     {
