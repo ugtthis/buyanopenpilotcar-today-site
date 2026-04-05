@@ -11,7 +11,8 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from markdown_to_json import parse_cars_from_markdown, RowValidationError
 
 
-CARS_FILE = Path("data/ref/CARS.md")
+WORKTREE_CARS_FILE = Path("data/ref/CARS.md")
+GIT_CARS_FILE = Path("pipeline/data/ref/CARS.md")
 SUMMARY_FILE = Path(".github/cars-sync-summary.md")
 HEALTHY_STATE = "healthy"
 DEGRADED_STATE = "degraded"
@@ -19,7 +20,7 @@ DEGRADED_STATE = "degraded"
 
 def load_old_cars():
   result = subprocess.run(
-    ["git", "show", f"HEAD:{CARS_FILE}"],
+    ["git", "show", f"HEAD:{GIT_CARS_FILE}"],
     capture_output=True,
     text=True,
   )
@@ -92,7 +93,7 @@ def write_github_output(sync_state):
 
 def main():
   try:
-    new_cars = parse_cars_from_markdown(CARS_FILE, {})
+    new_cars = parse_cars_from_markdown(WORKTREE_CARS_FILE, {})
   except (RowValidationError, ValueError) as e:
     print(f"Failed to parse new CARS.md: {e}")
     write_github_output(DEGRADED_STATE)
