@@ -1,4 +1,5 @@
 import { For, Show } from "solid-js";
+import { ChevronDownIcon } from "./Icons";
 import { SUPPORT_LEVEL_STYLES } from "./SupportChip";
 import { SUPPORT_TYPE_CONTENT } from "../supportContent";
 import { SupportChip } from "./SupportChip";
@@ -47,7 +48,7 @@ export function SupportDetail() {
                                           text-xs font-medium text-secondary bg-raised/60
                                           hover:bg-raised hover:text-content transition-colors select-none list-none">
                             {section.title}
-                            <span class="text-[10px] text-muted transition-transform group-open:rotate-180">▾</span>
+                            <ChevronDownIcon class="w-2.5 h-2.5 text-muted group-open:rotate-180" />
                           </summary>
                           <div class="px-3 py-2.5 border-t border-white/8 flex flex-col gap-2">
                             <For each={section.paragraphs}>
