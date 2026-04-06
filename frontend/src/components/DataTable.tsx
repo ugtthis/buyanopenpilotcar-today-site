@@ -221,7 +221,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
             </div>
           }
         >
-          <table class={clsx("w-full text-left border-collapse", DENSITY_CONFIG[density()].textSize)}>
+          <table class={clsx("w-max min-w-full text-left border-collapse", DENSITY_CONFIG[density()].textSize)}>
             <thead>
               <For each={table.getHeaderGroups()}>
                 {(headerGroup) => (
@@ -238,7 +238,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
                           onClick={header.column.getToggleSortingHandler()}
                         >
                           <Show when={!header.isPlaceholder}>
-                            <span class="flex items-center gap-0.5 leading-tight">
+                            <span class="flex items-center gap-0.5 leading-tight whitespace-nowrap">
                               {flexRender(header.column.columnDef.header, header.getContext())}
                               <Show when={header.column.getIsSorted()}>
                                 {(dir) => (
