@@ -121,7 +121,7 @@ export default function App() {
 
   const confidenceLevelTitle = () => {
     const level = activeConfidenceLevel();
-    return level ? `${CONFIDENCE_STYLES[level]?.label ?? level} Confidence` : "";
+    return level ? `${CONFIDENCE_STYLES[level]?.label ?? level} Confidence Level` : "";
   };
   const selectedCarTitle = () => {
     const car = selectedCar();
@@ -179,7 +179,7 @@ export default function App() {
       key: "matchConfidence",
       header: (
         <span title="How confident a given car listing is to be compatible with openpilot.">
-          Confidence
+          Confidence Level
         </span>
       ),
       render: (value) => (
@@ -203,7 +203,7 @@ export default function App() {
     { key: "trim",  header: "Trim"  },
     {
       key: "supportLevel",
-      header: "Support",
+      header: "Support Level",
       render: (value) => (
         <SupportChip
           level={value as string}
@@ -523,7 +523,7 @@ export default function App() {
 
       <InfoDrawer
         open={activeSupportLevel() !== null}
-        title={activeSupportLevel() ?? ""}
+        title={activeSupportLevel() ? `${activeSupportLevel()} Support Level` : ""}
         onClose={() => setActiveSupportLevel(null)}
       >
         <SupportDetail level={activeSupportLevel() ?? ""} />
