@@ -47,20 +47,11 @@ export const SUPPORT_TYPE_CONTENT: Record<string, SupportTypeContent> = {
     paragraphs: [
       "A vehicle under review is one for which software support has been " +
       "merged into upstream openpilot, but hasn't yet been tested for " +
-      "drive quality and conformance with comma safety guidelines (linked below)."
+      "drive quality and conformance with comma safety guidelines (linked below).",
+      "This is a normal part of the development and quality assurance process. " +
+      "This vehicle will not work when upstream openpilot is installed, but " +
+      "custom forks may allow their use."
     ],
-    expandableContent: {
-      sections: [
-        {
-          title: "",
-          paragraphs: [
-            "This is a normal part of the development and quality assurance process. " +
-            "This vehicle will not work when upstream openpilot is installed, but " +
-            "custom forks may allow their use."
-          ]
-        }
-      ]
-    },
     reference: {
       text: "comma Safety Guidelines",
       url: "https://github.com/commaai/openpilot/blob/master/docs/SAFETY.md"
