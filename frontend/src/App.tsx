@@ -17,6 +17,11 @@ import logo from "./assets/logo.png";
 
 type Coords = { lat: number; lng: number };
 const STORE_COORDS = storeCoords as Record<string, Coords>;
+
+const trackEvent = (name: string, props: Record<string, string | number>) => {
+  (window as unknown as { plausible?: (n: string, o: { props: Record<string, string | number> }) => void })
+    .plausible?.(name, { props });
+};
 const MAX_SEARCH_QUERY_LENGTH = 50;
 
 const formatPrice = (price: number | null) =>
@@ -133,11 +138,13 @@ export default function App() {
     setReopenCarDrawerAfterModal(false);
     setSelectedCar(car);
     setIsCarDrawerOpen(true);
+    trackEvent("Car Detail Opened", { make: car.make, model: car.model, year: car.year, supportLevel: car.supportLevel, confidence: car.matchConfidence, package: car.packageRequirements ?? "" });
   }
 
   function startCarNavigation(car: CarListing) {
     const url = buildListingUrl(car);
     if (car.supportLevel === "upstream") {
+      trackEvent("Listing Clicked", { make: car.make, model: car.model, year: car.year, supportLevel: car.supportLevel, confidence: car.matchConfidence, package: car.packageRequirements ?? "", friction: "none" });
       window.open(url, "_blank", "noreferrer");
       closeCarDetail();
       return;
@@ -152,12 +159,17 @@ export default function App() {
       year: car.year,
       trim: car.trim,
       supportLevel: car.supportLevel,
+      matchConfidence: car.matchConfidence,
+      packageRequirements: car.packageRequirements ?? "",
     });
   }
 
   function confirmPendingNavigation() {
     const nav = pendingNav();
-    if (nav) window.open(nav.url, "_blank", "noreferrer");
+    if (nav) {
+      trackEvent("Listing Clicked", { make: nav.make, model: nav.model, year: nav.year, supportLevel: nav.supportLevel, confidence: nav.matchConfidence, package: nav.packageRequirements, friction: "warning shown" });
+      window.open(nav.url, "_blank", "noreferrer");
+    }
     setReopenCarDrawerAfterModal(false);
     setPendingNav(null);
     closeCarDetail();

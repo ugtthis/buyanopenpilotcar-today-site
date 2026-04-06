@@ -45,6 +45,11 @@ const renderAutoResume = (value: string): JSXElement =>
       </span>
     );
 const SUPPORT_SPECS_UNAVAILABLE = "N/A";
+
+const trackEvent = (name: string, props: Record<string, string | number>) => {
+  (window as unknown as { plausible?: (n: string, o: { props: Record<string, string | number> }) => void })
+    .plausible?.(name, { props });
+};
 const VISIBILITY_THRESHOLD = 0.25;
 
 const DetailRow = (props: DetailItem) => (
@@ -262,6 +267,7 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
             href={buildopendbcSiteUrl(props.car.make, props.car.modelOriginal)}
             target="_blank"
             rel="noreferrer"
+            onClick={() => trackEvent("opendbc-site button Clicked", { make: props.car.make, model: props.car.model, year: props.car.year, supportLevel: props.car.supportLevel, confidence: props.car.matchConfidence, package: props.car.packageRequirements ?? "" })}
             class="inline-flex min-h-12 w-full items-center justify-center rounded-sm border border-white/12 bg-transparent px-5 py-3 text-base font-semibold text-secondary transition-colors hover:bg-white/5 cursor-pointer"
           >
             View Detailed Support Specs ↗

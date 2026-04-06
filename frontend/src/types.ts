@@ -76,4 +76,6 @@ export type PendingNav = {
   year: number;
   trim: string;
   supportLevel: string;
+  matchConfidence: string;
+  packageRequirements: string;
 };
