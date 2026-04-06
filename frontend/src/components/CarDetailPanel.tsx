@@ -213,8 +213,7 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
         <details class="group overflow-hidden border-b border-white/8">
           <summary class="flex items-center justify-between px-4 py-3.5 cursor-pointer
                           text-sm font-semibold text-content
-                          hover:bg-raised transition-colors select-none
-                          list-none [&::-webkit-details-marker]:hidden">
+                          hover:bg-raised transition-colors select-none list-none">
             <span class="flex items-center gap-2">
               <span class="text-base">💬</span>
               Have more questions about compatibility?

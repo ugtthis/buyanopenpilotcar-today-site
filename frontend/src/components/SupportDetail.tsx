@@ -45,8 +45,7 @@ export function SupportDetail() {
                         <details class="group rounded-sm border border-white/8 overflow-hidden">
                           <summary class="flex items-center justify-between px-3 py-2.5 cursor-pointer
                                           text-xs font-medium text-secondary bg-raised/60
-                                          hover:bg-raised hover:text-content transition-colors select-none
-                                          list-none [&::-webkit-details-marker]:hidden">
+                                          hover:bg-raised hover:text-content transition-colors select-none list-none">
                             {section.title}
                             <span class="text-[10px] text-muted transition-transform group-open:rotate-180">▾</span>
                           </summary>
