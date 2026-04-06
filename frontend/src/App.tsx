@@ -306,7 +306,7 @@ export default function App() {
       <div class="bg-paper bg-noise border-b border-white/8 shrink-0">
         {/* Logo row */}
         <div class="max-w-[1800px] mx-auto px-5 pt-15 sm:pt-17 pb-8 ">
-          <img src={logo} alt="buyanopenpilotcar.today" class="h-auto max-h-16 sm:max-h-20 w-auto max-w-full" />
+          <img src={logo} alt="buyanopenpilotcar.today" class="h-auto max-[401px]:max-h-13 max-h-15 sm:max-h-20 w-auto max-w-full" />
         </div>
       </div>
 
