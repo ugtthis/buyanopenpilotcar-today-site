@@ -10,7 +10,7 @@ import type { ColumnDef, SortingState, VisibilityState } from "@tanstack/solid-t
 import clsx from "clsx";
 import { createEffect, createSignal, For, on, Show, untrack, type JSX } from "solid-js";
 import type { DataTableProps } from "../types";
-import { DensityComfortableIcon, DensityNormalIcon } from "./Icons";
+import { ChevronRightIcon, DensityComfortableIcon, DensityNormalIcon, DoubleChevronIcon } from "./Icons";
 
 type RowDensity = "normal" | "comfortable";
 
@@ -30,14 +30,19 @@ const DENSITY_CONFIG: Record<RowDensity, {
 };
 
 
-const BpBtn = (props: { onClick: () => void; disabled: boolean; children: string }) => (
+const BpBtn = (props: { onClick: () => void; disabled: boolean; ariaLabel: string; class?: string; children: JSX.Element }) => (
   <button
     onClick={props.onClick}
     disabled={props.disabled}
-    class="min-w-12 h-11 px-4 text-base font-medium rounded-sm border border-white/15 bg-panel
-           text-secondary select-none transition-colors
-           hover:bg-hover hover:text-content cursor-pointer
-           disabled:opacity-30 disabled:cursor-not-allowed"
+    aria-label={props.ariaLabel}
+    title={props.ariaLabel}
+    class={clsx(
+      "min-w-12 h-11 px-4 text-base font-medium rounded-sm border border-white/15 bg-panel",
+      "text-secondary select-none transition-colors",
+      "hover:bg-hover hover:text-content cursor-pointer inline-flex items-center justify-center",
+      "disabled:opacity-30 disabled:cursor-not-allowed",
+      props.class,
+    )}
   >
     {props.children}
   </button>
@@ -308,16 +313,24 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
           <div class="flex w-full items-center justify-center gap-2 flex-wrap sm:w-auto">
             {/* Page nav */}
             <div class="flex items-center gap-1.5">
-              <BpBtn onClick={() => table.firstPage()}    disabled={!table.getCanPreviousPage()}>⟨⟨</BpBtn>
-              <BpBtn onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>⟨</BpBtn>
+              <BpBtn ariaLabel="First page" onClick={() => table.firstPage()} disabled={!table.getCanPreviousPage()}>
+                <DoubleChevronIcon class="w-5 h-5 rotate-180" />
+              </BpBtn>
+              <BpBtn ariaLabel="Previous page" onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()} class="max-[400px]:px-2">
+                <ChevronRightIcon class="w-10 h-10 rotate-180" />
+              </BpBtn>
 
               <span class="min-w-24 h-11 px-4 inline-flex items-center justify-center text-base rounded-sm border border-white/8 bg-surface text-secondary select-none tabular-nums">
                 {pageIdx() + 1}
                 <span class="text-muted"> / {table.getPageCount()}</span>
               </span>
 
-              <BpBtn onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>⟩</BpBtn>
-              <BpBtn onClick={() => table.lastPage()} disabled={!table.getCanNextPage()}>⟩⟩</BpBtn>
+              <BpBtn ariaLabel="Next page" onClick={() => table.nextPage()} disabled={!table.getCanNextPage()} class="max-[400px]:px-2">
+                <ChevronRightIcon class="w-10 h-10" />
+              </BpBtn>
+              <BpBtn ariaLabel="Last page" onClick={() => table.lastPage()} disabled={!table.getCanNextPage()}>
+                <DoubleChevronIcon class="w-5 h-5" />
+              </BpBtn>
             </div>
           </div>
         </Show>
