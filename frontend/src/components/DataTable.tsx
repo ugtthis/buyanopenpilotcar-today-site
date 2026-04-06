@@ -151,12 +151,13 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
       <div class="flex items-end gap-2 flex-wrap pb-2">
 
         {/* Object count */}
-        <div class="text-md text-muted tabular-nums whitespace-nowrap">
+        <div class="flex items-center gap-2.5 text-md text-muted tabular-nums whitespace-nowrap">
           <Show when={globalFilter()} fallback={
             <span><strong class="text-secondary">{totalAll().toLocaleString()}</strong> cars</span>
           }>
             <span><strong class="text-secondary">{totalFiltered().toLocaleString()}</strong> of {totalAll().toLocaleString()} cars</span>
           </Show>
+          {props.countSlot}
         </div>
 
         {/* Legend slot + Row density toggle */}

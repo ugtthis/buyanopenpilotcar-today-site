@@ -67,6 +67,7 @@ export type DataTableProps<T extends object> = {
   isRowSelected?: (row: T) => boolean;
   distanceActive?: boolean;
   toolbarSlot?: JSXElement;
+  countSlot?: JSXElement;
 };
 
 export type PendingNav = {

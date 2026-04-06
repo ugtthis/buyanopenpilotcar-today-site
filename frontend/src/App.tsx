@@ -9,7 +9,7 @@ import { DataTable } from "./components/DataTable";
 import { InfoDrawer } from "./components/InfoDrawer";
 import { SupportChip, SUPPORT_LEVEL_STYLES } from "./components/SupportChip";
 import { SupportDetail } from "./components/SupportDetail";
-import { cars } from "./data";
+import { cars, generatedAt } from "./data";
 import { haversineMiles } from "./haversine";
 import storeCoords from "../../pipeline/data/store-coords.json";
 import type { CarListing, Column, PendingNav } from "./types";
@@ -469,6 +469,16 @@ export default function App() {
               onRowClick={openCarDetail}
               isRowSelected={(row) => row.stockNumber === selectedCar()?.stockNumber}
               distanceActive={!!zipCoords()}
+              countSlot={
+                <span class="font-mono text-sm tracking-tight text-muted/60 border-l border-black/10 pl-2.5">
+                  {(() => {
+                    const diff = Date.now() - new Date(generatedAt).getTime();
+                    const hours = Math.floor(diff / 36e5);
+                    const mins = Math.floor(diff / 60e3);
+                    return hours >= 1 ? `${hours}h ago` : mins < 1 ? "just now" : `${mins}m ago`;
+                  })()}
+                </span>
+              }
               toolbarSlot={
                 <div class="flex items-center gap-2 shrink-0">
                   <button
