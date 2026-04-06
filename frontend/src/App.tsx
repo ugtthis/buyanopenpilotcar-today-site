@@ -57,6 +57,7 @@ export default function App() {
   const [isCarDrawerOpen, setIsCarDrawerOpen] = createSignal(false);
   const [carDrawerTitle, setCarDrawerTitle] = createSignal<JSXElement>("Car Details");
   const [pendingNav, setPendingNav] = createSignal<PendingNav | null>(null);
+  const [reopenCarDrawerAfterModal, setReopenCarDrawerAfterModal] = createSignal(false);
   const [showLegend, setShowLegend] = createSignal(false);
 
   const [userZip, setUserZip] = createSignal("");
@@ -127,6 +128,7 @@ export default function App() {
   }
 
   function openCarDetail(car: CarListing) {
+    setReopenCarDrawerAfterModal(false);
     setSelectedCar(car);
     setIsCarDrawerOpen(true);
   }
@@ -139,6 +141,8 @@ export default function App() {
       return;
     }
 
+    setReopenCarDrawerAfterModal(true);
+    setIsCarDrawerOpen(false);
     setPendingNav({
       url,
       make: car.make,
@@ -152,6 +156,7 @@ export default function App() {
   function confirmPendingNavigation() {
     const nav = pendingNav();
     if (nav) window.open(nav.url, "_blank", "noreferrer");
+    setReopenCarDrawerAfterModal(false);
     setPendingNav(null);
     closeCarDetail();
   }
@@ -491,14 +496,21 @@ export default function App() {
       <ConfirmNavModal
         pending={pendingNav()}
         onConfirm={confirmPendingNavigation}
-        onCancel={() => setPendingNav(null)}
+        onCancel={() => {
+          setPendingNav(null);
+          setIsCarDrawerOpen(true);
+          setReopenCarDrawerAfterModal(false);
+        }}
       />
 
       <InfoDrawer
         open={isCarDrawerOpen()}
         title={carDrawerTitle()}
         onClose={closeCarDetail}
-        onClosed={() => setSelectedCar(null)}
+        onClosed={() => {
+          if (reopenCarDrawerAfterModal()) return;
+          setSelectedCar(null);
+        }}
       >
         <Show when={selectedCar()}>
           {(car) => (
