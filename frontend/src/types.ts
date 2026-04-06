@@ -66,7 +66,7 @@ export type DataTableProps<T extends object> = {
   onRowClick?: (row: T) => void;
   isRowSelected?: (row: T) => boolean;
   distanceActive?: boolean;
-  legendSlot?: JSXElement;
+  toolbarSlot?: JSXElement;
 };
 
 export type PendingNav = {

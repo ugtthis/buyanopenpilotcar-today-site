@@ -7,6 +7,7 @@ type InfoDrawerProps = {
   title: JSX.Element;
   onClose: () => void;
   onClosed?: () => void;
+  mobileHeight?: string;
   children: JSX.Element;
 };
 
@@ -82,12 +83,13 @@ export function InfoDrawer(props: InfoDrawerProps) {
               "data-snapping:duration-(--info-drawer-animation-ms) data-snapping:ease-out",
               isDesktop()
                 ? "top-4 bottom-4 right-4 w-[560px] rounded-lg overflow-hidden"
-                : "bottom-0 left-0 right-0 rounded-t-lg h-full max-h-[85%] overflow-visible",
+                : "bottom-0 left-0 right-0 rounded-t-lg h-full overflow-visible",
               !isDesktop() && "after:absolute after:inset-x-0 after:top-[calc(100%-1px)] after:h-1/2 after:bg-inherit",
             )}
             style={{
               "box-shadow": "0 4px 6px -1px rgba(0,0,0,0.08), 0 16px 48px -8px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.08)",
               "--info-drawer-animation-ms": `${INFO_DRAWER_ANIMATION_MS}ms`,
+              "max-height": isDesktop() ? undefined : (props.mobileHeight ?? "85%"),
             }}
           >
             <div class={clsx("flex justify-center pt-2.5 pb-1 shrink-0", isDesktop() && "hidden")}>

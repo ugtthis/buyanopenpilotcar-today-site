@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { createEffect, createMemo, createResource, createSignal, For, onMount, Show, type JSXElement } from "solid-js";
-import { CheckmarkBadgeIcon, CmdIcon, InfoCircleIcon, PinIcon, RemoveCircleIcon, SearchIcon } from "./components/Icons";
+import { CheckmarkBadgeIcon, CmdIcon, InfoCircleIcon, PencilFeedbackIcon, PinIcon, RemoveCircleIcon, SearchIcon } from "./components/Icons";
 import { CarDetailPanel } from "./components/CarDetailPanel";
 import { ConfidenceChip, CONFIDENCE_STYLES } from "./components/ConfidenceChip";
 import { ConfidenceDetail } from "./components/ConfidenceDetail";
@@ -59,6 +59,7 @@ export default function App() {
   const [pendingNav, setPendingNav] = createSignal<PendingNav | null>(null);
   const [reopenCarDrawerAfterModal, setReopenCarDrawerAfterModal] = createSignal(false);
   const [showLegend, setShowLegend] = createSignal(false);
+  const [showFeedback, setShowFeedback] = createSignal(false);
 
   const [userZip, setUserZip] = createSignal("");
   const [radius, setRadius] = createSignal<number | null>(null);
@@ -468,45 +469,57 @@ export default function App() {
               onRowClick={openCarDetail}
               isRowSelected={(row) => row.stockNumber === selectedCar()?.stockNumber}
               distanceActive={!!zipCoords()}
-              legendSlot={
-                <div class="relative shrink-0">
+              toolbarSlot={
+                <div class="flex items-center gap-2 shrink-0">
                   <button
-                    onClick={() => setShowLegend(v => !v)}
-                    class={clsx(
-                      "flex items-center gap-1.5 px-3 py-2.5 text-xs font-medium rounded-sm bg-panel",
-                      "border border-white/15 text-secondary hover:bg-raised hover:text-content transition-colors cursor-pointer",
-                      showLegend() && "text-content bg-raised",
-                    )}
+                    onClick={() => setShowFeedback(true)}
+                    class="flex items-center gap-1.5 px-3 py-2.5 text-xs font-medium rounded-sm bg-panel
+                           border border-white/15 text-secondary hover:bg-raised hover:text-content
+                           transition-colors cursor-pointer"
+                    title="Leave feedback"
                   >
-                    <InfoCircleIcon class="w-3.5 h-3.5 shrink-0" />
-                    <span>Legend</span>
+                    <PencilFeedbackIcon class="w-4 h-4 shrink-0" />
                   </button>
-                  <Show when={showLegend()}>
-                    <div class="fixed inset-0 z-10" onClick={() => setShowLegend(false)} aria-hidden="true" />
-                    <div class="absolute right-0 z-20 mt-1 w-72 max-w-[calc(100vw-2rem)] rounded-sm border border-white/15 bg-panel bp-elevation-3 p-3 flex flex-col gap-3">
-                      <div>
-                        <p class="text-[10px] font-semibold uppercase tracking-wider text-muted mb-2.5">Support levels</p>
-                        <div class="flex flex-wrap gap-x-1.5 gap-y-2.5">
-                          {Object.keys(SUPPORT_LEVEL_STYLES).map((level) => (
-                            <SupportChip level={level} onClick={() => { setActiveSupportLevel(level); setShowLegend(false); }} />
-                          ))}
+
+                  <div class="relative shrink-0">
+                    <button
+                      onClick={() => setShowLegend(v => !v)}
+                      class={clsx(
+                        "flex items-center gap-1.5 px-3 py-2.5 text-xs font-medium rounded-sm bg-panel",
+                        "border border-white/15 text-secondary hover:bg-raised hover:text-content transition-colors cursor-pointer",
+                        showLegend() && "text-content bg-raised",
+                      )}
+                    >
+                      <InfoCircleIcon class="w-3.5 h-3.5 shrink-0" />
+                      <span>Legend</span>
+                    </button>
+                    <Show when={showLegend()}>
+                      <div class="fixed inset-0 z-10" onClick={() => setShowLegend(false)} aria-hidden="true" />
+                      <div class="absolute right-0 z-20 mt-1 w-72 max-w-[calc(100vw-2rem)] rounded-sm border border-white/15 bg-panel bp-elevation-3 p-3 flex flex-col gap-3">
+                        <div>
+                          <p class="text-[10px] font-semibold uppercase tracking-wider text-muted mb-2.5">Support levels</p>
+                          <div class="flex flex-wrap gap-x-1.5 gap-y-2.5">
+                            {Object.keys(SUPPORT_LEVEL_STYLES).map((level) => (
+                              <SupportChip level={level} onClick={() => { setActiveSupportLevel(level); setShowLegend(false); }} />
+                            ))}
+                          </div>
+                        </div>
+                        <div class="border-t border-white/8" />
+                        <div>
+                          <p class="text-[10px] font-semibold uppercase tracking-wider text-muted mb-2.5">Confidence levels</p>
+                          <div class="flex flex-wrap gap-x-1.5 gap-y-2.5">
+                            {Object.keys(CONFIDENCE_STYLES).map((level) => (
+                              <ConfidenceChip level={level} onClick={() => { setActiveConfidenceLevel(level); setShowLegend(false); }} />
+                            ))}
+                          </div>
                         </div>
                       </div>
-                      <div class="border-t border-white/8" />
-                      <div>
-                        <p class="text-[10px] font-semibold uppercase tracking-wider text-muted mb-2.5">Confidence levels</p>
-                        <div class="flex flex-wrap gap-x-1.5 gap-y-2.5">
-                          {Object.keys(CONFIDENCE_STYLES).map((level) => (
-                            <ConfidenceChip level={level} onClick={() => { setActiveConfidenceLevel(level); setShowLegend(false); }} />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </Show>
+                    </Show>
+                  </div>
                 </div>
               }
             />
-            </div>
+          </div>
         </div>
       </div>
 
@@ -554,6 +567,29 @@ export default function App() {
         onClose={() => setActiveConfidenceLevel(null)}
       >
         <ConfidenceDetail />
+      </InfoDrawer>
+
+      <InfoDrawer
+        open={showFeedback()}
+        title="Leave Feedback"
+        onClose={() => setShowFeedback(false)}
+        mobileHeight="35%"
+      >
+        <div class="flex flex-col gap-6">
+          <p class="text-sm text-secondary leading-relaxed">
+            Have a suggestion, found inaccurate information, or want to request a feature?
+          </p>
+          <div class="flex flex-col gap-3">
+            <a
+              href="https://buyanopenpilotcar-today.userjot.com/?cursor=1&order=top&limit=10"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-accent px-5 py-3 text-base font-semibold text-white transition-colors hover:bg-accent-muted cursor-pointer"
+            >
+              Submit Feedback ↗
+            </a>
+          </div>
+        </div>
       </InfoDrawer>
     </div>
   );

@@ -161,7 +161,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
 
         {/* Legend slot + Row density toggle */}
         <div class="flex items-center gap-2 ml-auto">
-          {props.legendSlot}
+          {props.toolbarSlot}
           <div class="relative flex items-center rounded-sm border border-white/15 bg-panel overflow-hidden">
             {/* Sliding indicator */}
             <div
