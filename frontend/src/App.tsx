@@ -177,7 +177,11 @@ export default function App() {
     },
     {
       key: "matchConfidence",
-      header: "Confidence",
+      header: (
+        <span title="How confident a given car listing is to be compatible with openpilot.">
+          Confidence
+        </span>
+      ),
       render: (value) => (
         <ConfidenceChip
           level={value as string}
@@ -232,12 +236,20 @@ export default function App() {
     { key: "state",        header: "State"  },
     {
       id: "longitudinal",
-      header: "Longitudinal",
+      header: (
+        <span title="The system responsible for acceleration and braking control.">
+          Longitudinal
+        </span>
+      ),
       accessorFn: (row) => row.supportSpecs.longitudinal,
     },
     {
       id: "autoResume",
-      header: "Auto Resume",
+      header: (
+        <span title="Whether openpilot can automatically resume driving after coming to a complete stop.">
+          Auto Resume
+        </span>
+      ),
       accessorFn: (row) => row.supportSpecs.autoResumeStar,
     },
     { key: "driveTrain",   header: "Drive"  },
