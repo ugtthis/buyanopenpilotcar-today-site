@@ -326,7 +326,7 @@ export default function App() {
             <input
               ref={searchInputRef}
               type="search"
-              placeholder="Search makes, models, trims, states…"
+              placeholder="Search makes, models, states…"
               value={searchQuery()}
               onInput={(e) => setSearchQuery(normalizeSearchQuery(e.currentTarget.value))}
               maxLength={MAX_SEARCH_QUERY_LENGTH}

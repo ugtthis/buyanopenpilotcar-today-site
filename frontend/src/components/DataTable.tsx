@@ -211,7 +211,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
               </div>
               <p class="max-w-md text-sm leading-6 text-secondary">
                 {isSearchEmpty()
-                  ? "Try a different make, model, trim, or state, or clear the search to see everything again."
+                  ? "Try a different make, model, or state, or clear the search to see everything again."
                   : "Try again in a moment or adjust the current filters."}
               </p>
               <Show when={isSearchEmpty()}>
