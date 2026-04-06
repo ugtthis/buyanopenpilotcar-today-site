@@ -184,18 +184,18 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
       <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
         <div class="rounded-sm border border-white/8 bg-canvas/60 px-4 py-3">
           <div class="mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted">Support Level</div>
-          <div class="flex flex-col gap-2">
+          <div class="flex flex-col gap-2 items-start">
             <span ref={supportChipRef}>
               <SupportChip level={props.car.supportLevel} />
             </span>
-            <p class="text-sm leading-relaxed text-secondary">{supportDescription()}</p>
+            <p class="text-sm leading-relaxed text-secondary self-stretch">{supportDescription()}</p>
           </div>
         </div>
         <div class="rounded-sm border border-white/8 bg-canvas/60 px-4 py-3">
           <div class="mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted">Confidence Level</div>
-          <div class="flex flex-col gap-2">
+          <div class="flex flex-col gap-2 items-start">
             <ConfidenceChip level={props.car.matchConfidence} />
-            <p class="text-sm leading-relaxed text-secondary">{confidenceDescription()}</p>
+            <p class="text-sm leading-relaxed text-secondary self-stretch">{confidenceDescription()}</p>
           </div>
         </div>
       </div>
