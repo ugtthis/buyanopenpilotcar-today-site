@@ -230,7 +230,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
                       {(header) => (
                         <th
                           class={clsx(
-                            "px-3 h-16 align-middle text-[1.15em] font-semibold select-none transition-colors",
+                            "px-4 h-16 align-middle text-[1.15em] font-semibold select-none transition-colors",
                             DENSITY_CONFIG[density()].headPy,
                             header.column.getCanSort() && "hover:bg-raised cursor-pointer",
                             header.column.getIsSorted() ? "text-accent-bright" : "text-secondary",
