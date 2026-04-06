@@ -2,6 +2,16 @@
 
 Find openpilot-compatible vehicles for sale on CarMax.
 
+## Running the frontend
+
+Requires [Bun](https://bun.sh/).
+
+```bash
+cd frontend
+bun install
+bun run dev
+```
+
 ## How it works
 
 ```
@@ -53,13 +63,3 @@ uv run python matcher.py
 ```
 
 See [`pipeline/README.md`](pipeline/README.md) for full setup, cookie config, and CI runbook.
-
-## Running the frontend
-
-Requires [Bun](https://bun.sh/).
-
-```bash
-cd frontend
-bun install
-bun run dev
-```
