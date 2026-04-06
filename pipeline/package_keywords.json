@@ -5,8 +5,6 @@
   },
 
 
-
-
   "Adaptive Cruise Control (ACC) & LKAS": {
     "confidence": "high",
     "keywords": ["ACC", "LKAS"]
@@ -35,9 +33,6 @@
     "confidence": "high",
     "keywords": ["ACC"]
   },
-
-
-
 
 
   "EyeSight Driver Assistance": {
@@ -154,8 +149,6 @@
   },
 
 
-
-
   "Co-Pilot360 Plus": {
     "confidence": "low",
     "keywords": ["-"]
@@ -172,8 +165,6 @@
     "confidence": "low",
     "keywords": ["-"]
   },
-
-
 
 
   "All--Brazil only": {
