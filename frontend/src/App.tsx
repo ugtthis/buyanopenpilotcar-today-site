@@ -9,7 +9,7 @@ import { DataTable } from "./components/DataTable";
 import { InfoDrawer } from "./components/InfoDrawer";
 import { SupportChip, SUPPORT_LEVEL_STYLES } from "./components/SupportChip";
 import { SupportDetail } from "./components/SupportDetail";
-import { cars, generatedAt } from "./data";
+import { cars } from "./data";
 import { haversineMiles } from "./haversine";
 import storeCoords from "../../pipeline/data/store-coords.json";
 import type { CarListing, Column, PendingNav } from "./types";
@@ -34,17 +34,6 @@ const formatTextDetail = (value: string | null) =>
 const normalizeSearchQuery = (value: string) =>
   value.replace(/[\u0000-\u001F\u007F]/g, "").slice(0, MAX_SEARCH_QUERY_LENGTH);
 
-const MS_PER_MINUTE = 60_000;
-const MS_PER_HOUR = 3_600_000;
-
-const formatRelativeTime = (isoTimestamp: string): string => {
-  const elapsed = Date.now() - new Date(isoTimestamp).getTime();
-  const hours = Math.floor(elapsed / MS_PER_HOUR);
-  const mins = Math.floor(elapsed / MS_PER_MINUTE);
-  if (hours >= 1) return `${String(hours).padStart(2, "0")}H AGO`;
-  if (mins >= 1) return `${mins}M AGO`;
-  return "NOW";
-};
 
 export default function App() {
   const [searchQuery, setSearchQuery] = createSignal("");
@@ -315,17 +304,8 @@ export default function App() {
   return (
     <div class="min-h-screen bg-canvas flex flex-col">
       <div class="bg-paper bg-noise border-b border-white/8 shrink-0">
-        <div class="max-w-[1800px] mx-auto px-5 flex justify-end">
-          <span class="inline-flex items-center gap-2.5 px-3.5 py-1.5 select-none whitespace-nowrap leading-none
-                       font-mono uppercase bg-accent-mid/45
-                       border-b border-l border-r border-accent/30 rounded-b-md">
-            <span class="text-[8px] tracking-[0.18em] text-canvas/80">updated</span>
-            <span class="w-px h-2.5 bg-canvas/20 shrink-0" />
-            <span class="text-[10px] tracking-tight text-canvas/80 font-semibold">{formatRelativeTime(generatedAt)}</span>
-          </span>
-        </div>
         {/* Logo row */}
-        <div class="max-w-[1800px] mx-auto px-5 pt-8 pb-8">
+        <div class="max-w-[1800px] mx-auto px-5 pt-15 sm:pt-17 pb-8 ">
           <img src={logo} alt="buyanopenpilotcar.today" class="h-auto max-h-16 sm:max-h-20 w-auto max-w-full" />
         </div>
       </div>

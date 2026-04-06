@@ -50,11 +50,9 @@ type RawEntry = {
   available_years: RawYear[];
 };
 
-type RawJson = { entries: RawEntry[]; generated_at: string };
+type RawJson = { entries: RawEntry[] };
 
 const data = rawJson as RawJson;
-
-export const generatedAt = data.generated_at;
 
 // Flatten entries[].available_years[].car into one row per listing
 export const cars: CarListing[] = data.entries.flatMap(
