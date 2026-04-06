@@ -95,7 +95,7 @@ export function InfoDrawer(props: InfoDrawerProps) {
             </div>
 
             <div class="flex items-center justify-between px-4 py-3 border-b border-white/8 shrink-0">
-              <Drawer.Label class="text-sm font-semibold text-content">{props.title}</Drawer.Label>
+              <Drawer.Label class="text-base font-semibold text-content">{props.title}</Drawer.Label>
               <Drawer.Close
                 aria-label="Close"
                 class={clsx(
