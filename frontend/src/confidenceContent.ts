@@ -16,12 +16,12 @@ export const CONFIDENCE_CONTENT: Record<string, ConfidenceContent> = {
   medium: {
     paragraphs: [
       "This specific car requires features that are less easy to verify.",
-      "Triple check the requirements. May need to confirm with community members on Discord if not confident.",
+      "May need to confirm with community members on Discord if not confident.",
     ],
   },
   low: {
     paragraphs: [
-      "If not experienced, this specific car requires features that are hard to verify, or have confusing naming conventions.",
+      "If not experienced, this specific car can be harder to verify correct package because of confusing naming conventions.",
       "May need to confirm with community members on Discord if not confident.",
     ],
   },
