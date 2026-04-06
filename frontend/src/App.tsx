@@ -119,10 +119,6 @@ export default function App() {
     return carsWithDistance().filter((car) => car.distance != null && car.distance <= maxMiles);
   });
 
-  const confidenceLevelTitle = () => {
-    const level = activeConfidenceLevel();
-    return level ? `${CONFIDENCE_STYLES[level]?.label ?? level} Confidence Level` : "";
-  };
   const selectedCarTitle = () => {
     const car = selectedCar();
     return car ? `${car.year} ${car.make} ${car.model}` : "";
@@ -523,18 +519,18 @@ export default function App() {
 
       <InfoDrawer
         open={activeSupportLevel() !== null}
-        title={activeSupportLevel() ? `${activeSupportLevel()} Support Level` : ""}
+        title="Support Levels"
         onClose={() => setActiveSupportLevel(null)}
       >
-        <SupportDetail level={activeSupportLevel() ?? ""} />
+        <SupportDetail />
       </InfoDrawer>
 
       <InfoDrawer
         open={activeConfidenceLevel() !== null}
-        title={confidenceLevelTitle()}
+        title="Confidence Levels"
         onClose={() => setActiveConfidenceLevel(null)}
       >
-        <ConfidenceDetail level={activeConfidenceLevel() ?? ""} />
+        <ConfidenceDetail />
       </InfoDrawer>
     </div>
   );
