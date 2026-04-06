@@ -7,11 +7,16 @@ Find openpilot-compatible vehicles for sale on CarMax.
 ```
 pipeline/data/ref/CARS.md (opendbc) + pipeline/package_keywords.json
         │
-        ▼ pipeline/matcher.py
+        ▼ pipeline/markdown_to_json.py + pipeline/enricher.py
+pipeline/data/ref/opendbc_ref.json
+        │
+scraper.py → merge_inventory.py → matcher.py
+        │
+        ▼
 pipeline/data/openpilot_cars.json
         │
         ▼ imported at build time
-frontend/ (Vite + SolidJS)
+frontend/
 ```
 
 The pipeline produces `pipeline/data/openpilot_cars.json`
@@ -35,6 +40,9 @@ uv sync
 # Build reference data from pipeline/data/ref/CARS.md
 uv run python markdown_to_json.py
 
+# Enrich with support specs from opendbc-site metadata
+uv run python enricher.py
+
 # Scrape CarMax (requires cookies — see pipeline/README.md)
 uv run python scraper.py
 
@@ -55,13 +63,3 @@ cd frontend
 bun install
 bun run dev
 ```
-
-## CI
-
-| Workflow | Trigger | What it does |
-|----------|---------|--------------|
-| `pipeline-scrape` | daily 8am UTC | scrape → match → PR with updated data |
-| `pipeline-update-ref-data` | daily 10am UTC | sync `pipeline/data/ref/CARS.md` from opendbc, rebuild ref data → PR |
-| `pipeline-validate-reference-data` | PR touching `pipeline/data/ref/CARS.md` or `package_keywords.json` | validate reference data schema |
-| `validate` | push / PR to main | validate store coordinates sync |
-| `frontend-build` | push / PR to main | typecheck + build frontend |
