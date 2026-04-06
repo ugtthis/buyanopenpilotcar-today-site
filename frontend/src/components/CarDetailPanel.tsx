@@ -127,7 +127,6 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
       label: "OP Long Control",
       value: formatBooleanDetail(props.car.supportSpecs.openpilotLongitudinalControl),
     },
-    { label: "Steering Torque", value: props.car.supportSpecs.steeringTorque },
   ];
 
   const detailSections = (): DetailSection[] => [
