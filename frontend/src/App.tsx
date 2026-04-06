@@ -317,9 +317,9 @@ export default function App() {
       <div class="bg-paper bg-noise border-b border-white/8 shrink-0">
         <div class="max-w-[1800px] mx-auto px-5 flex justify-end">
           <span class="inline-flex items-center gap-2.5 px-3.5 py-1.5 select-none whitespace-nowrap leading-none
-                       font-mono uppercase bg-accent-mid/70
-                       border-b border-l border-r border-accent/60 rounded-b-md">
-            <span class="text-[8px] tracking-[0.18em] text-canvas/50">updated</span>
+                       font-mono uppercase bg-accent-mid/45
+                       border-b border-l border-r border-accent/30 rounded-b-md">
+            <span class="text-[8px] tracking-[0.18em] text-canvas/80">updated</span>
             <span class="w-px h-2.5 bg-canvas/20 shrink-0" />
             <span class="text-[10px] tracking-tight text-canvas/80 font-semibold">{formatRelativeTime(generatedAt)}</span>
           </span>
