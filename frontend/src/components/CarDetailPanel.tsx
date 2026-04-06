@@ -35,20 +35,20 @@ const formatMpg = (city: number | null, highway: number | null) => (
 const renderAutoResume = (value: string): JSXElement =>
   value === "full"
     ? (
-      <span class="inline-flex items-center text-positive/80" title="Auto resume supported">
-        <CheckmarkBadgeIcon class="w-[1.5em] h-[1.5em]" />
+      <span class="text-positive/80" title="Auto resume supported">
+        <CheckmarkBadgeIcon class="w-[1.5em] h-[1.5em] align-middle" />
       </span>
     )
     : (
-      <span class="inline-flex items-center text-danger/80" title="Auto resume not supported">
-        <RemoveCircleIcon class="w-[1.5em] h-[1.5em]" />
+      <span class="text-danger/80" title="Auto resume not supported">
+        <RemoveCircleIcon class="w-[1.5em] h-[1.5em] align-middle" />
       </span>
     );
 const SUPPORT_SPECS_UNAVAILABLE = "N/A";
 const VISIBILITY_THRESHOLD = 0.25;
 
 const DetailRow = (props: DetailItem) => (
-  <div class="flex items-start justify-between gap-4 border-t border-white/8 py-2.5">
+  <div class="flex items-center justify-between gap-4 border-t border-white/8 py-2.5">
     <span class="text-md font-medium text-muted">{props.label}</span>
     <div class="min-w-0 text-right text-base text-content">{props.value}</div>
   </div>
@@ -116,6 +116,7 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
   const showSupportSpecs = props.car.supportLevel === "upstream" || props.car.supportLevel === "dashcam mode";
   const supportSpecItems: DetailItem[] = [
     { label: "Longitudinal", value: props.car.supportSpecs.longitudinal },
+    { label: "Auto Resume", value: renderAutoResume(props.car.supportSpecs.autoResumeStar) },
     { label: "FSR Longitudinal", value: props.car.supportSpecs.fsrLongitudinal },
     { label: "FSR Steering", value: props.car.supportSpecs.fsrSteering },
     {
@@ -127,7 +128,6 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
       value: formatBooleanDetail(props.car.supportSpecs.openpilotLongitudinalControl),
     },
     { label: "Steering Torque", value: props.car.supportSpecs.steeringTorque },
-    { label: "Auto Resume", value: renderAutoResume(props.car.supportSpecs.autoResumeStar) },
   ];
 
   const detailSections = (): DetailSection[] => [
