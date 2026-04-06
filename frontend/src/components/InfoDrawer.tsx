@@ -4,7 +4,7 @@ import { createSignal, onCleanup, onMount, type JSX } from "solid-js";
 
 type InfoDrawerProps = {
   open: boolean;
-  title: string;
+  title: JSX.Element;
   onClose: () => void;
   onClosed?: () => void;
   children: JSX.Element;
@@ -74,7 +74,6 @@ export function InfoDrawer(props: InfoDrawerProps) {
           />
 
           <Drawer.Content
-            aria-label={props.title}
             class={clsx(
               "fixed z-50 flex flex-col bg-surface border border-white/15 will-change-transform",
               "data-transitioning:transition-transform",

@@ -1,4 +1,4 @@
-import { onCleanup, onMount, For, Show, type JSXElement } from "solid-js";
+import { createEffect, createSignal, onCleanup, onMount, For, Show, type JSXElement } from "solid-js";
 import { CONFIDENCE_CONTENT } from "../confidenceContent";
 import { SUPPORT_TYPE_CONTENT } from "../supportContent";
 import type { CarListing } from "../types";
@@ -9,7 +9,7 @@ import { SupportChip } from "./SupportChip";
 type CarDetailPanelProps = {
   car: CarListing;
   onOpenListingLink: (car: CarListing) => void;
-  onCarNameVisibilityChange?: (isVisible: boolean) => void;
+  onTitleChange?: (title: JSXElement) => void;
 };
 
 type DetailItem = {
@@ -32,7 +32,7 @@ const formatMpg = (city: number | null, highway: number | null) => (
   city != null && highway != null ? `${city} / ${highway}` : "—"
 );
 const SUPPORT_SPECS_UNAVAILABLE = "N/A";
-const CAR_TITLE_VISIBLE_THRESHOLD = 0.25;
+const VISIBILITY_THRESHOLD = 0.25;
 
 const DetailRow = (props: DetailItem) => (
   <div class="flex items-start justify-between gap-4 border-t border-white/8 py-2.5">
@@ -50,23 +50,50 @@ const DetailSectionCard = (props: DetailSection) => (
   </div>
 );
 
+function watchVisibility(target: Element, onChange: (visible: boolean) => void) {
+  if (typeof IntersectionObserver === "undefined") return;
+  const observer = new IntersectionObserver(
+    ([entry]) => onChange(entry.isIntersecting && entry.intersectionRatio > VISIBILITY_THRESHOLD),
+    { threshold: [0, VISIBILITY_THRESHOLD, 0.5, 1] },
+  );
+  onChange(true);
+  observer.observe(target);
+  return () => observer.disconnect();
+}
+
 export function CarDetailPanel(props: CarDetailPanelProps) {
   let carNameRef: HTMLParagraphElement | undefined;
+  let supportChipRef: HTMLSpanElement | undefined;
+
+  const [isCarNameVisible, setIsCarNameVisible] = createSignal(true);
+  const [isSupportChipVisible, setIsSupportChipVisible] = createSignal(true);
 
   onMount(() => {
-    const onVisibilityChange = props.onCarNameVisibilityChange;
-    const target = carNameRef;
-    if (!onVisibilityChange || !target || typeof IntersectionObserver === "undefined") return;
+    if (carNameRef) {
+      const cleanup = watchVisibility(carNameRef, setIsCarNameVisible);
+      if (cleanup) onCleanup(cleanup);
+    }
+    if (supportChipRef) {
+      const cleanup = watchVisibility(supportChipRef, setIsSupportChipVisible);
+      if (cleanup) onCleanup(cleanup);
+    }
+  });
 
-    // Keep the drawer header concise until the in-panel car title scrolls away.
-    const observer = new IntersectionObserver(
-      ([entry]) => onVisibilityChange(entry.isIntersecting && entry.intersectionRatio > CAR_TITLE_VISIBLE_THRESHOLD),
-      { threshold: [0, CAR_TITLE_VISIBLE_THRESHOLD, 0.5, 1] },
-    );
-
-    onVisibilityChange(true);
-    observer.observe(target);
-    onCleanup(() => observer.disconnect());
+  createEffect(() => {
+    if (!props.onTitleChange) return;
+    const carTitle = `${props.car.year} ${props.car.make} ${props.car.model}`;
+    if (isCarNameVisible()) {
+      props.onTitleChange("Car Details");
+    } else if (!isSupportChipVisible()) {
+      props.onTitleChange(
+        <span class="flex items-center gap-2">
+          {carTitle}
+          <SupportChip level={props.car.supportLevel} />
+        </span>
+      );
+    } else {
+      props.onTitleChange(carTitle);
+    }
   });
 
   const supportDescription = () =>
@@ -157,7 +184,9 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
         <div class="rounded-sm border border-white/8 bg-canvas/60 px-4 py-3">
           <div class="mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted">Support Level</div>
           <div class="flex flex-col gap-2">
-            <SupportChip level={props.car.supportLevel} />
+            <span ref={supportChipRef}>
+              <SupportChip level={props.car.supportLevel} />
+            </span>
             <p class="text-sm leading-relaxed text-secondary">{supportDescription()}</p>
             <div class="border-t border-white/8 pt-2">
               <div class="text-[11px] font-semibold uppercase tracking-wider text-muted">Package requirements</div>

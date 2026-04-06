@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { createEffect, createMemo, createResource, createSignal, For, onMount, Show } from "solid-js";
+import { createEffect, createMemo, createResource, createSignal, For, onMount, Show, type JSXElement } from "solid-js";
 import { CmdIcon, InfoCircleIcon, PinIcon, SearchIcon } from "./components/Icons";
 import { CarDetailPanel } from "./components/CarDetailPanel";
 import { ConfidenceChip, CONFIDENCE_STYLES } from "./components/ConfidenceChip";
@@ -55,7 +55,7 @@ export default function App() {
   const [activeConfidenceLevel, setActiveConfidenceLevel] = createSignal<string | null>(null);
   const [selectedCar, setSelectedCar] = createSignal<CarListing | null>(null);
   const [isCarDrawerOpen, setIsCarDrawerOpen] = createSignal(false);
-  const [isCarNameVisible, setIsCarNameVisible] = createSignal(true);
+  const [carDrawerTitle, setCarDrawerTitle] = createSignal<JSXElement>("Car Details");
   const [pendingNav, setPendingNav] = createSignal<PendingNav | null>(null);
   const [showLegend, setShowLegend] = createSignal(false);
 
@@ -119,20 +119,14 @@ export default function App() {
     return carsWithDistance().filter((car) => car.distance != null && car.distance <= maxMiles);
   });
 
-  const selectedCarTitle = () => {
-    const car = selectedCar();
-    return car ? `${car.year} ${car.make} ${car.model}` : "";
-  };
-  const selectedCarDrawerTitle = () => (isCarNameVisible() ? "Car Details" : selectedCarTitle());
   const buildListingUrl = (car: CarListing) => `https://www.carmax.com/car/${car.stockNumber}`;
 
   function closeCarDetail() {
     setIsCarDrawerOpen(false);
-    setIsCarNameVisible(true);
+    setCarDrawerTitle("Car Details");
   }
 
   function openCarDetail(car: CarListing) {
-    setIsCarNameVisible(true);
     setSelectedCar(car);
     setIsCarDrawerOpen(true);
   }
@@ -502,7 +496,7 @@ export default function App() {
 
       <InfoDrawer
         open={isCarDrawerOpen()}
-        title={selectedCarDrawerTitle()}
+        title={carDrawerTitle()}
         onClose={closeCarDetail}
         onClosed={() => setSelectedCar(null)}
       >
@@ -511,7 +505,7 @@ export default function App() {
             <CarDetailPanel
               car={car()}
               onOpenListingLink={startCarNavigation}
-              onCarNameVisibilityChange={setIsCarNameVisible}
+              onTitleChange={setCarDrawerTitle}
             />
           )}
         </Show>
