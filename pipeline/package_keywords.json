@@ -39,42 +39,39 @@
 
 
 
+
+  "EyeSight Driver Assistance": {
+    "confidence": "medium",
+    "keywords": ["-"]
+  },
   "Advance Package": {
-    "confidence": "high",
-    "keywords": ["ACC", "LKAS"]
+    "confidence": "medium",
+    "keywords": ["-"]
   },
   "AcuraWatch Plus or Advance Package": {
-    "confidence": "high",
-    "keywords": ["ACC", "LKAS"]
+    "confidence": "medium",
+    "keywords": ["-"]
   },
   "Advance Package or Technology Package": {
-    "confidence": "high",
-    "keywords": ["ACC", "LKAS"]
+    "confidence": "medium",
+    "keywords": ["-"]
   },
   "Technology Plus Package or AcuraWatch Plus": {
-    "confidence": "high",
-    "keywords": ["ACC", "LKAS"]
+    "confidence": "medium",
+    "keywords": ["-"]
   },
   "Honda Sensing": {
-    "confidence": "high",
-    "keywords": ["ACC", "LKAS"]
+    "confidence": "medium",
+    "keywords": ["-"]
   },
   "Lexus Safety System+": {
-    "confidence": "high",
-    "keywords": ["ACC", "LKAS"]
+    "confidence": "medium",
+    "keywords": ["-"]
   },
   "Toyota Safety Sense P": {
-    "confidence": "high",
-    "keywords": ["ACC", "LKAS"]
+    "confidence": "medium",
+    "keywords": ["-"]
   },
-  "EyeSight Driver Assistance": {
-    "confidence": "high",
-    "keywords": ["ACC", "LKAS"]
-  },
-
-
-
-
   "Highway Driving Assist II": {
     "confidence": "medium",
     "keywords": ["-"]
