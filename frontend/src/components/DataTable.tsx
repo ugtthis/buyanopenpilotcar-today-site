@@ -176,7 +176,8 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
               {(densityOption) => (
                 <button
                   onClick={() => handleDensityClick(densityOption)}
-                  title={DENSITY_CONFIG[densityOption].label}
+                  title={`Row density: ${DENSITY_CONFIG[densityOption].label}`}
+                  aria-label={`Row density: ${DENSITY_CONFIG[densityOption].label}`}
                   class={clsx(
                     "relative z-10 flex items-center justify-center w-10 py-2.5 border-0 bg-transparent",
                     "transition-colors duration-150 cursor-pointer",
