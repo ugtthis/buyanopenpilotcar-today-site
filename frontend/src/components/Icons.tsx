@@ -32,6 +32,12 @@ export const InfoCircleIcon = (props: SvgProps) => (
   </svg>
 );
 
+export const ChevronDownIcon = (props: SvgProps) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="m0.25 7.21 11 12.47a1.06 1.06 0 0 0 1.54 0l11 -12.47a1 1 0 0 0 0.21 -0.73 1 1 0 0 0 -0.36 -0.69l-1.85 -1.55a1 1 0 0 0 -0.74 -0.24 1 1 0 0 0 -0.69 0.35l-8.17 9.45a0.27 0.27 0 0 1 -0.38 0L3.64 4.35A1 1 0 0 0 3 4a1 1 0 0 0 -0.74 0.23L0.36 5.79a1 1 0 0 0 -0.36 0.69 1 1 0 0 0 0.25 0.73Z" />
+  </svg>
+);
+
 export const DensityNormalIcon = (props: SvgProps) => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true" {...props}>
     <rect x="1" y="1"      width="12" height="1.875" rx="0.5" />

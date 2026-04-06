@@ -3,6 +3,7 @@ import { CONFIDENCE_CONTENT } from "../confidenceContent";
 import { SUPPORT_TYPE_CONTENT } from "../supportContent";
 import type { CarListing } from "../types";
 import { buildopendbcSiteUrl } from "../urls";
+import { ChevronDownIcon } from "./Icons";
 import { ConfidenceChip } from "./ConfidenceChip";
 import { SupportChip } from "./SupportChip";
 
@@ -208,21 +209,53 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
         <For each={detailSections()}>{(section) => <DetailSectionCard {...section} />}</For>
       </div>
 
-      <div class="sticky -bottom-4 z-10 -mx-4 -mb-4 mt-auto flex flex-col gap-3 border-t border-white/8 bg-surface px-4 py-4 pb-1 md:pb-4">
-        <button
-          onClick={() => props.onOpenListingLink(props.car)}
-          class="inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-accent px-5 py-3 text-base font-semibold text-white transition-colors hover:bg-accent-muted cursor-pointer"
-        >
-          View Listing ↗
-        </button>
-        <a
-          href={buildopendbcSiteUrl(props.car.make, props.car.modelOriginal)}
-          target="_blank"
-          rel="noreferrer"
-          class="inline-flex min-h-12 w-full items-center justify-center rounded-sm border border-white/12 bg-transparent px-5 py-3 text-base font-semibold text-secondary transition-colors hover:bg-white/5 cursor-pointer"
-        >
-          View Detailed Support Specs ↗
-        </a>
+      <div class="sticky -bottom-4 z-10 -mx-4 -mb-4 mt-auto flex flex-col border-t border-white/8 bg-surface pb-1 md:pb-4">
+        <details class="group overflow-hidden border-b border-white/8">
+          <summary class="flex items-center justify-between px-4 py-3.5 cursor-pointer
+                          text-sm font-semibold text-content
+                          hover:bg-raised transition-colors select-none
+                          list-none [&::-webkit-details-marker]:hidden">
+            <span class="flex items-center gap-2">
+              <span class="text-base">💬</span>
+              Have more questions about compatibility?
+            </span>
+            <ChevronDownIcon class="w-3 h-3 text-muted group-open:rotate-180" />
+          </summary>
+          <div class="flex flex-col divide-y divide-white/8 border-t border-white/8 bg-canvas/40">
+            {([
+              { label: "Ask a question on comma community Discord", url: "https://discord.comma.ai" },
+              { label: "Compatibility page - comma.ai", url: "https://comma.ai/vehicles" },
+              { label: "Supported Cars Info - Github", url: "https://github.com/commaai/openpilot/blob/master/docs/CARS.md" },
+            ] as const).map(({ label, url }) => (
+              <a
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+                class="flex items-center justify-between px-4 py-3 text-sm font-medium text-secondary
+                       hover:bg-raised hover:text-content transition-colors"
+              >
+                {label}
+                <span class="text-accent-bright text-sm">↗</span>
+              </a>
+            ))}
+          </div>
+        </details>
+        <div class="flex flex-col gap-3 px-4 pt-4">
+          <button
+            onClick={() => props.onOpenListingLink(props.car)}
+            class="inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-accent px-5 py-3 text-base font-semibold text-white transition-colors hover:bg-accent-muted cursor-pointer"
+          >
+            View Listing ↗
+          </button>
+          <a
+            href={buildopendbcSiteUrl(props.car.make, props.car.modelOriginal)}
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex min-h-12 w-full items-center justify-center rounded-sm border border-white/12 bg-transparent px-5 py-3 text-base font-semibold text-secondary transition-colors hover:bg-white/5 cursor-pointer"
+          >
+            View Detailed Support Specs ↗
+          </a>
+        </div>
       </div>
     </div>
   );
