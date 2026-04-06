@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { createEffect, createMemo, createResource, createSignal, For, onMount, Show, type JSXElement } from "solid-js";
-import { CmdIcon, InfoCircleIcon, PinIcon, SearchIcon } from "./components/Icons";
+import { CheckmarkBadgeIcon, CmdIcon, InfoCircleIcon, PinIcon, RemoveCircleIcon, SearchIcon } from "./components/Icons";
 import { CarDetailPanel } from "./components/CarDetailPanel";
 import { ConfidenceChip, CONFIDENCE_STYLES } from "./components/ConfidenceChip";
 import { ConfidenceDetail } from "./components/ConfidenceDetail";
@@ -246,6 +246,23 @@ export default function App() {
         </span>
       ),
       accessorFn: (row) => row.supportSpecs.autoResumeStar,
+      render: (value) => (
+        (value as string) === "full"
+          ? (
+            <span class="flex w-full justify-center">
+              <span class="inline-flex items-center text-positive/80" title="Auto resume supported">
+                <CheckmarkBadgeIcon class="w-[1.5em] h-[1.5em]" />
+              </span>
+            </span>
+          )
+          : (
+            <span class="flex w-full justify-center">
+              <span class="inline-flex items-center text-danger/80" title="Auto resume not supported">
+                <RemoveCircleIcon class="w-[1.5em] h-[1.5em]" />
+              </span>
+            </span>
+          )
+      ),
     },
     { key: "driveTrain",   header: "Drive"  },
     {

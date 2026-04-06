@@ -3,7 +3,7 @@ import { CONFIDENCE_CONTENT } from "../confidenceContent";
 import { SUPPORT_TYPE_CONTENT } from "../supportContent";
 import type { CarListing } from "../types";
 import { buildopendbcSiteUrl } from "../urls";
-import { ChevronDownIcon } from "./Icons";
+import { CheckmarkBadgeIcon, ChevronDownIcon, RemoveCircleIcon } from "./Icons";
 import { ConfidenceChip } from "./ConfidenceChip";
 import { SupportChip } from "./SupportChip";
 
@@ -32,6 +32,18 @@ const formatBooleanDetail = (value: boolean) => (value ? "Yes" : "No");
 const formatMpg = (city: number | null, highway: number | null) => (
   city != null && highway != null ? `${city} / ${highway}` : "—"
 );
+const renderAutoResume = (value: string): JSXElement =>
+  value === "full"
+    ? (
+      <span class="inline-flex items-center text-positive/80" title="Auto resume supported">
+        <CheckmarkBadgeIcon class="w-[1.5em] h-[1.5em]" />
+      </span>
+    )
+    : (
+      <span class="inline-flex items-center text-danger/80" title="Auto resume not supported">
+        <RemoveCircleIcon class="w-[1.5em] h-[1.5em]" />
+      </span>
+    );
 const SUPPORT_SPECS_UNAVAILABLE = "N/A";
 const VISIBILITY_THRESHOLD = 0.25;
 
@@ -115,7 +127,7 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
       value: formatBooleanDetail(props.car.supportSpecs.openpilotLongitudinalControl),
     },
     { label: "Steering Torque", value: props.car.supportSpecs.steeringTorque },
-    { label: "Auto Resume", value: props.car.supportSpecs.autoResumeStar },
+    { label: "Auto Resume", value: renderAutoResume(props.car.supportSpecs.autoResumeStar) },
   ];
 
   const detailSections = (): DetailSection[] => [
