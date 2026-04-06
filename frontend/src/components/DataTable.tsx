@@ -148,7 +148,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
     <div class="flex flex-col gap-2">
 
       {/* ── Table controls ── */}
-      <div class="flex items-end gap-2 flex-wrap pb-2">
+      <div class="flex items-center gap-2 flex-wrap pb-2">
 
         {/* Object count */}
         <div class="flex items-center gap-2.5 text-md text-muted tabular-nums whitespace-nowrap">
@@ -157,7 +157,6 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
           }>
             <span><strong class="text-secondary">{totalFiltered().toLocaleString()}</strong> of {totalAll().toLocaleString()} cars</span>
           </Show>
-          {props.countSlot}
         </div>
 
         {/* Legend slot + Row density toggle */}

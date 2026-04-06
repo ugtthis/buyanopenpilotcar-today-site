@@ -52,15 +52,17 @@ type RawEntry = {
 
 type RawJson = { entries: RawEntry[]; generated_at: string };
 
-export const generatedAt: string = (rawJson as RawJson).generated_at;
+const data = rawJson as RawJson;
+
+export const generatedAt = data.generated_at;
 
 // Flatten entries[].available_years[].car into one row per listing
-export const cars: CarListing[] = (rawJson as RawJson).entries.flatMap(
+export const cars: CarListing[] = data.entries.flatMap(
   (entry) =>
     entry.available_years
-      .filter((ay) => ay.car !== null)
+      .filter((ay): ay is RawYear & { car: RawCar } => ay.car !== null)
       .map((ay) => {
-        const car = ay.car!;
+        const car = ay.car;
         const supportSpecs: SupportSpecs = {
           longitudinal: entry.support_specs.longitudinal,
           fsrLongitudinal: entry.support_specs.fsr_longitudinal,
