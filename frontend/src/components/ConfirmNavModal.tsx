@@ -56,7 +56,7 @@ export function ConfirmNavModal(props: Props) {
               onClick={props.onCancel}
               aria-label="Close"
               class="flex items-center justify-center w-6 h-6 rounded-sm text-muted border-0 bg-transparent
-                     hover:bg-raised hover:text-content transition-colors"
+                     hover:bg-raised hover:text-content transition-colors cursor-pointer"
             >
               ✕
             </button>
@@ -121,14 +121,14 @@ export function ConfirmNavModal(props: Props) {
             <button
               onClick={props.onCancel}
               class="px-3 py-1.5 text-xs font-medium rounded-sm border border-white/15 bg-panel text-secondary
-                     hover:bg-raised hover:text-content transition-colors"
+                     hover:bg-raised hover:text-content transition-colors cursor-pointer"
             >
               Cancel
             </button>
             <button
               onClick={props.onConfirm}
               class="px-3 py-1.5 text-xs font-medium rounded-sm bg-accent text-white
-                     hover:bg-accent-muted transition-colors"
+                     hover:bg-accent-muted transition-colors cursor-pointer"
             >
               Continue to listing ↗
             </button>
