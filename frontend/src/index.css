@@ -99,9 +99,6 @@
   a {
     @apply text-accent-bright no-underline;
   }
-  a:hover {
-    @apply underline;
-  }
 }
 
 /* Blueprint elevation shadows — used as utility classes */
