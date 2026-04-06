@@ -31,7 +31,8 @@ export function SupportChip(props: Props) {
       class={clsx(
         "inline-flex items-center gap-1 px-1.5 py-0.5 text-[0.8em] font-semibold rounded-sm",
         style().wrap,
-        props.onClick && "cursor-pointer hover:ring-1 hover:ring-current transition-all duration-150",
+        props.onClick &&
+          "cursor-pointer hover:ring-1 hover:ring-current transition-[box-shadow,color,background-color] duration-150",
       )}
     >
       <span class={clsx("inline-block w-1 h-1 rounded-full", style().dot)} />

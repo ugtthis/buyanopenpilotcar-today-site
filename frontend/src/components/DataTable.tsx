@@ -169,7 +169,6 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
               style={{
                 width: `${100 / DENSITIES.length}%`,
                 transform: `translateX(${densityIndex() * 100}%)`,
-                transition: "transform 150ms ease",
               }}
             />
             <For each={DENSITIES}>
@@ -179,8 +178,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
                   title={`Row density: ${DENSITY_CONFIG[densityOption].label}`}
                   aria-label={`Row density: ${DENSITY_CONFIG[densityOption].label}`}
                   class={clsx(
-                    "relative z-10 flex items-center justify-center w-10 py-2.5 border-0 bg-transparent",
-                    "transition-colors duration-150 cursor-pointer",
+                    "relative z-10 flex items-center justify-center w-10 py-2.5 border-0 bg-transparent cursor-pointer",
                     density() === densityOption ? "text-content" : "text-muted hover:text-secondary",
                   )}
                   aria-pressed={density() === densityOption}
