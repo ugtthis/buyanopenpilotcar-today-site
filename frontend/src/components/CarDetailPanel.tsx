@@ -188,10 +188,6 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
               <SupportChip level={props.car.supportLevel} />
             </span>
             <p class="text-sm leading-relaxed text-secondary">{supportDescription()}</p>
-            <div class="border-t border-white/8 pt-2">
-              <div class="text-[11px] font-semibold uppercase tracking-wider text-muted">Package requirements</div>
-              <p class="mt-1 text-sm leading-relaxed text-content">{formatTextDetail(props.car.packageRequirements)}</p>
-            </div>
           </div>
         </div>
         <div class="rounded-sm border border-white/8 bg-canvas/60 px-4 py-3">
@@ -201,6 +197,11 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
             <p class="text-sm leading-relaxed text-secondary">{confidenceDescription()}</p>
           </div>
         </div>
+      </div>
+
+      <div class="rounded-sm border border-white/8 bg-canvas/60 px-4 py-3">
+        <div class="mb-1 text-[11px] font-semibold uppercase tracking-wider text-muted">Package Required</div>
+        <p class="text-sm leading-relaxed text-content">{props.car.packageRequirements}</p>
       </div>
 
       <div class="flex flex-col gap-3">
