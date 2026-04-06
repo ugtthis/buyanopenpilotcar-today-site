@@ -484,7 +484,7 @@ export default function App() {
               toolbarSlot={
                 <div class="flex items-center gap-2 shrink-0">
                   <button
-                    onClick={() => setShowFeedback(true)}
+                    onClick={() => { setShowFeedback(true); trackEvent("Feedback Drawer Opened", {}); }}
                     class="flex items-center gap-1.5 px-3 py-2.5 text-xs font-medium rounded-sm bg-panel
                            border border-white/15 text-secondary hover:bg-raised hover:text-content
                            transition-colors cursor-pointer"
@@ -596,6 +596,7 @@ export default function App() {
               href="https://buyanopenpilotcar-today.userjot.com/?cursor=1&order=top&limit=10"
               target="_blank"
               rel="noreferrer"
+              onClick={() => trackEvent("Feedback Link Clicked", {})}
               class="inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-accent px-5 py-3 text-base font-semibold text-white transition-colors hover:bg-accent-muted cursor-pointer"
             >
               Submit Feedback ↗
