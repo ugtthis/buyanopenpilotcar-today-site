@@ -188,7 +188,8 @@ export function CarDetailPanel(props: CarDetailPanelProps) {
         </div>
 
         <p class="text-sm leading-relaxed text-secondary">
-          Review the listing details here, then continue to CarMax when you are ready.
+          Review the listing details here, then continue to CarMax when you are ready. User is responsible for confirming
+          that all specs and listing details are accurate before purchase.
         </p>
       </div>
 
