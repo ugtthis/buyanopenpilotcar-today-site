@@ -177,7 +177,7 @@ export default function App() {
     },
     {
       key: "matchConfidence",
-      header: (
+      header: () => (
         <span title="How confident a given car listing is to be compatible with openpilot.">
           Confidence Level
         </span>
@@ -213,7 +213,7 @@ export default function App() {
     },
     {
       key: "packageRequirements",
-      header: (
+      header: () => (
         <span
           class="inline-flex items-center gap-1.5 rounded border px-1.75 py-0.75 font-semibold"
           title="Without the required package, the car will not be compatible with openpilot."
@@ -236,7 +236,7 @@ export default function App() {
     { key: "state",        header: "State"  },
     {
       id: "longitudinal",
-      header: (
+      header: () => (
         <span title="The system responsible for acceleration and braking control.">
           Longitudinal
         </span>
@@ -245,7 +245,7 @@ export default function App() {
     },
     {
       id: "autoResume",
-      header: (
+      header: () => (
         <span title="Whether openpilot can automatically resume driving after coming to a complete stop.">
           Auto Resume
         </span>
