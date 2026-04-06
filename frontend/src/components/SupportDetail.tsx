@@ -6,6 +6,13 @@ import { SupportChip } from "./SupportChip";
 
 const LEVELS = Object.keys(SUPPORT_LEVEL_STYLES);
 
+const LINK_BTN = [
+  "inline-flex items-center gap-1.5 self-start",
+  "px-2.5 py-1.5 rounded-sm border border-white/15 bg-raised",
+  "text-xs font-medium text-secondary",
+  "hover:bg-hover hover:text-content transition-colors",
+].join(" ");
+
 export function SupportDetail() {
   return (
     <div class="flex flex-col gap-3">
@@ -31,9 +38,9 @@ export function SupportDetail() {
                     href={ref().url}
                     target="_blank"
                     rel="noreferrer"
-                    class="inline-flex items-center gap-1 text-xs text-accent-bright hover:underline"
+                    class={LINK_BTN}
                   >
-                    ↗ {ref().text}
+                    {ref().text} ↗
                   </a>
                 )}
               </Show>
@@ -60,9 +67,9 @@ export function SupportDetail() {
                                   href={link().url}
                                   target="_blank"
                                   rel="noreferrer"
-                                  class="inline-flex items-center gap-1 text-xs text-accent-bright hover:underline mt-1"
+                                  class={LINK_BTN}
                                 >
-                                  ↗ {link().text}
+                                  {link().text} ↗
                                 </a>
                               )}
                             </Show>
