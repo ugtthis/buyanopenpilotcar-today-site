@@ -82,10 +82,9 @@
       ],
       "package_requirements": "Technology Plus Package or AcuraWatch Plus",
       "package_key_used": "Technology Plus Package or AcuraWatch Plus",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -172,10 +171,9 @@
       ],
       "package_requirements": "Advance Package",
       "package_key_used": "Advance Package",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "community",
@@ -328,10 +326,9 @@
       ],
       "package_requirements": "AcuraWatch Plus or Advance Package",
       "package_key_used": "AcuraWatch Plus or Advance Package",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -447,10 +444,9 @@
       ],
       "package_requirements": "Advance Package or Technology Package",
       "package_key_used": "Advance Package or Technology Package",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "community",
@@ -480,10 +476,9 @@
       ],
       "package_requirements": "Advance Package",
       "package_key_used": "Advance Package",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "community",
@@ -2674,10 +2669,9 @@
       ],
       "package_requirements": "Honda Sensing",
       "package_key_used": "Honda Sensing",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "community",
@@ -2887,10 +2881,9 @@
       ],
       "package_requirements": "Honda Sensing",
       "package_key_used": "Honda Sensing",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -2979,10 +2972,9 @@
       ],
       "package_requirements": "Honda Sensing",
       "package_key_used": "Honda Sensing",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -3223,10 +3215,9 @@
       ],
       "package_requirements": "Honda Sensing",
       "package_key_used": "Honda Sensing",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -3290,10 +3281,9 @@
       ],
       "package_requirements": "Honda Sensing",
       "package_key_used": "Honda Sensing",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -3382,10 +3372,9 @@
       ],
       "package_requirements": "Honda Sensing",
       "package_key_used": "Honda Sensing",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -3413,10 +3402,9 @@
       ],
       "package_requirements": "Honda Sensing",
       "package_key_used": "Honda Sensing",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -3447,10 +3435,9 @@
       ],
       "package_requirements": "Honda Sensing",
       "package_key_used": "Honda Sensing",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -3597,10 +3584,9 @@
       ],
       "package_requirements": "Honda Sensing",
       "package_key_used": "Honda Sensing",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -3786,10 +3772,9 @@
       ],
       "package_requirements": "Honda Sensing",
       "package_key_used": "Honda Sensing",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -3884,10 +3869,9 @@
       ],
       "package_requirements": "Honda Sensing",
       "package_key_used": "Honda Sensing",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -6679,10 +6663,9 @@
       ],
       "package_requirements": "Lexus Safety System+",
       "package_key_used": "Lexus Safety System+",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -7188,10 +7171,9 @@
       ],
       "package_requirements": "Lexus Safety System+",
       "package_key_used": "Lexus Safety System+",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -7279,10 +7261,9 @@
       ],
       "package_requirements": "Lexus Safety System+",
       "package_key_used": "Lexus Safety System+",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -8318,10 +8299,9 @@
       ],
       "package_requirements": "EyeSight Driver Assistance",
       "package_key_used": "EyeSight Driver Assistance",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -8352,10 +8332,9 @@
       ],
       "package_requirements": "EyeSight Driver Assistance",
       "package_key_used": "EyeSight Driver Assistance",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -8383,10 +8362,9 @@
       ],
       "package_requirements": "EyeSight Driver Assistance",
       "package_key_used": "EyeSight Driver Assistance",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "dashcam mode",
@@ -8415,10 +8393,9 @@
       ],
       "package_requirements": "EyeSight Driver Assistance",
       "package_key_used": "EyeSight Driver Assistance",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "dashcam mode",
@@ -8506,10 +8483,9 @@
       ],
       "package_requirements": "EyeSight Driver Assistance",
       "package_key_used": "EyeSight Driver Assistance",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "dashcam mode",
@@ -8539,10 +8515,9 @@
       ],
       "package_requirements": "EyeSight Driver Assistance",
       "package_key_used": "EyeSight Driver Assistance",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -8572,10 +8547,9 @@
       ],
       "package_requirements": "EyeSight Driver Assistance",
       "package_key_used": "EyeSight Driver Assistance",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -8606,10 +8580,9 @@
       ],
       "package_requirements": "EyeSight Driver Assistance",
       "package_key_used": "EyeSight Driver Assistance",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "dashcam mode",
@@ -8669,10 +8642,9 @@
       ],
       "package_requirements": "EyeSight Driver Assistance",
       "package_key_used": "EyeSight Driver Assistance",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "dashcam mode",
@@ -8701,10 +8673,9 @@
       ],
       "package_requirements": "EyeSight Driver Assistance",
       "package_key_used": "EyeSight Driver Assistance",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "dashcam mode",
@@ -8821,10 +8792,9 @@
       ],
       "package_requirements": "EyeSight Driver Assistance",
       "package_key_used": "EyeSight Driver Assistance",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -8853,10 +8823,9 @@
       ],
       "package_requirements": "EyeSight Driver Assistance",
       "package_key_used": "EyeSight Driver Assistance",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -9408,10 +9377,9 @@
       ],
       "package_requirements": "Toyota Safety Sense P",
       "package_key_used": "Toyota Safety Sense P",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -10305,10 +10273,9 @@
       ],
       "package_requirements": "Toyota Safety Sense P",
       "package_key_used": "Toyota Safety Sense P",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -10456,10 +10423,9 @@
       ],
       "package_requirements": "Toyota Safety Sense P",
       "package_key_used": "Toyota Safety Sense P",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -10487,10 +10453,9 @@
       ],
       "package_requirements": "Toyota Safety Sense P",
       "package_key_used": "Toyota Safety Sense P",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
@@ -10635,10 +10600,9 @@
       ],
       "package_requirements": "Toyota Safety Sense P",
       "package_key_used": "Toyota Safety Sense P",
-      "match_confidence": "high",
+      "match_confidence": "medium",
       "matching_keywords": [
-        "ACC",
-        "LKAS"
+        "-"
       ],
       "support_level": {
         "type": "upstream",
