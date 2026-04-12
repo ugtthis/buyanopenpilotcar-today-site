@@ -5,12 +5,12 @@ export type ConfidenceContent = {
 export const CONFIDENCE_CONTENT: Record<string, ConfidenceContent> = {
   extra_high: {
     paragraphs: [
-      "As long as it matches the year, make, and model, this car is defintley compatible with openpilot.",
+      "As long as it matches the year, make, and model, this car is definitely compatible with openpilot.",
     ],
   },
   high: {
     paragraphs: [
-      "Easy to verify car. Ussually just confirming if it has LKAS/ACC",
+      "Easy to verify car. Usually just confirming if it has LKAS/ACC",
     ],
   },
   medium: {
