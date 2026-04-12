@@ -71,7 +71,7 @@ export const DoubleChevronIcon = (props: SvgProps) => (
   </svg>
 );
 
-export const DensityNormalIcon = (props: SvgProps) => (
+export const DensityCompactIcon = (props: SvgProps) => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true" {...props}>
     <rect x="1" y="1"      width="12" height="1.875" rx="0.5" />
     <rect x="1" y="4.375"  width="12" height="1.875" rx="0.5" />
@@ -80,10 +80,17 @@ export const DensityNormalIcon = (props: SvgProps) => (
   </svg>
 );
 
-export const DensityComfortableIcon = (props: SvgProps) => (
+export const DensityNormalIcon = (props: SvgProps) => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true" {...props}>
     <rect x="1" y="1"   width="12" height="3" rx="0.5" />
     <rect x="1" y="5.5" width="12" height="3" rx="0.5" />
     <rect x="1" y="10"  width="12" height="3" rx="0.5" />
+  </svg>
+);
+
+export const DensityComfortableIcon = (props: SvgProps) => (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true" {...props}>
+    <rect x="1" y="1" width="12" height="5.125" rx=".8" />
+    <rect x="1" y="7.875" width="12" height="5.125" rx=".8" />
   </svg>
 );

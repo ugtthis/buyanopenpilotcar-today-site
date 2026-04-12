@@ -10,11 +10,17 @@ import type { ColumnDef, SortingState, VisibilityState } from "@tanstack/solid-t
 import clsx from "clsx";
 import { createEffect, createSignal, For, on, Show, untrack, type JSX } from "solid-js";
 import type { DataTableProps } from "../types";
-import { ChevronRightIcon, DensityComfortableIcon, DensityNormalIcon, DoubleChevronIcon } from "./Icons";
+import {
+  ChevronRightIcon,
+  DensityCompactIcon,
+  DensityComfortableIcon,
+  DensityNormalIcon,
+  DoubleChevronIcon,
+} from "./Icons";
 
-type RowDensity = "normal" | "comfortable";
+type RowDensity = "compact" | "normal" | "comfortable";
 
-const DENSITIES: RowDensity[] = ["normal", "comfortable"];
+const DENSITIES: RowDensity[] = ["compact", "normal", "comfortable"];
 const UNKNOWN_RANK = 99;
 
 const COLUMN_SORT_RANK: Partial<Record<string, Record<string, number>>> = {
@@ -23,10 +29,11 @@ const COLUMN_SORT_RANK: Partial<Record<string, Record<string, number>>> = {
 };
 
 const DENSITY_CONFIG: Record<RowDensity, {
-  cellPy: string; headPy: string; textSize: string; label: string; icon: () => JSX.Element;
+  cellPx: string; cellPy: string; headPx: string; headPy: string; textSize: string; label: string; icon: () => JSX.Element;
 }> = {
-  normal:      { cellPy: "py-1.5", headPy: "py-2", textSize: "text-xs",   label: "Normal",      icon: () => <DensityNormalIcon /> },
-  comfortable: { cellPy: "py-3",   headPy: "py-3", textSize: "text-base", label: "Comfortable", icon: () => <DensityComfortableIcon /> },
+  compact:     { cellPx: "px-3.5", headPx: "px-3.5", cellPy: "py-1.5", headPy: "py-2", textSize: "text-xs", label: "Compact", icon: () => <DensityCompactIcon /> },
+  normal:      { cellPx: "px-3.5", headPx: "px-3.5", cellPy: "py-3",   headPy: "py-3", textSize: "text-base", label: "Normal", icon: () => <DensityNormalIcon /> },
+  comfortable: { cellPx: "px-6", headPx: "px-6", cellPy: "py-5",   headPy: "py-4", textSize: "text-[16px]", label: "Comfortable", icon: () => <DensityComfortableIcon /> },
 };
 
 
@@ -68,11 +75,14 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
     }
   });
   const isMobile = typeof window !== "undefined" && !window.matchMedia("(min-width: 640px)").matches;
-  const [density, setDensity] = createSignal<RowDensity>(isMobile ? "comfortable" : "normal");
+  const [density, setDensity] = createSignal<RowDensity>(isMobile ? "normal" : "compact");
+  let lastDensityClick: RowDensity | null = null;
   const densityIndex = () => DENSITIES.indexOf(density());
   const handleDensityClick = (densityOption: RowDensity) => {
+    const repeatedButtonClick = lastDensityClick === densityOption;
+    lastDensityClick = densityOption;
     setDensity((current) => {
-      if (current !== densityOption) return densityOption;
+      if (current !== densityOption && !repeatedButtonClick) return densityOption;
       const nextIndex = (DENSITIES.indexOf(current) + 1) % DENSITIES.length;
       return DENSITIES[nextIndex];
     });
@@ -234,7 +244,8 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
                       {(header) => (
                         <th
                           class={clsx(
-                            "px-4 h-16 align-middle text-[1.15em] font-semibold select-none transition-colors",
+                            "h-16 align-middle text-[1.15em] font-semibold select-none transition-colors",
+                            DENSITY_CONFIG[density()].headPx,
                             DENSITY_CONFIG[density()].headPy,
                             header.column.getCanSort() && "hover:bg-raised cursor-pointer",
                             header.column.getIsSorted() ? "text-accent-bright" : "text-secondary",
@@ -280,7 +291,8 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
                         {(cell) => (
                           <td
                             class={clsx(
-                              "px-3 whitespace-nowrap tabular-nums transition-colors",
+                              "whitespace-nowrap tabular-nums transition-colors",
+                              DENSITY_CONFIG[density()].cellPx,
                               DENSITY_CONFIG[density()].cellPy,
                               selected() ? "text-content" : "text-secondary group-hover:text-content",
                             )}
