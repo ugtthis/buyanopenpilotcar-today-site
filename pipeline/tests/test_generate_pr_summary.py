@@ -9,6 +9,7 @@ from scripts.generate_pr_summary import (
   get_geocode_summary,
   get_workflow_state,
   append_geocode_summary,
+  append_workflow_state,
   save_scrape_counts,
   HEALTHY_STATE,
   DEGRADED_STATE,
@@ -118,6 +119,27 @@ class TestGetGeocodeSummary:
   def test_returns_none_when_file_missing(self, tmp_path, monkeypatch):
     monkeypatch.setattr(summary_script, "GEOCODE_RESULT_FILE", tmp_path / "missing.json")
     assert get_geocode_summary() is None
+
+
+class TestAppendWorkflowState:
+  def test_count_mismatches_renders_markdown_table(self):
+    lines = []
+    append_workflow_state(
+      lines,
+      DEGRADED_STATE,
+      INVENTORY,
+      [],
+      [
+        {"make": "Toyota", "html_count": 3200, "api_count": 310},
+        {"make": "Honda", "html_count": 1500, "api_count": 1499},
+      ],
+      [],
+    )
+    joined = "\n".join(lines)
+    assert "**Count mismatches**" in joined
+    assert "| Make | HTML | API | Delta |" in joined
+    assert "| **Toyota** | 3,200 | 310 | -2,890 |" in joined
+    assert "| **Honda** | 1,500 | 1,499 | -1 |" in joined
 
 
 class TestAppendGeocodeSummary:

@@ -143,11 +143,15 @@ def append_workflow_state(lines, workflow_state, inventory_artifact, failed_make
       lines.append(f"Failed makes: {', '.join(f'`{m}`' for m in failed_makes)}")
     if count_mismatches:
       lines.append("")
-      mismatch_items = ", ".join(
-        f"`{m['make']}` (html: {m['html_count']:,}, api: {m['api_count']:,})"
-        for m in count_mismatches
-      )
-      lines.append(f"Count mismatches: {mismatch_items}")
+      lines.append("**Count mismatches**")
+      lines.append("")
+      lines.append("| Make | HTML | API | Delta |")
+      lines.append("|------|-----:|----:|-----------------:|")
+      for m in count_mismatches:
+        html_n = m["html_count"]
+        api_n = m["api_count"]
+        delta = api_n - html_n
+        lines.append(f"| **{m['make']}** | {html_n:,} | {api_n:,} | {delta:+,} |")
     if missing:
       lines.append("")
       lines.append(f"Missing artifacts: {', '.join(missing)}")
