@@ -5,9 +5,9 @@
     "source": "CARS.md"
   },
   "stats": {
-    "total_cars": 1172,
+    "total_cars": 1174,
     "total_by_make": {
-      "Acura": 46,
+      "Acura": 47,
       "Audi": 50,
       "CUPRA": 6,
       "Chevrolet": 12,
@@ -16,7 +16,7 @@
       "Ford": 65,
       "GMC": 4,
       "Genesis": 26,
-      "Honda": 127,
+      "Honda": 128,
       "Hyundai": 96,
       "Jeep": 11,
       "Kia": 78,
@@ -405,14 +405,15 @@
       }
     },
     {
-      "name": "Acura RDX 2025",
+      "name": "Acura RDX 2025-26",
       "make": "Acura",
       "model": "RDX",
-      "model_original": "RDX 2025",
+      "model_original": "RDX 2025-26",
       "index_key": "acura_rdx",
       "variant_info": null,
       "years": [
-        2025
+        2025,
+        2026
       ],
       "package_requirements": "All",
       "package_key_used": "All",
@@ -3809,6 +3810,34 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
+      }
+    },
+    {
+      "name": "Honda Pilot 2026",
+      "make": "Honda",
+      "model": "Pilot",
+      "model_original": "Pilot 2026",
+      "index_key": "honda_pilot",
+      "variant_info": null,
+      "years": [
+        2026
+      ],
+      "package_requirements": "All",
+      "package_key_used": "All",
+      "match_confidence": "extra_high",
+      "matching_keywords": null,
+      "support_level": {
+        "type": "community",
+        "link_anchor": "community"
       },
       "support_specs": {
         "longitudinal": "Stock",
