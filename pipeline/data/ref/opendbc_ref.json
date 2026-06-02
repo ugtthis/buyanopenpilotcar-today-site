@@ -5,26 +5,26 @@
     "source": "CARS.md"
   },
   "stats": {
-    "total_cars": 1172,
+    "total_cars": 1187,
     "total_by_make": {
-      "Acura": 46,
+      "Acura": 47,
       "Audi": 50,
       "CUPRA": 6,
       "Chevrolet": 12,
       "Chrysler": 16,
       "Dodge": 2,
-      "Ford": 65,
+      "Ford": 73,
       "GMC": 4,
       "Genesis": 26,
-      "Honda": 127,
-      "Hyundai": 96,
+      "Honda": 128,
+      "Hyundai": 98,
       "Jeep": 11,
       "Kia": 78,
       "Lexus": 66,
       "Lincoln": 10,
       "MAN": 13,
       "Mazda": 23,
-      "Nissan": 13,
+      "Nissan": 16,
       "Peugeot": 7,
       "Porsche": 8,
       "Ram": 15,
@@ -405,14 +405,15 @@
       }
     },
     {
-      "name": "Acura RDX 2025",
+      "name": "Acura RDX 2025-26",
       "make": "Acura",
       "model": "RDX",
-      "model_original": "RDX 2025",
+      "model_original": "RDX 2025-26",
       "index_key": "acura_rdx",
       "variant_info": null,
       "years": [
-        2025
+        2025,
+        2026
       ],
       "package_requirements": "All",
       "package_key_used": "All",
@@ -1774,14 +1775,18 @@
       }
     },
     {
-      "name": "Ford Focus 2018",
+      "name": "Ford Focus 2018-22",
       "make": "Ford",
       "model": "Focus",
-      "model_original": "Focus 2018",
+      "model_original": "Focus 2018-22",
       "index_key": "ford_focus",
       "variant_info": null,
       "years": [
-        2018
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
       ],
       "package_requirements": "Adaptive Cruise Control with Lane Centering",
       "package_key_used": "Adaptive Cruise Control with Lane Centering",
@@ -1805,14 +1810,18 @@
       }
     },
     {
-      "name": "Ford Focus Hybrid 2018",
+      "name": "Ford Focus Hybrid 2018-22",
       "make": "Ford",
       "model": "Focus Hybrid",
-      "model_original": "Focus Hybrid 2018",
+      "model_original": "Focus Hybrid 2018-22",
       "index_key": "ford_focus_hybrid",
       "variant_info": null,
       "years": [
-        2018
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
       ],
       "package_requirements": "Adaptive Cruise Control with Lane Centering",
       "package_key_used": "Adaptive Cruise Control with Lane Centering",
@@ -3821,6 +3830,34 @@
       }
     },
     {
+      "name": "Honda Pilot 2026",
+      "make": "Honda",
+      "model": "Pilot",
+      "model_original": "Pilot 2026",
+      "index_key": "honda_pilot",
+      "variant_info": null,
+      "years": [
+        2026
+      ],
+      "package_requirements": "All",
+      "package_key_used": "All",
+      "match_confidence": "extra_high",
+      "matching_keywords": null,
+      "support_level": {
+        "type": "community",
+        "link_anchor": "community"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
+      }
+    },
+    {
       "name": "Honda Prologue 2024-25",
       "make": "Honda",
       "model": "Prologue",
@@ -4327,6 +4364,37 @@
       ],
       "package_requirements": "Highway Driving Assist II",
       "package_key_used": "Highway Driving Assist II--with HDA II",
+      "match_confidence": "medium",
+      "matching_keywords": [
+        "-"
+      ],
+      "support_level": {
+        "type": "upstream",
+        "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
+      }
+    },
+    {
+      "name": "Hyundai Ioniq 6 (without HDA II) 2023-24",
+      "make": "Hyundai",
+      "model": "Ioniq 6",
+      "model_original": "Ioniq 6 (without HDA II) 2023-24",
+      "index_key": "hyundai_ioniq_6",
+      "variant_info": "without HDA II",
+      "years": [
+        2023,
+        2024
+      ],
+      "package_requirements": "Highway Driving Assist",
+      "package_key_used": "Highway Driving Assist--without HDA II",
       "match_confidence": "medium",
       "matching_keywords": [
         "-"
@@ -7699,15 +7767,18 @@
       }
     },
     {
-      "name": "Nissan Altima 2019-20, 2024",
+      "name": "Nissan Altima 2019-24",
       "make": "Nissan",
       "model": "Altima",
-      "model_original": "Altima 2019-20, 2024",
+      "model_original": "Altima 2019-24",
       "index_key": "nissan_altima",
       "variant_info": null,
       "years": [
         2019,
         2020,
+        2021,
+        2022,
+        2023,
         2024
       ],
       "package_requirements": "ProPILOT Assist",
