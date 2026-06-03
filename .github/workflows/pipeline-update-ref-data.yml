@@ -43,12 +43,8 @@ jobs:
           uv run python -c "import json; json.load(open('data/ref/opendbc_metadata_ref.json'))"
         working-directory: pipeline
 
-      - name: Transform reference data
-        run: uv run python markdown_to_json.py --input data/ref/CARS.md --output data/ref/opendbc_ref.json
-        working-directory: pipeline
-
-      - name: Enrich ref data with opendbc metadata
-        run: uv run python enricher.py
+      - name: Regenerate reference data
+        run: bash scripts/regenerate_reference_data.sh
         working-directory: pipeline
 
       - name: Generate sync summary
