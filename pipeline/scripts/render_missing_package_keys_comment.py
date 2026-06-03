@@ -37,6 +37,7 @@ def _build_comment_body(missing_keys: list[str], coverage_payload: str) -> str:
       "cd pipeline",
       "uv run python markdown_to_json.py --input data/ref/CARS.md --output data/ref/opendbc_ref.json",
       "uv run python enricher.py",
+      "# writes data/ref/opendbc_enriched_ref.json",
       "```",
       "",
       "<details>",

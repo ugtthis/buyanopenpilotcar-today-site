@@ -39,6 +39,7 @@ def test_build_comment_body_includes_required_sections_and_key_bullets():
   assert body.index("- `Highway Driving Assist--without HDA II`") < body.index("- `All`")
   assert "<summary>Coverage check JSON (collapsed by default)</summary>" in body
   assert "```bash\ncd pipeline\nuv run python markdown_to_json.py" in body
+  assert "# writes data/ref/opendbc_enriched_ref.json" in body
 
 
 def test_build_comment_body_filters_blank_missing_keys():

@@ -71,6 +71,7 @@ jobs:
             pipeline/data/ref/CARS.md
             pipeline/data/ref/opendbc_metadata_ref.json
             pipeline/data/ref/opendbc_ref.json
+            pipeline/data/ref/opendbc_enriched_ref.json
 
       - name: Enable auto-merge for healthy syncs
         if: steps.summary.outputs.sync_state == 'healthy' && steps.create-pr.outputs.pull-request-number

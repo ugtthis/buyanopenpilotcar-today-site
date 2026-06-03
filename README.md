@@ -17,8 +17,11 @@ bun run dev
 ```
 pipeline/data/ref/CARS.md (opendbc) + pipeline/package_keywords.json
         │
-        ▼ pipeline/markdown_to_json.py + pipeline/enricher.py
+        ▼ pipeline/markdown_to_json.py
 pipeline/data/ref/opendbc_ref.json
+        │
+        ▼ pipeline/enricher.py
+pipeline/data/ref/opendbc_enriched_ref.json
         │
 scraper.py → merge_inventory.py → matcher.py
         │
@@ -47,10 +50,10 @@ Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/).
 cd pipeline
 uv sync
 
-# Build reference data from pipeline/data/ref/CARS.md
+# Build raw reference data from pipeline/data/ref/CARS.md
 uv run python markdown_to_json.py
 
-# Enrich with support specs from opendbc-site metadata
+# Enrich into pipeline/data/ref/opendbc_enriched_ref.json
 uv run python enricher.py
 
 # Scrape CarMax (requires cookies — see pipeline/README.md)

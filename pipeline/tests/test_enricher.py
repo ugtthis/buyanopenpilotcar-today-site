@@ -2,7 +2,7 @@
 
 import pytest
 
-from enricher import build_name_index, build_support_specs, enrich_ref_data
+from enricher import build_name_index, build_support_specs, enrich_ref_data, update_output_metadata
 
 
 def make_metadata_entry(name: str, make: str, model: str, year_list: list[str], **overrides):
@@ -116,3 +116,24 @@ class TestEnrichRefData:
 
     with pytest.raises(ValueError, match=r"1 ref car\(s\) missing from metadata:\n  - Honda Civic 2020"):
       enrich_ref_data(reference_data, metadata_entries)
+
+
+class TestEnrichedMetadataContract:
+  def test_sets_enricher_generator_and_provenance(self):
+    reference_data = {
+      "_metadata": {
+        "generator": "markdown_to_json.py",
+        "source": "CARS.md",
+      },
+      "cars": [],
+    }
+
+    update_output_metadata(reference_data)
+
+    assert reference_data["_metadata"]["generator"] == "enricher.py"
+    assert "compiled_by" not in reference_data["_metadata"]
+    assert "source" not in reference_data["_metadata"]
+    assert "enriched_from" not in reference_data["_metadata"]
+    assert reference_data["_metadata"]["base_ref_file"] == "opendbc_ref.json"
+    assert "metadata_source" not in reference_data["_metadata"]
+    assert reference_data["_metadata"]["support_specs_source"] == "opendbc_metadata_ref.json"

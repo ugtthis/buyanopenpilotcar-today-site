@@ -6,6 +6,7 @@ from pathlib import Path
 
 DATA_DIR = Path("data")
 INPUT_FILE = DATA_DIR / "ref" / "opendbc_ref.json"
+OUTPUT_FILE = DATA_DIR / "ref" / "opendbc_enriched_ref.json"
 METADATA_FILE = DATA_DIR / "ref" / "opendbc_metadata_ref.json"
 SUPPORT_SPEC_FIELDS = (
   "longitudinal",
@@ -63,6 +64,14 @@ def enrich_ref_data(reference_data: dict, metadata_entries: list[dict]) -> int:
   return len(reference_data["cars"])
 
 
+def update_output_metadata(reference_data: dict) -> None:
+  metadata = reference_data.setdefault("_metadata", {})
+  metadata.pop("source", None)
+  metadata["generator"] = "enricher.py"
+  metadata["base_ref_file"] = INPUT_FILE.name
+  metadata["support_specs_source"] = METADATA_FILE.name
+
+
 def main():
   if not INPUT_FILE.exists():
     print(f"❌ Error: {INPUT_FILE} not found!", flush=True)
@@ -83,9 +92,10 @@ def main():
 
   print("🔗 Joining support specs...", flush=True)
   enriched_count = enrich_ref_data(reference_data, metadata_entries)
+  update_output_metadata(reference_data)
 
-  print(f"💾 Writing enriched output to {INPUT_FILE}", flush=True)
-  with open(INPUT_FILE, "w") as f:
+  print(f"💾 Writing enriched output to {OUTPUT_FILE}", flush=True)
+  with open(OUTPUT_FILE, "w") as f:
     json.dump(reference_data, f, indent=2)
 
   print("✅ Enrichment complete", flush=True)

@@ -60,5 +60,5 @@ jobs:
         if: steps.validate_package_keys.outputs.validate_status == '0'
         run: |
           bash scripts/regenerate_reference_data.sh
-          git diff --exit-code -- data/ref/opendbc_ref.json
+          git diff --exit-code -- data/ref/opendbc_ref.json data/ref/opendbc_enriched_ref.json
         working-directory: pipeline
