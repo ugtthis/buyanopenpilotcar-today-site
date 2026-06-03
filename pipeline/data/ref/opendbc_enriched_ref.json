@@ -1,8 +1,9 @@
 {
   "_metadata": {
     "warning": "AUTO-GENERATED FILE - DO NOT EDIT MANUALLY",
-    "generator": "markdown_to_json.py",
-    "source": "CARS.md"
+    "generator": "enricher.py",
+    "base_ref_file": "opendbc_ref.json",
+    "support_specs_source": "opendbc_metadata_ref.json"
   },
   "stats": {
     "total_cars": 1187,
@@ -57,6 +58,15 @@
       "support_level": {
         "type": "community",
         "link_anchor": "community"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -80,6 +90,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "26 mph",
+        "fsr_steering": "25 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -99,6 +118,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "26 mph",
+        "fsr_steering": "25 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -120,6 +148,15 @@
       "support_level": {
         "type": "community",
         "link_anchor": "community"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -142,6 +179,15 @@
       "support_level": {
         "type": "community",
         "link_anchor": "community"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -164,6 +210,15 @@
       "support_level": {
         "type": "community",
         "link_anchor": "community"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -185,6 +240,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "43 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -207,6 +271,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -229,6 +302,15 @@
       "support_level": {
         "type": "community",
         "link_anchor": "community"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -252,6 +334,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "26 mph",
+        "fsr_steering": "12 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -273,6 +364,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "3 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -294,6 +394,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "43 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -314,6 +423,15 @@
       "support_level": {
         "type": "community",
         "link_anchor": "community"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -335,6 +453,15 @@
       "support_level": {
         "type": "community",
         "link_anchor": "community"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -358,6 +485,15 @@
       "support_level": {
         "type": "community",
         "link_anchor": "community"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -379,6 +515,15 @@
       "support_level": {
         "type": "community",
         "link_anchor": "community"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -399,6 +544,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -418,6 +572,15 @@
       "support_level": {
         "type": "community",
         "link_anchor": "community"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -437,6 +600,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -456,6 +628,15 @@
       "support_level": {
         "type": "not compatible",
         "link_anchor": "can-bus-security"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -483,6 +664,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -506,6 +696,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -533,6 +732,15 @@
       "support_level": {
         "type": "not compatible",
         "link_anchor": "flexray"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -560,6 +768,15 @@
       "support_level": {
         "type": "not compatible",
         "link_anchor": "flexray"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -582,6 +799,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -609,6 +835,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -635,6 +870,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -661,6 +905,15 @@
       "support_level": {
         "type": "not compatible",
         "link_anchor": "flexray"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -683,6 +936,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -707,6 +969,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -729,6 +1000,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "3 mph",
+        "fsr_steering": "6 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -751,6 +1031,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "3 mph",
+        "fsr_steering": "6 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -775,6 +1064,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "3 mph",
+        "fsr_steering": "6 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -797,6 +1095,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "6 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -819,6 +1126,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "3 mph",
+        "fsr_steering": "6 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -841,6 +1157,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "9 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -863,6 +1188,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "39 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -884,6 +1218,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "39 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -906,6 +1249,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "9 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -933,6 +1285,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "39 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -950,6 +1311,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -977,6 +1347,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -999,6 +1378,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "39 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1023,6 +1411,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1046,6 +1443,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1068,6 +1474,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1091,6 +1506,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1113,6 +1537,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1136,6 +1569,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1158,6 +1600,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1181,6 +1632,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1206,6 +1666,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1231,6 +1700,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1254,6 +1732,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1277,6 +1764,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1303,6 +1799,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1329,6 +1834,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1354,6 +1868,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1379,6 +1902,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1398,6 +1930,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1423,6 +1964,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1442,6 +1992,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1463,6 +2022,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1485,6 +2053,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1506,6 +2083,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1528,6 +2114,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1550,6 +2145,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1572,6 +2176,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1591,6 +2204,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1612,6 +2234,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1632,6 +2263,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1651,6 +2291,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "37 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -1671,6 +2320,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1692,6 +2350,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1714,6 +2381,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1735,6 +2411,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1757,6 +2442,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1780,6 +2474,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1802,6 +2505,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1821,6 +2533,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1843,6 +2564,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1862,6 +2592,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1884,6 +2623,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "6 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -1907,6 +2655,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "6 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -1929,6 +2686,15 @@
       "support_level": {
         "type": "community",
         "link_anchor": "community"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1952,6 +2718,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "3 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1973,6 +2748,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -1992,6 +2776,15 @@
       "support_level": {
         "type": "community",
         "link_anchor": "community"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2015,6 +2808,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "3 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2036,6 +2838,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2055,6 +2866,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "14 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2078,6 +2898,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "12 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2099,6 +2928,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "2 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2120,6 +2958,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2142,6 +2989,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "12 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2163,6 +3019,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "12 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2184,6 +3049,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2204,6 +3078,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2223,6 +3106,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2243,6 +3135,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2265,6 +3166,15 @@
       "support_level": {
         "type": "community",
         "link_anchor": "community"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2287,6 +3197,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "26 mph",
+        "fsr_steering": "12 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -2313,6 +3232,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "15 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2335,6 +3263,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2361,6 +3298,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "12 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2383,6 +3329,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2402,6 +3357,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "3 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2425,6 +3389,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "26 mph",
+        "fsr_steering": "12 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -2446,6 +3419,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "26 mph",
+        "fsr_steering": "12 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -2470,6 +3452,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "26 mph",
+        "fsr_steering": "12 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -2491,6 +3482,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2513,6 +3513,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "3 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2532,6 +3541,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "3 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2551,6 +3569,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "11 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2574,6 +3601,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "26 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -2598,6 +3634,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "43 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2617,6 +3662,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -2637,6 +3691,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -2662,6 +3725,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "26 mph",
+        "fsr_steering": "12 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -2681,6 +3753,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2708,6 +3789,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "26 mph",
+        "fsr_steering": "12 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -2729,6 +3819,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2748,6 +3847,15 @@
       "support_level": {
         "type": "community",
         "link_anchor": "community"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2768,6 +3876,15 @@
       "support_level": {
         "type": "not compatible",
         "link_anchor": "can-bus-security"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2797,6 +3914,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "26 mph",
+        "fsr_steering": "12 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -2816,6 +3942,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2835,6 +3970,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2854,6 +3998,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2873,6 +4026,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2895,6 +4057,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "32 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -2916,6 +4087,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "32 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -2939,6 +4119,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2963,6 +4152,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "32 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -2986,6 +4184,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3008,6 +4215,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "37 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -3031,6 +4247,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "32 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3052,6 +4277,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3075,6 +4309,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3098,6 +4341,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3120,6 +4372,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3142,6 +4403,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3163,6 +4433,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "32 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3182,6 +4461,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3205,6 +4493,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "32 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3228,6 +4525,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3249,6 +4555,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "32 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3270,6 +4585,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3291,6 +4615,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "6 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -3313,6 +4646,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3337,6 +4679,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3359,6 +4710,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3378,6 +4738,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3399,6 +4768,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3418,6 +4796,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3439,6 +4826,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3461,6 +4857,15 @@
       "support_level": {
         "type": "community",
         "link_anchor": "community"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3484,6 +4889,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3504,6 +4918,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3525,6 +4948,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3545,6 +4977,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3565,6 +5006,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3587,6 +5037,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3609,6 +5068,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3631,6 +5099,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3650,6 +5127,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3671,6 +5157,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -3692,6 +5187,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3712,6 +5216,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3733,6 +5246,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3754,6 +5276,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3773,6 +5304,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3795,6 +5335,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "5 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -3820,6 +5369,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "41 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3843,6 +5401,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "9 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3866,6 +5433,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "39 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3889,6 +5465,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3908,6 +5493,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3931,6 +5525,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3952,6 +5555,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3975,6 +5587,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -3998,6 +5619,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4021,6 +5651,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "6 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -4043,6 +5682,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4067,6 +5715,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4090,6 +5747,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4111,6 +5777,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4132,6 +5807,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4151,6 +5835,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4170,6 +5863,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4189,6 +5891,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4208,6 +5919,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4230,6 +5950,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4253,6 +5982,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4274,6 +6012,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "10 mph",
+        "fsr_steering": "32 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -4295,6 +6042,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4316,6 +6072,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4338,6 +6103,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4358,6 +6132,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "10 mph",
+        "fsr_steering": "32 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -4379,6 +6162,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "32 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4400,6 +6192,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4421,6 +6222,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4442,6 +6252,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "32 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4464,6 +6283,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4485,6 +6313,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4506,6 +6343,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4527,6 +6373,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4549,6 +6404,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4570,6 +6434,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4593,6 +6466,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4614,6 +6496,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4634,6 +6525,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4656,6 +6556,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4677,6 +6586,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4700,6 +6618,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4720,6 +6647,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4741,6 +6677,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4763,6 +6708,15 @@
       "support_level": {
         "type": "community",
         "link_anchor": "community"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4785,6 +6739,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -4805,6 +6768,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -4830,6 +6802,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4850,6 +6831,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -4875,6 +6865,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4894,6 +6893,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -4915,6 +6923,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -4936,6 +6953,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4956,6 +6982,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -4977,6 +7012,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -4999,6 +7043,15 @@
       "support_level": {
         "type": "not compatible",
         "link_anchor": "can-bus-security"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5019,6 +7072,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -5039,6 +7101,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5059,6 +7130,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -5079,6 +7159,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5100,6 +7189,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -5119,6 +7217,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5140,6 +7247,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -5161,6 +7277,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -5182,6 +7307,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5203,6 +7337,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -5224,6 +7367,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -5245,6 +7397,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5269,6 +7430,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5294,6 +7464,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5319,6 +7498,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5345,6 +7533,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "31 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5374,6 +7571,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "31 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5394,6 +7600,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "28 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5416,6 +7631,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "28 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5439,6 +7663,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "28 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5461,6 +7694,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5484,6 +7726,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "28 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5505,6 +7756,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "28 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5531,6 +7791,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -5557,6 +7826,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -5580,6 +7858,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -5601,6 +7888,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -5629,6 +7925,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5658,6 +7963,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5684,6 +7998,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "32 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5709,6 +8032,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "36 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5733,6 +8065,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "36 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5754,6 +8095,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5773,6 +8123,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5794,6 +8153,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5813,6 +8181,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5837,6 +8214,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "31 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5866,6 +8252,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5894,6 +8289,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -5915,6 +8319,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -5934,6 +8347,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -5956,6 +8378,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -5980,6 +8411,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6001,6 +8441,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6023,6 +8472,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6044,6 +8502,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6065,6 +8532,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6086,6 +8562,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6109,6 +8594,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6132,6 +8626,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6156,6 +8659,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6177,6 +8689,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6200,6 +8721,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6222,6 +8752,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6243,6 +8782,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6262,6 +8810,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6283,6 +8840,15 @@
       "support_level": {
         "type": "not compatible",
         "link_anchor": "can-bus-security"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6305,6 +8871,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "empty",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6327,6 +8902,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6350,6 +8934,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6374,6 +8967,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6400,6 +9002,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6428,6 +9039,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6454,6 +9074,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6476,6 +9105,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6500,6 +9138,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6525,6 +9172,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6554,6 +9210,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6579,6 +9244,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6601,6 +9275,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6622,6 +9305,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6646,6 +9338,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6668,6 +9369,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6688,6 +9398,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6707,6 +9426,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6728,6 +9456,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6748,6 +9485,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6769,6 +9515,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6788,6 +9543,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6809,6 +9573,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6828,6 +9601,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6849,6 +9631,15 @@
       "support_level": {
         "type": "not compatible",
         "link_anchor": "can-bus-security"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6871,6 +9662,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6890,6 +9690,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6912,6 +9721,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6932,6 +9750,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6953,6 +9780,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -6975,6 +9811,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -6994,6 +9839,15 @@
       "support_level": {
         "type": "not compatible",
         "link_anchor": "can-bus-security"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7015,6 +9869,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7037,6 +9900,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7058,6 +9930,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7079,6 +9960,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7101,6 +9991,15 @@
       "support_level": {
         "type": "not compatible",
         "link_anchor": "can-bus-security"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7123,6 +10022,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "17 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7144,6 +10052,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "17 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7166,6 +10083,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7187,6 +10113,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7209,6 +10144,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "17 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7230,6 +10174,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7252,6 +10205,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7271,6 +10233,15 @@
       "support_level": {
         "type": "not compatible",
         "link_anchor": "can-bus-security"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7292,6 +10263,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7314,6 +10294,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7333,6 +10322,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7354,6 +10352,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7376,6 +10383,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7396,6 +10412,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7418,6 +10443,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7438,6 +10472,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7459,6 +10502,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7480,6 +10532,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7500,6 +10561,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7521,6 +10591,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7540,6 +10619,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7561,6 +10649,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7582,6 +10679,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7602,6 +10708,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7623,6 +10738,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7642,6 +10766,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7663,6 +10796,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7684,6 +10826,15 @@
       "support_level": {
         "type": "custom",
         "link_anchor": "secoc-cars-with-recoverable-keys"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7704,6 +10855,15 @@
       "support_level": {
         "type": "not compatible",
         "link_anchor": "can-bus-security"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7725,6 +10885,15 @@
       "support_level": {
         "type": "not compatible",
         "link_anchor": "can-bus-security"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7746,6 +10915,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7767,6 +10945,15 @@
       "support_level": {
         "type": "custom",
         "link_anchor": "secoc-cars-with-recoverable-keys"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7787,6 +10974,15 @@
       "support_level": {
         "type": "not compatible",
         "link_anchor": "can-bus-security"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7809,6 +11005,15 @@
       "support_level": {
         "type": "not compatible",
         "link_anchor": "can-bus-security"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7832,6 +11037,15 @@
       "support_level": {
         "type": "not compatible",
         "link_anchor": "can-bus-security"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7852,6 +11066,15 @@
       "support_level": {
         "type": "custom",
         "link_anchor": "secoc-cars-with-recoverable-keys"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "19 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -7879,6 +11102,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7904,6 +11136,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7929,6 +11170,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7954,6 +11204,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -7981,6 +11240,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8005,6 +11273,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8027,6 +11304,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "13 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8049,6 +11335,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "13 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8073,6 +11368,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "31 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8095,6 +11399,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "31 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8121,6 +11434,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8150,6 +11472,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "31 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8178,6 +11509,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "31 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8206,6 +11546,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8233,6 +11582,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -8259,6 +11617,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -8286,6 +11653,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8313,6 +11689,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8341,6 +11726,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -8367,6 +11761,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8394,6 +11797,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8421,6 +11833,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "31 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8446,6 +11867,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "12 mph",
+        "fsr_steering": "31 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -8472,6 +11902,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8496,6 +11935,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8525,6 +11973,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8554,6 +12011,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8583,6 +12049,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8610,6 +12085,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "12 mph",
+        "fsr_steering": "31 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "empty"
       }
     },
     {
@@ -8637,6 +12121,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8664,6 +12157,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8690,6 +12192,15 @@
       "support_level": {
         "type": "dashcam mode",
         "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "31 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8712,6 +12223,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8739,6 +12259,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8763,6 +12292,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8789,6 +12327,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8812,6 +12359,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8835,6 +12391,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8863,6 +12428,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8887,6 +12461,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     },
     {
@@ -8916,6 +12499,15 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
       }
     }
   ]
