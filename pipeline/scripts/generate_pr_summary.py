@@ -2,7 +2,6 @@
 
 import json
 import os
-import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -74,26 +73,6 @@ def get_geocode_summary():
   return data
 
 
-def _read_git_file(file_path):
-  try:
-    result = subprocess.run(
-      ["git", "show", f"origin/main:{file_path}"],
-      capture_output=True,
-      text=True,
-      check=True,
-    )
-    return json.loads(result.stdout)
-  except (subprocess.CalledProcessError, json.JSONDecodeError):
-    return None
-
-
-def get_previous_counts():
-  data = _read_git_file(str(SCRAPE_COUNTS_FILE))
-  if isinstance(data, dict):
-    return data
-  return {}
-
-
 def get_current_counts():
   current = {}
   if not RAW_OUTPUT_DIR.exists():
@@ -108,26 +87,6 @@ def get_current_counts():
     current[make] = data.get("scraped_count", 0)
 
   return current
-
-
-def build_comparison_rows(previous_counts, current_counts):
-  rows = []
-  all_makes = set(current_counts) | set(previous_counts)
-
-  for make in all_makes:
-    previous = previous_counts.get(make, 0)
-    current = current_counts.get(make, 0)
-    rows.append(
-      {
-        "make": make,
-        "previous": previous,
-        "current": current,
-        "change": current - previous,
-      }
-    )
-
-  rows.sort(key=lambda row: row["current"], reverse=True)
-  return rows
 
 
 def append_workflow_state(lines, workflow_state, inventory_artifact, failed_makes, count_mismatches, missing):
@@ -187,27 +146,6 @@ def append_geocode_summary(lines, geocode_summary):
   lines.append("")
 
 
-def append_scrape_summary(lines, previous_counts, current_counts):
-  total_previous = sum(previous_counts.values())
-  total_current = sum(current_counts.values())
-  total_change = total_current - total_previous
-
-  lines.append("## Scrape Summary")
-  lines.append("")
-  lines.append(f"**Total Cars:** {total_current:,} ({total_change:+,} from previous)")
-  lines.append("")
-  lines.append("| Make | Previous | Current | Change |")
-  lines.append("|------|----------|---------|--------|")
-
-  for row in build_comparison_rows(previous_counts, current_counts):
-    previous = f"{row['previous']:,}" if row["previous"] > 0 else "—"
-    current = f"{row['current']:,}" if row["current"] > 0 else "—"
-    change = f"{row['change']:+,}" if row["change"] != 0 else "—"
-    lines.append(f"| **{row['make']}** | {previous} | {current} | {change} |")
-
-  lines.append("")
-
-
 def append_product_summary(lines, product_summary):
   if not product_summary:
     return
@@ -233,7 +171,6 @@ def generate_summary():
   current_counts = get_current_counts()
   if current_counts:
     save_scrape_counts(current_counts)
-  previous_counts = get_previous_counts()
   product_summary = get_product_summary()
   geocode_summary = get_geocode_summary()
   inventory_artifact = get_latest_inventory_artifact()
@@ -256,7 +193,6 @@ def generate_summary():
 
   if current_counts:
     append_product_summary(lines, product_summary)
-    append_scrape_summary(lines, previous_counts, current_counts)
 
   lines.append("---")
   lines.append(f"*Scraped at {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}*")
