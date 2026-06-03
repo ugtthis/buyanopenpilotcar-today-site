@@ -20,6 +20,8 @@ uv run python merge_inventory.py    # merge per-make scrapes into JSONL
 uv run python matcher.py            # match inventory → data/openpilot_cars.json
 ```
 
+`opendbc_ref.json` is built from `CARS.md` + `package_keywords.json` via `markdown_to_json.py`, then enriched with `opendbc_metadata_ref.json` via `enricher.py`.
+
 ### Cookies
 
 The scraper needs browser cookies for full inventory access.
