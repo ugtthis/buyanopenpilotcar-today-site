@@ -6,7 +6,7 @@
     "support_specs_source": "opendbc_metadata_ref.json"
   },
   "stats": {
-    "total_cars": 1187,
+    "total_cars": 1191,
     "total_by_make": {
       "Acura": 47,
       "Audi": 50,
@@ -17,7 +17,7 @@
       "Ford": 73,
       "GMC": 4,
       "Genesis": 26,
-      "Honda": 128,
+      "Honda": 129,
       "Hyundai": 98,
       "Jeep": 11,
       "Kia": 78,
@@ -34,7 +34,7 @@
       "Subaru": 49,
       "Tesla": 14,
       "Toyota": 148,
-      "Volkswagen": 203,
+      "Volkswagen": 206,
       "comma": 0,
       "\u0160koda": 38
     }
@@ -2820,16 +2820,17 @@
       }
     },
     {
-      "name": "Honda Accord Hybrid 2023-25",
+      "name": "Honda Accord Hybrid 2023-26",
       "make": "Honda",
       "model": "Accord Hybrid",
-      "model_original": "Accord Hybrid 2023-25",
+      "model_original": "Accord Hybrid 2023-26",
       "index_key": "honda_accord_hybrid",
       "variant_info": null,
       "years": [
         2023,
         2024,
-        2025
+        2025,
+        2026
       ],
       "package_requirements": "All",
       "package_key_used": "All",
@@ -11838,6 +11839,39 @@
         "longitudinal": "openpilot available",
         "fsr_longitudinal": "0 mph",
         "fsr_steering": "31 mph",
+        "experimental_longitudinal_available": true,
+        "openpilot_longitudinal_control": true,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
+      }
+    },
+    {
+      "name": "Volkswagen ID.4 2021-23",
+      "make": "Volkswagen",
+      "model": "ID.4",
+      "model_original": "ID.4 2021-23",
+      "index_key": "volkswagen_id.4",
+      "variant_info": null,
+      "years": [
+        2021,
+        2022,
+        2023
+      ],
+      "package_requirements": "Adaptive Cruise Control (ACC) & Lane Assist",
+      "package_key_used": "Adaptive Cruise Control (ACC) & Lane Assist",
+      "match_confidence": "high",
+      "matching_keywords": [
+        "ACC",
+        "LKAS"
+      ],
+      "support_level": {
+        "type": "dashcam mode",
+        "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "openpilot available",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
         "experimental_longitudinal_available": true,
         "openpilot_longitudinal_control": true,
         "steering_torque": "full",
