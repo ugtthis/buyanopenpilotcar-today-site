@@ -5,11 +5,11 @@
     "source": "CARS.md"
   },
   "stats": {
-    "total_cars": 1191,
+    "total_cars": 1194,
     "total_by_make": {
       "Acura": 47,
       "Audi": 50,
-      "CUPRA": 6,
+      "CUPRA": 9,
       "Chevrolet": 12,
       "Chrysler": 16,
       "Dodge": 2,
@@ -977,6 +977,30 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      }
+    },
+    {
+      "name": "CUPRA Born 2021-23",
+      "make": "CUPRA",
+      "model": "Born",
+      "model_original": "Born 2021-23",
+      "index_key": "cupra_born",
+      "variant_info": null,
+      "years": [
+        2021,
+        2022,
+        2023
+      ],
+      "package_requirements": "Adaptive Cruise Control (ACC) & Lane Assist",
+      "package_key_used": "Adaptive Cruise Control (ACC) & Lane Assist",
+      "match_confidence": "high",
+      "matching_keywords": [
+        "ACC",
+        "LKAS"
+      ],
+      "support_level": {
+        "type": "dashcam mode",
+        "link_anchor": "dashcam"
       }
     },
     {
