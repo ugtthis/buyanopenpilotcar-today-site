@@ -6,7 +6,7 @@
     "support_specs_source": "opendbc_metadata_ref.json"
   },
   "stats": {
-    "total_cars": 1194,
+    "total_cars": 1192,
     "total_by_make": {
       "Acura": 47,
       "Audi": 50,
@@ -29,7 +29,7 @@
       "Peugeot": 7,
       "Porsche": 8,
       "Ram": 15,
-      "Rivian": 8,
+      "Rivian": 6,
       "SEAT": 18,
       "Subaru": 49,
       "Tesla": 14,
@@ -8141,34 +8141,6 @@
       }
     },
     {
-      "name": "Rivian R1S 2025",
-      "make": "Rivian",
-      "model": "R1S",
-      "model_original": "R1S 2025",
-      "index_key": "rivian_r1s",
-      "variant_info": null,
-      "years": [
-        2025
-      ],
-      "package_requirements": "All",
-      "package_key_used": "All",
-      "match_confidence": "extra_high",
-      "matching_keywords": null,
-      "support_level": {
-        "type": "upstream",
-        "link_anchor": "upstream"
-      },
-      "support_specs": {
-        "longitudinal": "openpilot",
-        "fsr_longitudinal": "0 mph",
-        "fsr_steering": "0 mph",
-        "experimental_longitudinal_available": false,
-        "openpilot_longitudinal_control": true,
-        "steering_torque": "full",
-        "auto_resume_star": "full"
-      }
-    },
-    {
       "name": "Rivian R1T 2022-24",
       "make": "Rivian",
       "model": "R1T",
@@ -8179,34 +8151,6 @@
         2022,
         2023,
         2024
-      ],
-      "package_requirements": "All",
-      "package_key_used": "All",
-      "match_confidence": "extra_high",
-      "matching_keywords": null,
-      "support_level": {
-        "type": "upstream",
-        "link_anchor": "upstream"
-      },
-      "support_specs": {
-        "longitudinal": "openpilot",
-        "fsr_longitudinal": "0 mph",
-        "fsr_steering": "0 mph",
-        "experimental_longitudinal_available": false,
-        "openpilot_longitudinal_control": true,
-        "steering_torque": "full",
-        "auto_resume_star": "full"
-      }
-    },
-    {
-      "name": "Rivian R1T 2025",
-      "make": "Rivian",
-      "model": "R1T",
-      "model_original": "R1T 2025",
-      "index_key": "rivian_r1t",
-      "variant_info": null,
-      "years": [
-        2025
       ],
       "package_requirements": "All",
       "package_key_used": "All",
