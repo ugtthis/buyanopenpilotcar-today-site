@@ -1378,8 +1378,8 @@
         "LKAS"
       ],
       "support_level": {
-        "type": "dashcam mode",
-        "link_anchor": "dashcam"
+        "type": "upstream",
+        "link_anchor": "upstream"
       },
       "support_specs": {
         "longitudinal": "openpilot available",
@@ -11871,8 +11871,8 @@
         "LKAS"
       ],
       "support_level": {
-        "type": "dashcam mode",
-        "link_anchor": "dashcam"
+        "type": "upstream",
+        "link_anchor": "upstream"
       },
       "support_specs": {
         "longitudinal": "openpilot available",
@@ -11903,8 +11903,8 @@
         "LKAS"
       ],
       "support_level": {
-        "type": "dashcam mode",
-        "link_anchor": "dashcam"
+        "type": "upstream",
+        "link_anchor": "upstream"
       },
       "support_specs": {
         "longitudinal": "openpilot available",

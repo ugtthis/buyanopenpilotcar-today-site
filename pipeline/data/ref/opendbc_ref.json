@@ -999,8 +999,8 @@
         "LKAS"
       ],
       "support_level": {
-        "type": "dashcam mode",
-        "link_anchor": "dashcam"
+        "type": "upstream",
+        "link_anchor": "upstream"
       }
     },
     {
@@ -8450,8 +8450,8 @@
         "LKAS"
       ],
       "support_level": {
-        "type": "dashcam mode",
-        "link_anchor": "dashcam"
+        "type": "upstream",
+        "link_anchor": "upstream"
       }
     },
     {
@@ -8473,8 +8473,8 @@
         "LKAS"
       ],
       "support_level": {
-        "type": "dashcam mode",
-        "link_anchor": "dashcam"
+        "type": "upstream",
+        "link_anchor": "upstream"
       }
     },
     {
