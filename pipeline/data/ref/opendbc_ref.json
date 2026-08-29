@@ -5,7 +5,7 @@
     "source": "CARS.md"
   },
   "stats": {
-    "total_cars": 1196,
+    "total_cars": 1201,
     "total_by_make": {
       "Acura": 47,
       "Audi": 50,
@@ -16,13 +16,14 @@
       "Ford": 73,
       "GMC": 4,
       "Genesis": 26,
-      "Honda": 131,
+      "Honda": 135,
       "Hyundai": 98,
       "Jeep": 11,
       "Kia": 78,
       "Lexus": 66,
       "Lincoln": 10,
       "MAN": 13,
+      "MG": 1,
       "Mazda": 23,
       "Nissan": 16,
       "Peugeot": 7,
@@ -2127,16 +2128,18 @@
       }
     },
     {
-      "name": "Honda Civic 2022-24",
+      "name": "Honda Civic 2022-26",
       "make": "Honda",
       "model": "Civic",
-      "model_original": "Civic 2022-24",
+      "model_original": "Civic 2022-26",
       "index_key": "honda_civic",
       "variant_info": null,
       "years": [
         2022,
         2023,
-        2024
+        2024,
+        2025,
+        2026
       ],
       "package_requirements": "All",
       "package_key_used": "All",
@@ -2498,16 +2501,18 @@
       }
     },
     {
-      "name": "Honda HR-V 2023-25",
+      "name": "Honda HR-V 2023-27",
       "make": "Honda",
       "model": "HR-V",
-      "model_original": "HR-V 2023-25",
+      "model_original": "HR-V 2023-27",
       "index_key": "honda_hr_v",
       "variant_info": null,
       "years": [
         2023,
         2024,
-        2025
+        2025,
+        2026,
+        2027
       ],
       "package_requirements": "All",
       "package_key_used": "All",
@@ -5550,6 +5555,25 @@
       "support_level": {
         "type": "upstream",
         "link_anchor": "upstream"
+      }
+    },
+    {
+      "name": "MG 5 EV 2021",
+      "make": "MG",
+      "model": "5 EV",
+      "model_original": "5 EV 2021",
+      "index_key": "mg_5_ev",
+      "variant_info": null,
+      "years": [
+        2021
+      ],
+      "package_requirements": "All",
+      "package_key_used": "All",
+      "match_confidence": "extra_high",
+      "matching_keywords": null,
+      "support_level": {
+        "type": "dashcam mode",
+        "link_anchor": "dashcam"
       }
     },
     {

@@ -6,7 +6,7 @@
     "support_specs_source": "opendbc_metadata_ref.json"
   },
   "stats": {
-    "total_cars": 1196,
+    "total_cars": 1201,
     "total_by_make": {
       "Acura": 47,
       "Audi": 50,
@@ -17,13 +17,14 @@
       "Ford": 73,
       "GMC": 4,
       "Genesis": 26,
-      "Honda": 131,
+      "Honda": 135,
       "Hyundai": 98,
       "Jeep": 11,
       "Kia": 78,
       "Lexus": 66,
       "Lincoln": 10,
       "MAN": 13,
+      "MG": 1,
       "Mazda": 23,
       "Nissan": 16,
       "Peugeot": 7,
@@ -1382,10 +1383,10 @@
         "link_anchor": "upstream"
       },
       "support_specs": {
-        "longitudinal": "openpilot available",
+        "longitudinal": "openpilot",
         "fsr_longitudinal": "0 mph",
         "fsr_steering": "0 mph",
-        "experimental_longitudinal_available": true,
+        "experimental_longitudinal_available": false,
         "openpilot_longitudinal_control": true,
         "steering_torque": "full",
         "auto_resume_star": "full"
@@ -2974,16 +2975,18 @@
       }
     },
     {
-      "name": "Honda Civic 2022-24",
+      "name": "Honda Civic 2022-26",
       "make": "Honda",
       "model": "Civic",
-      "model_original": "Civic 2022-24",
+      "model_original": "Civic 2022-26",
       "index_key": "honda_civic",
       "variant_info": null,
       "years": [
         2022,
         2023,
-        2024
+        2024,
+        2025,
+        2026
       ],
       "package_requirements": "All",
       "package_key_used": "All",
@@ -3498,16 +3501,18 @@
       }
     },
     {
-      "name": "Honda HR-V 2023-25",
+      "name": "Honda HR-V 2023-27",
       "make": "Honda",
       "model": "HR-V",
-      "model_original": "HR-V 2023-25",
+      "model_original": "HR-V 2023-27",
       "index_key": "honda_hr_v",
       "variant_info": null,
       "years": [
         2023,
         2024,
-        2025
+        2025,
+        2026,
+        2027
       ],
       "package_requirements": "All",
       "package_key_used": "All",
@@ -7831,6 +7836,34 @@
       }
     },
     {
+      "name": "MG 5 EV 2021",
+      "make": "MG",
+      "model": "5 EV",
+      "model_original": "5 EV 2021",
+      "index_key": "mg_5_ev",
+      "variant_info": null,
+      "years": [
+        2021
+      ],
+      "package_requirements": "All",
+      "package_key_used": "All",
+      "match_confidence": "extra_high",
+      "matching_keywords": null,
+      "support_level": {
+        "type": "dashcam mode",
+        "link_anchor": "dashcam"
+      },
+      "support_specs": {
+        "longitudinal": "Stock",
+        "fsr_longitudinal": "0 mph",
+        "fsr_steering": "0 mph",
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
+        "steering_torque": "full",
+        "auto_resume_star": "full"
+      }
+    },
+    {
       "name": "Nissan Altima 2019-24",
       "make": "Nissan",
       "model": "Altima",
@@ -8328,11 +8361,11 @@
         "link_anchor": "upstream"
       },
       "support_specs": {
-        "longitudinal": "openpilot available",
+        "longitudinal": "Stock",
         "fsr_longitudinal": "0 mph",
         "fsr_steering": "0 mph",
-        "experimental_longitudinal_available": true,
-        "openpilot_longitudinal_control": true,
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
         "steering_torque": "full",
         "auto_resume_star": "empty"
       }
@@ -8387,11 +8420,11 @@
         "link_anchor": "upstream"
       },
       "support_specs": {
-        "longitudinal": "openpilot available",
+        "longitudinal": "Stock",
         "fsr_longitudinal": "0 mph",
         "fsr_steering": "0 mph",
-        "experimental_longitudinal_available": true,
-        "openpilot_longitudinal_control": true,
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
         "steering_torque": "empty",
         "auto_resume_star": "empty"
       }
@@ -8420,11 +8453,11 @@
         "link_anchor": "upstream"
       },
       "support_specs": {
-        "longitudinal": "openpilot available",
+        "longitudinal": "Stock",
         "fsr_longitudinal": "0 mph",
         "fsr_steering": "0 mph",
-        "experimental_longitudinal_available": true,
-        "openpilot_longitudinal_control": true,
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
         "steering_torque": "full",
         "auto_resume_star": "empty"
       }
@@ -8511,11 +8544,11 @@
         "link_anchor": "upstream"
       },
       "support_specs": {
-        "longitudinal": "openpilot available",
+        "longitudinal": "Stock",
         "fsr_longitudinal": "0 mph",
         "fsr_steering": "0 mph",
-        "experimental_longitudinal_available": true,
-        "openpilot_longitudinal_control": true,
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
         "steering_torque": "full",
         "auto_resume_star": "empty"
       }
@@ -8603,11 +8636,11 @@
         "link_anchor": "upstream"
       },
       "support_specs": {
-        "longitudinal": "openpilot available",
+        "longitudinal": "Stock",
         "fsr_longitudinal": "0 mph",
         "fsr_steering": "0 mph",
-        "experimental_longitudinal_available": true,
-        "openpilot_longitudinal_control": true,
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
         "steering_torque": "empty",
         "auto_resume_star": "empty"
       }
@@ -8635,11 +8668,11 @@
         "link_anchor": "upstream"
       },
       "support_specs": {
-        "longitudinal": "openpilot available",
+        "longitudinal": "Stock",
         "fsr_longitudinal": "0 mph",
         "fsr_steering": "0 mph",
-        "experimental_longitudinal_available": true,
-        "openpilot_longitudinal_control": true,
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
         "steering_torque": "full",
         "auto_resume_star": "empty"
       }
@@ -8880,11 +8913,11 @@
         "link_anchor": "upstream"
       },
       "support_specs": {
-        "longitudinal": "openpilot available",
+        "longitudinal": "Stock",
         "fsr_longitudinal": "0 mph",
         "fsr_steering": "0 mph",
-        "experimental_longitudinal_available": true,
-        "openpilot_longitudinal_control": true,
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
         "steering_torque": "empty",
         "auto_resume_star": "empty"
       }
@@ -8911,11 +8944,11 @@
         "link_anchor": "upstream"
       },
       "support_specs": {
-        "longitudinal": "openpilot available",
+        "longitudinal": "Stock",
         "fsr_longitudinal": "0 mph",
         "fsr_steering": "0 mph",
-        "experimental_longitudinal_available": true,
-        "openpilot_longitudinal_control": true,
+        "experimental_longitudinal_available": false,
+        "openpilot_longitudinal_control": false,
         "steering_torque": "full",
         "auto_resume_star": "empty"
       }
@@ -11875,10 +11908,10 @@
         "link_anchor": "upstream"
       },
       "support_specs": {
-        "longitudinal": "openpilot available",
+        "longitudinal": "openpilot",
         "fsr_longitudinal": "0 mph",
         "fsr_steering": "0 mph",
-        "experimental_longitudinal_available": true,
+        "experimental_longitudinal_available": false,
         "openpilot_longitudinal_control": true,
         "steering_torque": "full",
         "auto_resume_star": "full"
@@ -11907,10 +11940,10 @@
         "link_anchor": "upstream"
       },
       "support_specs": {
-        "longitudinal": "openpilot available",
+        "longitudinal": "openpilot",
         "fsr_longitudinal": "0 mph",
         "fsr_steering": "0 mph",
-        "experimental_longitudinal_available": true,
+        "experimental_longitudinal_available": false,
         "openpilot_longitudinal_control": true,
         "steering_torque": "full",
         "auto_resume_star": "full"
